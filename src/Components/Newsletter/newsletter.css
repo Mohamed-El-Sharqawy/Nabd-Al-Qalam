@@ -96,9 +96,16 @@
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 550px) {
   .newsletter {
     padding: 1rem;
+    width: 100%;
+  }
+
+  .newsletter form p {
+    text-align: center;
+    left: 0;
+    padding: 0 0.5rem;
   }
 
   .newsletter h1 {

@@ -50,6 +50,12 @@ footer ul li:has(h1) {
   }
 }
 
+@media screen and (max-width: 550px) {
+  footer {
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 329px) {
   footer {
     padding: 1.5rem;
