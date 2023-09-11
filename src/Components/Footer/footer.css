@@ -1,0 +1,65 @@
+footer {
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  background-color: #c0114c;
+  color: white;
+  padding: 2rem 3rem;
+}
+
+footer ul {
+  width: 100%;
+}
+
+footer ul li:not(:last-of-type) {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid white;
+  padding-bottom: 1rem;
+  transition: 0.35s;
+}
+
+footer ul li:not(footer .info, footer ul li:has(h1)):hover {
+  text-decoration: underline;
+  color: #fa8411;
+}
+
+footer .info,
+footer ul li:has(h1) {
+  cursor: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+@media screen and (max-width: 1165px) {
+  footer {
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  footer ul {
+    width: 46.5%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  footer ul {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 329px) {
+  footer {
+    padding: 1.5rem;
+  }
+
+  footer ul li:has(h1) h1 {
+    font-size: 20px;
+  }
+
+  footer ul li {
+    font-size: 12px;
+  }
+}

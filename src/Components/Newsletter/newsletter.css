@@ -1,0 +1,121 @@
+.newsletter {
+  background-color: #fa8411;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 95%;
+  margin: 0 auto;
+  padding: 2rem;
+  position: relative;
+  margin-top: 5rem;
+}
+
+.newsletter h1 {
+  flex: 1;
+}
+
+.newsletter form {
+  flex: 1;
+  display: flex;
+  justify-content: end;
+}
+
+.newsletter form input {
+  padding: 1rem 0.6rem;
+  width: 500px;
+  border: none;
+  outline: none;
+}
+
+.newsletter form input::placeholder {
+  transition: 0.5s;
+}
+
+.newsletter form input:focus::placeholder {
+  opacity: 0;
+}
+
+.newsletter form button {
+  background-color: #c0114c;
+  border: none;
+  color: white;
+  padding: 0 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.35s;
+}
+
+.newsletter form button:hover {
+  background-color: #99123f;
+}
+
+.newsletter form p {
+  position: absolute;
+  left: 10px;
+  top: -25px;
+  color: gray;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+@media screen and (max-width: 865px) {
+  .newsletter form p {
+    top: -40px;
+  }
+}
+
+@media screen and (max-width: 461px) {
+  .newsletter form p {
+    top: -55px;
+  }
+}
+
+@media screen and (max-width: 323px) {
+  .newsletter form p {
+    top: -70px;
+    overflow: hidden;
+    height: 67px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .newsletter {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .newsletter h1 {
+    font-size: 28px;
+  }
+
+  .newsletter form input {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .newsletter {
+    padding: 1rem;
+  }
+
+  .newsletter h1 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .newsletter form button {
+    font-size: 12px;
+  }
+
+  .newsletter form input {
+    width: 100%;
+    padding-right: 4px;
+  }
+
+  .newsletter form input::placeholder {
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,51 @@
+.middnav{
+    padding-top: 10px;
+}
+.container-midd{
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.search{
+    width: 30%;
+    position: relative;
+}
+.search input{
+    width: 100%;
+    padding: 11px 0px 11px 10px;
+    outline: none;
+    border: 2px solid #eee;
+    border-radius: 10px;
+}
+.search span {
+    position: absolute;
+    right: 0;
+    padding: 20px;
+    background-color: #eee;
+    border-radius: 10px;
+}
+.search svg{
+    position: absolute;
+    right: 12px;
+    top: 13px;
+}
+.cart {
+    position: relative;
+}
+.cart svg{
+    font-size: 2rem;
+}
+.cart .count{
+    position: absolute;
+    top: -5px;
+    left: 16px;
+    background-color: #eee;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    text-align: center;
+    padding-top: 2px;
+    font-size: 14px;
+}

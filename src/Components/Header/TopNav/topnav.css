@@ -1,0 +1,26 @@
+.topnav {
+  width: 100%;
+  background-color: #fa8411;
+}
+.container-nav {
+  width: 95%;
+  margin: 0 auto;
+  height: 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.contact {
+  display: flex;
+  gap: 20px;
+  color: #fff;
+}
+.contact p {
+  display: flex;
+  gap: 10px;
+}
+.mail p {
+  display: flex;
+  color: #fff;
+  gap: 10px;
+}
