@@ -1,0 +1,38 @@
+.topnav{
+    width: 100%;
+    background-color: #fa8411;
+}
+.container-topnav{
+    width: 95%;
+    margin: 0 auto;
+    height: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.contact {
+    display: flex;
+    gap: 20px;
+    color: #fff;
+}
+.contact p{
+    display: flex;
+    gap: 10px;
+}
+.mail a{
+    display: flex;
+    color: #fff;
+    gap: 10px;
+}
+.container-topnav ul{
+    display: flex;
+    gap: 50px;
+}
+.container-topnav ul li a {
+    color: #fff;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: .3s ease-out;
+}

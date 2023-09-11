@@ -1,0 +1,136 @@
+.images-container{
+    position: relative;
+}
+.cards{
+    width: 80%;
+    /* position: absolute;
+    right: 20px; */
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.images-container h1{
+    text-align: center;
+    padding-bottom: 20px;
+    color: #c0114c;
+}
+/* .cards h1:before{
+    content: '';
+    position: absolute;
+    height: 2px;    
+    width: 34.7%;
+    background-color: #fa8411;
+    top: 33px;
+} */
+.cards .slider{
+    width: 80%;
+    height: 180px;
+    margin-bottom: 20px;
+    background-color: #eee;
+    border-radius: 5px;
+}
+.slider .book-img img{
+    width: 85%;
+    height: 150px;
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-left: 20px;
+}
+.card{
+    width: 20%;
+    height: 260px;
+    border-radius: 6px;
+    /* background-color: #fa8411; */
+    background-color: #eee;
+    position: relative;
+    margin: 10px;
+    box-shadow: 3px 3px 3px 3px #ddd;
+}
+.card-img img{
+    width: 100%;
+    height: 180px;
+    border-radius: 5px;
+}
+.card::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0,0,0,0.3);
+    transition: .4s ease-in;
+    opacity: 0;
+    border-radius: 5px;
+}
+.card:hover::before{
+    opacity: 1;
+}
+.card-caption {
+    padding: 8px 8px 8px;
+}
+.card-caption .caption{
+    font-size: 14px;
+    font-weight: bold;
+    color: cadetblue;
+    padding-bottom: 8px;
+}
+.card-caption .price{
+    font-size: 14px;
+    font-weight: bold;
+    /* color: #fa8411; */
+    color: cadetblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.shopping{
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%,-50%);
+    opacity: 0;
+    transition: .5s ease-in;
+}
+.card:hover .shopping{
+    opacity: 1;
+}
+.icons{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 8px;
+    gap: 20px;
+}
+.icons svg{
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    transition: .3s ease-in;
+}
+.icons svg:hover{
+    /* color: #fa8411; */
+    color: cadetblue;
+    transform: scale(1.2);
+}
+.btn{
+    padding: 10px 15px;
+    background: transparent;
+    color: #fff;
+    border: 1px solid transparent;
+    transition: .5s ease-in;
+}
+.btn:hover{
+    /* background-color: #fa8411; */
+    background-color: cadetblue;
+    /* border: 1px solid #fa8411; */
+    border: 1px solid cadetblue;
+}
+.banner{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    margin: 30px auto;
+}
+.banner img{
+    width: 100%;
+    height: 150px;
+}
