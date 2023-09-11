@@ -1,17 +1,10 @@
-<<<<<<< HEAD
-import Header from "./Components/Header/Header";
-import Footer from "./Components/Footer/Footer";
+import Home from "./Components/Home/Home";
 import Newsletter from "./Components/Newsletter/Newsletter";
-
-=======
-import Header from "./Components/Header/Header"
-import Home from './Components/Home/Home'
->>>>>>> 0a3d97895db48b85c1dfec4729ec437316ff60d8
+import Footer from "./Components/Footer/Footer";
 const App = () => {
   return (
     <div>
-      <Header />
-<<<<<<< HEAD
+      <Home />
       <Newsletter />
       <Footer />
     </div>
@@ -19,11 +12,3 @@ const App = () => {
 };
 
 export default App;
-=======
-      <Home />
-    </div>
-  )
-}
-
-export default App
->>>>>>> 0a3d97895db48b85c1dfec4729ec437316ff60d8
