@@ -49,19 +49,19 @@
 }
 
 .contact .left-side button {
-  background-color: transparent;
+  background-color: #fa8411;
   border: 2px solid #fa8411;
+  color: white;
   cursor: pointer;
   width: fit-content;
   padding: 0.75rem 1.25rem;
   border-radius: 4px;
-  color: #f38f2a;
   transition: 0.35s;
-  color: white;
 }
 
 .contact .left-side button:hover {
-  background-color: #fa8411;
+  background-color: #e6790c;
+  border-color: #e6790c;
 }
 
 .contact .right-side {
