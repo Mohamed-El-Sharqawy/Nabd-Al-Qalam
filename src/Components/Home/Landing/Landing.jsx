@@ -1,10 +1,10 @@
 import './landing.css'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-
 import { TbHeartPlus } from 'react-icons/tb'
-import { AiOutlineStar } from 'react-icons/ai'
-// import { BsEye } from 'react-icons/Bs'
+import { BsEye } from 'react-icons/Bs'
+import {AiFillCloseCircle} from 'react-icons/ai'
+import { useState } from 'react';
 const Landing = () => {
 const responsive = {
     superLargeDesktop: {
@@ -24,7 +24,16 @@ const responsive = {
     breakpoint: { max: 464, min: 0 },
     items: 1
     }
-};
+    };
+    const [popup, setPopup] = useState(false)
+    const [value, setValue] = useState(0)
+    const increase = () => {
+        setValue(value+1)
+    }
+    const decrease = () => {
+        if (value == 1) return
+        setValue(value-1)
+    }
 return (
     <>
         <div className="images-container">
@@ -58,23 +67,22 @@ return (
                         </div>
                     </Carousel>
                 </div>
-                <div className="card">
-                    <div className="card-img">
-                        <img src="/src/assets/أنبياء الله فى قصصهم عبره.jpeg" alt="" />
-                    </div>
-                    <div className="card-caption">
-                        <p className='caption'>God’s prophets in their stories are examples</p>
-                        <span className='price'>19 AED</span>
-                    </div>
-                    <div className="shopping">
-                        <div className="icons">
-                            <TbHeartPlus />
-                            <AiOutlineStar />
-                            {/* <BsEye /> */}
+                    <div className="card">
+                        <div className="card-img">
+                            <img src="/src/assets/أنبياء الله فى قصصهم عبره.jpeg" alt="" />
                         </div>
-                        <button className="btn">Add to cart</button>
+                        <div className="card-caption">
+                            <p className='caption'>God’s prophets in their stories are examples</p>
+                            <span className='price'>19 AED</span>
+                        </div>
+                        <div className="shopping">
+                            <div className="icons">
+                                <TbHeartPlus />
+                                <BsEye onClick={() => setPopup(!popup)} />
+                            </div>
+                            <button className="btn">Add to cart</button>
+                        </div>
                     </div>
-                </div>
                 <div className="card">
                     <div className="card-img">
                         <img src="/src/assets/أشعه اكس.JPG" alt="" />
@@ -86,7 +94,7 @@ return (
                     <div className="shopping">
                         <div className="icons">
                             <TbHeartPlus />
-                            <AiOutlineStar />
+                            <BsEye />
                         </div>
                         <button className="btn">Add to cart</button>
                     </div>
@@ -102,7 +110,7 @@ return (
                     <div className="shopping">
                         <div className="icons">
                             <TbHeartPlus />
-                            <AiOutlineStar />
+                            <BsEye />
                         </div>
                         <button className="btn">Add to cart</button>
                     </div>
@@ -118,12 +126,39 @@ return (
                     <div className="shopping">
                         <div className="icons">
                             <TbHeartPlus />
-                            <AiOutlineStar />
+                            <BsEye />
                         </div>
                         <button className="btn">Add to cart</button>
                     </div>
                 </div>
-                <div className="card">
+                <div className="popup-container">
+                    <div className={`popup ${popup? 'show' :"hidden"}`}>
+                        <div className="left-popup">
+                            <p className='title'>انبياء الله فى قصصهم عبره</p>
+                            <p className='where'>فى المخزن</p>
+                            <h4 className='price'>30 AED</h4>
+                            <p className='overview'>A collection of stories from some of the prophets,
+                                one of the best and most enjoyable stories,
+                                containing faith, knowledge,work, worship, lesson, and benefit,
+                                narrated in a creative and exciting manner.</p>
+                            <div className="btnpopup">
+                                <button className='btnclick' onClick={()=>increase()}>+</button>
+                                <span className='counter'>{value}</span>
+                                <button  className='btnclick' onClick={()=>decrease()}>-</button>
+                            </div>
+                            <div className="addcart">
+                                <button className='add-to-cart'>Add To Cart</button>
+                            </div>
+                        </div>
+                        <div className="right-popup">
+                            <img src="/src/assets/أنبياء الله فى قصصهم عبره.jpeg" alt="" />
+                        </div>
+                        <div className="close">
+                            <AiFillCloseCircle className='close' onClick={()=>setPopup(false)} />
+                        </div>
+                    </div>
+                </div>
+                {/* <div className="card">
                     <div className="card-img">
                         <img src="/src/assets/اصابع مشغوله.JPG" alt="" />
                     </div>
@@ -134,7 +169,7 @@ return (
                     <div className="shopping">
                         <div className="icons">
                             <TbHeartPlus />
-                            <AiOutlineStar />
+                            <BsEye />
                         </div>
                         <button className="btn">Add to cart</button>
                     </div>
@@ -150,7 +185,7 @@ return (
                     <div className="shopping">
                         <div className="icons">
                             <TbHeartPlus />
-                            <AiOutlineStar />
+                            <BsEye />
                         </div>
                         <button className="btn">Add to cart</button>
                     </div>
@@ -166,7 +201,7 @@ return (
                     <div className="shopping">
                         <div className="icons">
                             <TbHeartPlus />
-                            <AiOutlineStar />
+                            <BsEye />
                         </div>
                         <button className="btn">Add to cart</button>
                     </div>
@@ -182,7 +217,7 @@ return (
                     <div className="shopping">
                         <div className="icons">
                             <TbHeartPlus />
-                            <AiOutlineStar />
+                            <BsEye />
                         </div>
                         <button className="btn">Add to cart</button>
                     </div>
@@ -198,7 +233,7 @@ return (
                     <div className="shopping">
                         <div className="icons">
                             <TbHeartPlus />
-                            <AiOutlineStar />
+                            <BsEye />
                         </div>
                         <button className="btn">Add to cart</button>
                     </div>
@@ -214,7 +249,7 @@ return (
                     <div className="shopping">
                         <div className="icons">
                             <TbHeartPlus />
-                            <AiOutlineStar />
+                            <BsEye />
                         </div>
                         <button className="btn">Add to cart</button>
                     </div>
@@ -230,7 +265,7 @@ return (
                     <div className="shopping">
                         <div className="icons">
                             <TbHeartPlus />
-                            <AiOutlineStar />
+                            <BsEye />
                         </div>
                         <button className="btn">Add to cart</button>
                     </div>
@@ -246,7 +281,7 @@ return (
                     <div className="shopping">
                         <div className="icons">
                             <TbHeartPlus />
-                            <AiOutlineStar />
+                            <BsEye />
                         </div>
                         <button className="btn">Add to cart</button>
                     </div>
@@ -265,7 +300,7 @@ return (
                     <div className="shopping">
                         <div className="icons">
                             <TbHeartPlus />
-                            <AiOutlineStar />
+                            <BsEye />
                         </div>
                         <button className="btn">Add to cart</button>
                     </div>
@@ -281,7 +316,7 @@ return (
                     <div className="shopping">
                         <div className="icons">
                             <TbHeartPlus />
-                            <AiOutlineStar />
+                            <BsEye />
                         </div>
                         <button className="btn">Add to cart</button>
                     </div>
@@ -297,7 +332,7 @@ return (
                     <div className="shopping">
                         <div className="icons">
                             <TbHeartPlus />
-                            <AiOutlineStar />
+                            <BsEye />
                         </div>
                         <button className="btn">Add to cart</button>
                     </div>
@@ -313,7 +348,7 @@ return (
                     <div className="shopping">
                         <div className="icons">
                             <TbHeartPlus />
-                            <AiOutlineStar />
+                            <BsEye />
                         </div>
                         <button className="btn">Add to cart</button>
                     </div>
@@ -329,7 +364,7 @@ return (
                     <div className="shopping">
                         <div className="icons">
                             <TbHeartPlus />
-                            <AiOutlineStar />
+                            <BsEye />
                         </div>
                         <button className="btn">Add to cart</button>
                     </div>
@@ -345,7 +380,7 @@ return (
                     <div className="shopping">
                         <div className="icons">
                             <TbHeartPlus />
-                            <AiOutlineStar />
+                            <BsEye />
                         </div>
                         <button className="btn">Add to cart</button>
                     </div>
@@ -361,7 +396,7 @@ return (
                     <div className="shopping">
                         <div className="icons">
                             <TbHeartPlus />
-                            <AiOutlineStar />
+                            <BsEye />
                         </div>
                         <button className="btn">Add to cart</button>
                     </div>
@@ -377,7 +412,7 @@ return (
                     <div className="shopping">
                         <div className="icons">
                             <TbHeartPlus />
-                            <AiOutlineStar />
+                            <BsEye />
                         </div>
                         <button className="btn">Add to cart</button>
                     </div>
@@ -393,7 +428,7 @@ return (
                     <div className="shopping">
                         <div className="icons">
                             <TbHeartPlus />
-                            <AiOutlineStar />
+                            <BsEye />
                         </div>
                         <button className="btn">Add to cart</button>
                     </div>
@@ -409,7 +444,7 @@ return (
                     <div className="shopping">
                         <div className="icons">
                             <TbHeartPlus />
-                            <AiOutlineStar />
+                            <BsEye />
                         </div>
                         <button className="btn">Add to cart</button>
                     </div>
@@ -425,7 +460,7 @@ return (
                     <div className="shopping">
                         <div className="icons">
                             <TbHeartPlus />
-                            <AiOutlineStar />
+                            <BsEye />
                         </div>
                         <button className="btn">Add to cart</button>
                     </div>
@@ -441,7 +476,7 @@ return (
                     <div className="shopping">
                         <div className="icons">
                             <TbHeartPlus />
-                            <AiOutlineStar />
+                            <BsEye />
                         </div>
                         <button className="btn">Add to cart</button>
                     </div>
@@ -457,7 +492,7 @@ return (
                     <div className="shopping">
                         <div className="icons">
                             <TbHeartPlus />
-                            <AiOutlineStar />
+                            <BsEye />
                         </div>
                         <button className="btn">Add to cart</button>
                     </div>
@@ -473,7 +508,7 @@ return (
                     <div className="shopping">
                         <div className="icons">
                             <TbHeartPlus />
-                            <AiOutlineStar />
+                            <BsEye />
                         </div>
                         <button className="btn">Add to cart</button>
                     </div>
@@ -489,7 +524,7 @@ return (
                     <div className="shopping">
                         <div className="icons">
                             <TbHeartPlus />
-                            <AiOutlineStar />
+                            <BsEye />
                         </div>
                         <button className="btn">Add to cart</button>
                     </div>
@@ -505,7 +540,7 @@ return (
                     <div className="shopping">
                         <div className="icons">
                             <TbHeartPlus />
-                            <AiOutlineStar />
+                            <BsEye />
                         </div>
                         <button className="btn">Add to cart</button>
                     </div>
@@ -521,7 +556,7 @@ return (
                     <div className="shopping">
                         <div className="icons">
                             <TbHeartPlus />
-                            <AiOutlineStar />
+                            <BsEye />
                         </div>
                         <button className="btn">Add to cart</button>
                     </div>
@@ -537,7 +572,7 @@ return (
                     <div className="shopping">
                         <div className="icons">
                             <TbHeartPlus />
-                            <AiOutlineStar />
+                            <BsEye />
                         </div>
                         <button className="btn">Add to cart</button>
                     </div>
@@ -553,7 +588,7 @@ return (
                     <div className="shopping">
                         <div className="icons">
                             <TbHeartPlus />
-                            <AiOutlineStar />
+                            <BsEye />
                         </div>
                         <button className="btn">Add to cart</button>
                     </div>
@@ -569,7 +604,7 @@ return (
                     <div className="shopping">
                         <div className="icons">
                             <TbHeartPlus />
-                            <AiOutlineStar />
+                            <BsEye />
                         </div>
                         <button className="btn">Add to cart</button>
                     </div>
@@ -585,7 +620,7 @@ return (
                     <div className="shopping">
                         <div className="icons">
                             <TbHeartPlus />
-                            <AiOutlineStar />
+                            <BsEye />
                         </div>
                         <button className="btn">Add to cart</button>
                     </div>
@@ -601,7 +636,7 @@ return (
                     <div className="shopping">
                         <div className="icons">
                             <TbHeartPlus />
-                            <AiOutlineStar />
+                            <BsEye />
                         </div>
                         <button className="btn">Add to cart</button>
                     </div>
@@ -617,7 +652,7 @@ return (
                     <div className="shopping">
                         <div className="icons">
                             <TbHeartPlus />
-                            <AiOutlineStar />
+                            <BsEye />
                         </div>
                         <button className="btn">Add to cart</button>
                     </div>
@@ -633,7 +668,7 @@ return (
                     <div className="shopping">
                         <div className="icons">
                             <TbHeartPlus />
-                            <AiOutlineStar />
+                            <BsEye />
                         </div>
                         <button className="btn">Add to cart</button>
                     </div>
@@ -649,7 +684,7 @@ return (
                     <div className="shopping">
                         <div className="icons">
                             <TbHeartPlus />
-                            <AiOutlineStar />
+                            <BsEye />
                         </div>
                         <button className="btn">Add to cart</button>
                     </div>
@@ -665,7 +700,7 @@ return (
                     <div className="shopping">
                         <div className="icons">
                             <TbHeartPlus />
-                            <AiOutlineStar />
+                            <BsEye />
                         </div>
                         <button className="btn">Add to cart</button>
                     </div>
@@ -681,7 +716,7 @@ return (
                     <div className="shopping">
                         <div className="icons">
                             <TbHeartPlus />
-                            <AiOutlineStar />
+                            <BsEye />
                         </div>
                         <button className="btn">Add to cart</button>
                     </div>
@@ -697,7 +732,7 @@ return (
                     <div className="shopping">
                         <div className="icons">
                             <TbHeartPlus />
-                            <AiOutlineStar />
+                            <BsEye />
                         </div>
                         <button className="btn">Add to cart</button>
                     </div>
@@ -713,7 +748,7 @@ return (
                     <div className="shopping">
                         <div className="icons">
                             <TbHeartPlus />
-                            <AiOutlineStar />
+                            <BsEye />
                         </div>
                         <button className="btn">Add to cart</button>
                     </div>
@@ -729,7 +764,7 @@ return (
                     <div className="shopping">
                         <div className="icons">
                             <TbHeartPlus />
-                            <AiOutlineStar />
+                            <BsEye />
                         </div>
                         <button className="btn">Add to cart</button>
                     </div>
@@ -745,7 +780,7 @@ return (
                     <div className="shopping">
                         <div className="icons">
                             <TbHeartPlus />
-                            <AiOutlineStar />
+                            <BsEye />
                         </div>
                         <button className="btn">Add to cart</button>
                     </div>
@@ -761,7 +796,7 @@ return (
                     <div className="shopping">
                         <div className="icons">
                             <TbHeartPlus />
-                            <AiOutlineStar />
+                            <BsEye />
                         </div>
                         <button className="btn">Add to cart</button>
                     </div>
@@ -777,7 +812,7 @@ return (
                     <div className="shopping">
                         <div className="icons">
                             <TbHeartPlus />
-                            <AiOutlineStar />
+                            <BsEye />
                         </div>
                         <button className="btn">Add to cart</button>
                     </div>
@@ -793,7 +828,7 @@ return (
                     <div className="shopping">
                         <div className="icons">
                             <TbHeartPlus />
-                            <AiOutlineStar />
+                            <BsEye />
                         </div>
                         <button className="btn">Add to cart</button>
                     </div>
@@ -809,7 +844,7 @@ return (
                     <div className="shopping">
                         <div className="icons">
                             <TbHeartPlus />
-                            <AiOutlineStar />
+                            <BsEye />
                         </div>
                         <button className="btn">Add to cart</button>
                     </div>
@@ -825,7 +860,7 @@ return (
                     <div className="shopping">
                         <div className="icons">
                             <TbHeartPlus />
-                            <AiOutlineStar />
+                            <BsEye />
                         </div>
                         <button className="btn">Add to cart</button>
                     </div>
@@ -841,7 +876,7 @@ return (
                     <div className="shopping">
                         <div className="icons">
                             <TbHeartPlus />
-                            <AiOutlineStar />
+                            <BsEye />
                         </div>
                         <button className="btn">Add to cart</button>
                     </div>
@@ -857,14 +892,12 @@ return (
                     <div className="shopping">
                         <div className="icons">
                             <TbHeartPlus />
-                            <AiOutlineStar />
+                            <BsEye />
                         </div>
                         <button className="btn">Add to cart</button>
                     </div>
-                </div>
-                {/* <div className="banner">
-                    <img src="/src/assets/poster_half_page.jpeg" alt="" />
                 </div> */}
+                
             </div>
         </div>
     </>
