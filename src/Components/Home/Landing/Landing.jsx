@@ -1,9 +1,10 @@
 import "./landing.css";
-import "react-multi-carousel/lib/styles.css";
 import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 import { TbHeartPlus } from "react-icons/tb";
 import { BsEye } from "react-icons/Bs";
-
+import { AiFillCloseCircle } from "react-icons/ai";
+import { useState } from "react";
 const Landing = () => {
   const responsive = {
     superLargeDesktop: {
@@ -24,13 +25,20 @@ const Landing = () => {
       items: 1,
     },
   };
-
+  const [popup, setPopup] = useState(false);
+  const [value, setValue] = useState(0);
+  const increase = () => {
+    setValue(value + 1);
+  };
+  const decrease = () => {
+    if (value == 1) return;
+    setValue(value - 1);
+  };
   return (
     <>
       <div className="images-container">
         <h1>Best Sellers</h1>
         <div className="cards">
-          {/* Slider */}
           <div className="slider">
             <Carousel responsive={responsive}>
               <div className="book-img">
@@ -91,7 +99,7 @@ const Landing = () => {
               </div>
             </Carousel>
           </div>
-          {/* Cards */}
+
           <div className="card">
             <div className="card-img">
               <img src="/src/assets/أنبياء الله فى قصصهم عبره.jpeg" alt="" />
@@ -105,7 +113,7 @@ const Landing = () => {
             <div className="shopping">
               <div className="icons">
                 <TbHeartPlus />
-                <BsEye />
+                <BsEye onClick={() => setPopup(!popup)} />
               </div>
               <button className="btn">Add to cart</button>
             </div>
@@ -161,6 +169,42 @@ const Landing = () => {
                 <BsEye />
               </div>
               <button className="btn">Add to cart</button>
+            </div>
+          </div>
+          <div className="popup-container">
+            <div className={`popup ${popup ? "show" : "hidden"}`}>
+              <div className="left-popup">
+                <p className="title">انبياء الله فى قصصهم عبره</p>
+                <p className="where">فى المخزن</p>
+                <h4 className="price">30 AED</h4>
+                <p className="overview">
+                  A collection of stories from some of the prophets, one of the
+                  best and most enjoyable stories, containing faith,
+                  knowledge,work, worship, lesson, and benefit, narrated in a
+                  creative and exciting manner.
+                </p>
+                <div className="btnpopup">
+                  <button className="btnclick" onClick={() => increase()}>
+                    +
+                  </button>
+                  <span className="counter">{value}</span>
+                  <button className="btnclick" onClick={() => decrease()}>
+                    -
+                  </button>
+                </div>
+                <div className="addcart">
+                  <button className="add-to-cart">Add To Cart</button>
+                </div>
+              </div>
+              <div className="right-popup">
+                <img src="/src/assets/أنبياء الله فى قصصهم عبره.jpeg" alt="" />
+              </div>
+              <div className="close">
+                <AiFillCloseCircle
+                  className="close"
+                  onClick={() => setPopup(false)}
+                />
+              </div>
             </div>
           </div>
           <div className="card">
