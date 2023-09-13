@@ -1,12 +1,10 @@
 import "./landing.css";
 import "react-multi-carousel/lib/styles.css";
 import Carousel from "react-multi-carousel";
-
 import { TbHeartPlus } from "react-icons/tb";
 import { BsEye } from "react-icons/Bs";
-import { useState } from "react";
+
 const Landing = () => {
-  const [popup, setPopup] = useState(false);
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -107,7 +105,7 @@ const Landing = () => {
             <div className="shopping">
               <div className="icons">
                 <TbHeartPlus />
-                <BsEye onClick={() => setPopup(true)} />
+                <BsEye />
               </div>
               <button className="btn">Add to cart</button>
             </div>
@@ -164,26 +162,6 @@ const Landing = () => {
               </div>
               <button className="btn">Add to cart</button>
             </div>
-          </div>
-          {/* <div className="banner">
-            <img src="/src/assets/poster_half_page.jpeg" alt="" />
-          </div> */}
-        </div>
-        <div className={`popup ${popup ? "show" : "hidden"}`}>
-          <div>
-            <h1>Title</h1>
-            <p>SKU 9789948861737-10</p>
-            <p>في المخزن</p>
-            <h3>د.إ.‏ 29٫98</h3>
-            <button>-</button>
-            <span>1</span>
-            <button>+</button>
-
-            <button>اضف الي العربه</button>
-            <p onClick={() => setPopup(false)}>Close</p>
-          </div>
-          <div>
-            <img src="/src/assets/اخبرني عن خوفك.jpg" alt="" />
           </div>
         </div>
       </div>
