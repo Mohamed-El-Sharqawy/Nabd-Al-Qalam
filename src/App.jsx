@@ -1,13 +1,14 @@
-import Home from "./Components/Home/Home";
+import { Outlet } from "react-router-dom";
 import Newsletter from "./Components/Newsletter/Newsletter";
 import Footer from "./Components/Footer/Footer";
+
 const App = () => {
   return (
-    <div>
-      <Home />
+    <>
+      <Outlet />
       <Newsletter />
       <Footer />
-    </div>
+    </>
   );
 };
 

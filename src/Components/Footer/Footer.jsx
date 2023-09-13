@@ -1,6 +1,7 @@
 import "./footer.css";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaLocationDot, FaEnvelope } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -9,8 +10,12 @@ const Footer = () => {
         <li>
           <h1>Useful Links</h1>
         </li>
-        <li>About Us</li>
-        <li>Request and Refund</li>
+        <li>
+          <Link to="/">About Us</Link>
+        </li>
+        <li>
+          <Link to={"/contact"}>Contact Us</Link>
+        </li>
         <li>Need Help ?</li>
         <li>Terms Of Use</li>
       </ul>

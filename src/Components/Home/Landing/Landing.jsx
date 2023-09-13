@@ -40,33 +40,66 @@ return (
                     <h1>Best Sellers</h1>
             <div className="cards">
                 <div className="slider">
-                    <Carousel responsive={responsive}>
-                        <div className="book-img">
-                            <img src="/src/assets/حكايات وردان.jpeg" alt="" />
-                        </div>
-                        <div className="book-img">
-                            <img src="/src/assets/زايد نبراس الحكمه.jpeg" alt="" />
-                        </div>
-                        <div className="book-img">
-                            <img src="/src/assets/فكر و العب.JPG" alt="" />
-                        </div>
-                        <div className="book-img">
-                            <img src="/src/assets/مغامرات فى ارض الفايكنج.JPG" alt="" />
-                        </div>
-                        <div className="book-img">
-                            <img src="/src/assets/أنبياء الله فى قصصهم عبره.jpeg" alt="" />
-                        </div>
-                        <div className="book-img">
-                            <img src="/src/assets/المسبار الجديد 1.JPG" alt="" />
-                        </div>
-                        <div className="book-img">
-                            <img src="/src/assets/الدوده مورى.JPG" alt="" />
-                        </div>
-                        <div className="book-img">
-                            <img src="/src/assets/كوكب الوفاق.jpeg" alt="" />
-                        </div>
-                    </Carousel>
-                </div>
+            <Carousel responsive={responsive}>
+              <div className="book-img">
+                <img
+                  src="/src/assets/حكايات وردان.jpeg"
+                  draggable={false}
+                  alt=""
+                />
+              </div>
+              <div className="book-img">
+                <img
+                  src="/src/assets/زايد نبراس الحكمه.jpeg"
+                  draggable={false}
+                  alt=""
+                />
+              </div>
+              <div className="book-img">
+                <img
+                  src="/src/assets/فكر و العب.JPG"
+                  draggable={false}
+                  alt=""
+                />
+              </div>
+              <div className="book-img">
+                <img
+                  src="/src/assets/مغامرات فى ارض الفايكنج.JPG"
+                  draggable={false}
+                  alt=""
+                />
+              </div>
+              <div className="book-img">
+                <img
+                  src="/src/assets/أنبياء الله فى قصصهم عبره.jpeg"
+                  draggable={false}
+                  alt=""
+                />
+              </div>
+              <div className="book-img">
+                <img
+                  src="/src/assets/المسبار الجديد 1.JPG"
+                  draggable={false}
+                  alt=""
+                />
+              </div>
+              <div className="book-img">
+                <img
+                  src="/src/assets/الدوده مورى.JPG"
+                  draggable={false}
+                  alt=""
+                />
+              </div>
+              <div className="book-img">
+                <img
+                  src="/src/assets/كوكب الوفاق.jpeg"
+                  draggable={false}
+                  alt=""
+                />
+              </div>
+            </Carousel>
+          </div>
+
                     <div className="card">
                         <div className="card-img">
                             <img src="/src/assets/أنبياء الله فى قصصهم عبره.jpeg" alt="" />
