@@ -5,18 +5,17 @@
 .container-nav {
   width: 95%;
   margin: 0 auto;
-  height: 35px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0.75rem 0;
 }
 .contact-paragraph {
   display: flex;
   gap: 20px;
   color: #fff;
 }
-
-.mail a {
+.mail p {
   display: flex;
   color: #fff;
   gap: 10px;
@@ -32,4 +31,13 @@
   align-items: center;
   gap: 10px;
   transition: 0.3s ease-out;
+}
+
+@media screen and (max-width: 415px) {
+  .container-nav {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    column-gap: 2rem;
+    justify-content: center;
+  }
 }

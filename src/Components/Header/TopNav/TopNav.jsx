@@ -9,15 +9,13 @@ const TopNav = () => {
         <div className="container-nav">
           <div className="contact-paragraph">
             <p>
-              {" "}
               +971504880044 <FiPhoneCall />
             </p>
           </div>
-          <div className="slider"></div>
           <div className="mail">
-            <a href="#">
+            <p>
               sales@nabdualqalam.ae <FiMail />
-            </a>
+            </p>
           </div>
         </div>
       </div>

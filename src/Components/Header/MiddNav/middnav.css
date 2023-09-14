@@ -1,69 +1,69 @@
-.middnav{
-    padding-top: 10px;
+.middnav {
+  padding-top: 10px;
 }
-.container-midd{
-    width: 95%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.container-midd {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
 }
-.leftlinks-search .links-search{
-    width: 100%;
-    display: flex;
-    gap: 30px;
+.leftlinks-search .links-search {
+  width: 100%;
+  display: flex;
+  gap: 30px;
 }
-.leftlinks-search .links-search a{
-    font-size: 15px;
-    font-weight: bold;
-    color: #fa8411;
-}
-.search{
-    width: 30%;
-    position: relative;
-}
-.search input{
-    width: 100%;
-    padding: 11px 0px 11px 10px;
-    outline: none;
-    border: 2px solid #eee;
-    border-radius: 10px;
-}
-.search span {
-    position: absolute;
-    right: 0;
-    padding: 20px;
-    background-color: #eee;
-    border-radius: 10px;
-}
-.search svg{
-    position: absolute;
-    right: 12px;
-    top: 13px;
+.leftlinks-search .links-search a {
+  font-size: 15px;
+  font-weight: bold;
+  color: #fa8411;
 }
 .cart {
-    position: relative;
-    display: flex;
-    gap: 20px;
+  position: relative;
+  display: flex;
+  gap: 20px;
 }
-.cart svg{
-    font-size: 2rem;
+.cart svg {
+  font-size: 2rem;
 }
-.cart .count{
-    position: absolute;
-    top: -5px;
-    left: 16px;
-    background-color: #fa8411;
-    color: #fff;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    text-align: center;
-    padding-top: 2px;
-    font-size: 14px;
+.cart .count {
+  position: absolute;
+  top: -5px;
+  left: 16px;
+  background-color: #fa8411;
+  color: #fff;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 2px;
+  font-size: 14px;
 }
-.cart a img{
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
+.cart a img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.menu {
+  display: none;
+}
+
+.menu .menu-icon {
+  font-size: 30px;
+}
+
+@media screen and (max-width: 767px) {
+  .leftlinks-search {
+    display: none;
+  }
+
+  .cart {
+    display: none;
+  }
+
+  .menu {
+    display: block;
+  }
 }

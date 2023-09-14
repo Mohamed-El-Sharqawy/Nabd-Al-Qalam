@@ -172,7 +172,9 @@ const Landing = () => {
           </div>
           <div className={`popup ${popup ? "show" : "hidden"}`}>
             <div className="left-popup">
-              <p className="title">God’s prophets in their stories are examples</p>
+              <p className="title">
+                God’s prophets in their stories are examples
+              </p>
               <p className="where">in the store</p>
               <h4 className="price">30 AED</h4>
               <p className="overview">
@@ -204,12 +206,17 @@ const Landing = () => {
               />
             </div>
           </div>
+          {/* Banners */}
           <div className="twobanner">
             <div className="bnr">
-              <a href="#"><img src="/src/assets/banner-space.jpg" alt="" /></a>
+              <a href="#">
+                <img src="/src/assets/banner-space.jpg" alt="" />
+              </a>
             </div>
             <div className="bnr">
-              <a href="#"><img src="/src/assets/banner-wardan.jpg" alt="" /></a>
+              <a href="#">
+                <img src="/src/assets/banner-wardan.jpg" alt="" />
+              </a>
             </div>
           </div>
         </div>
@@ -218,4 +225,3 @@ const Landing = () => {
   );
 };
 export default Landing;
-  
