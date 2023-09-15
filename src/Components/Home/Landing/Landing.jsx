@@ -193,7 +193,7 @@ const Landing = () => {
                 </button>
               </div>
               <div className="addcart">
-                <button className="add-to-cart">Add To Cart</button>
+                <button>Add To Cart</button>
               </div>
             </div>
             <div className="right-popup">

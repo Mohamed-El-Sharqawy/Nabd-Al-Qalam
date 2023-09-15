@@ -22,10 +22,11 @@
 .cart {
   position: relative;
   display: flex;
-  gap: 20px;
+  align-items: center;
+  gap: 1.5rem;
 }
 .cart svg {
-  font-size: 2rem;
+  font-size: 30px;
 }
 .cart .count {
   position: absolute;
@@ -40,10 +41,16 @@
   padding-top: 2px;
   font-size: 14px;
 }
-.cart a img {
+.cart button {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
+.cart button img {
   width: 30px;
   height: 30px;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .menu {
