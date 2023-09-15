@@ -1,32 +1,15 @@
-import Carousel from "react-multi-carousel";
+import "./landing.css";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { TbHeartPlus } from "react-icons/tb";
 import { BsEye } from "react-icons/Bs";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./landing.css";
-import "react-multi-carousel/lib/styles.css";
 
 const Landing = () => {
-  const responsive = {
-    superLargeDesktop: {
-      // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5,
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2,
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-    },
-  };
   const [popup, setPopup] = useState(false);
   const [value, setValue] = useState(1);
   const increase = () => {
@@ -36,71 +19,43 @@ const Landing = () => {
     if (value == 1) return;
     setValue(value - 1);
   };
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
   return (
     <>
       <div className="images-container">
-        <h1>Best Sellers</h1>
+        <div className="container">
+          <h2>Best Seller</h2>
+          <Slider {...settings}>
+            <div>
+              <img src="/src/assets/أنبياء الله فى قصصهم عبره.jpeg" alt="" />
+            </div>
+            <div>
+              <img src="/src/assets/المسبار الجديد 1.JPG" alt="" />
+            </div>
+            <div>
+              <img src="/src/assets/بدر و شمس.JPG" alt="" />
+            </div>
+            <div>
+              <img src="/src/assets/حكايات وردان.jpeg" alt="" />
+            </div>
+            <div>
+              <img src="/src/assets/بدر و شمس.JPG" alt="" />
+            </div>
+            <div>
+              <img
+                src="/src/assets/اسرار الفضاء مع هزاع و أصدقائه.jpeg"
+                alt=""
+              />
+            </div>
+          </Slider>
+        </div>
         <div className="cards">
-          <div className="slider">
-            <Carousel responsive={responsive}>
-              <div className="book-img">
-                <img
-                  src="/src/assets/حكايات وردان.jpeg"
-                  draggable={false}
-                  alt=""
-                />
-              </div>
-              <div className="book-img">
-                <img
-                  src="/src/assets/زايد نبراس الحكمه.jpeg"
-                  draggable={false}
-                  alt=""
-                />
-              </div>
-              <div className="book-img">
-                <img
-                  src="/src/assets/فكر و العب.JPG"
-                  draggable={false}
-                  alt=""
-                />
-              </div>
-              <div className="book-img">
-                <img
-                  src="/src/assets/مغامرات فى ارض الفايكنج.JPG"
-                  draggable={false}
-                  alt=""
-                />
-              </div>
-              <div className="book-img">
-                <img
-                  src="/src/assets/أنبياء الله فى قصصهم عبره.jpeg"
-                  draggable={false}
-                  alt=""
-                />
-              </div>
-              <div className="book-img">
-                <img
-                  src="/src/assets/المسبار الجديد 1.JPG"
-                  draggable={false}
-                  alt=""
-                />
-              </div>
-              <div className="book-img">
-                <img
-                  src="/src/assets/الدوده مورى.JPG"
-                  draggable={false}
-                  alt=""
-                />
-              </div>
-              <div className="book-img">
-                <img
-                  src="/src/assets/كوكب الوفاق.jpeg"
-                  draggable={false}
-                  alt=""
-                />
-              </div>
-            </Carousel>
-          </div>
           <div className="card">
             <div className="card-img">
               <img src="/src/assets/أنبياء الله فى قصصهم عبره.jpeg" alt="" />
