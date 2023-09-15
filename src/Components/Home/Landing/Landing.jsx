@@ -1,10 +1,12 @@
-import "./landing.css";
 import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
 import { TbHeartPlus } from "react-icons/tb";
 import { BsEye } from "react-icons/Bs";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import "./landing.css";
+import "react-multi-carousel/lib/styles.css";
+
 const Landing = () => {
   const responsive = {
     superLargeDesktop: {
@@ -209,14 +211,14 @@ const Landing = () => {
           {/* Banners */}
           <div className="twobanner">
             <div className="bnr">
-              <a href="#">
+              <Link to="/">
                 <img src="/src/assets/banner-space.jpg" alt="" />
-              </a>
+              </Link>
             </div>
             <div className="bnr">
-              <a href="#">
+              <Link to="/">
                 <img src="/src/assets/banner-wardan.jpg" alt="" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>

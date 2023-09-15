@@ -3,14 +3,20 @@ import axios from "axios";
 import "./addBooks.css";
 
 const AddBooks = () => {
-  const [book, setBook] = useState({
+  const defaultFormData = {
     arTitle: "",
     enTitle: "",
     arDescription: "",
     enDescription: "",
-    price: 20,
+    arAuthor: "",
+    enAuthor: "",
+    numberOfPages: null,
+    price: null,
+    ageGroup: "اختر الفئة العمرية من فضلك",
     img: "",
-  });
+  };
+
+  const [book, setBook] = useState(defaultFormData);
 
   const createBook = async (newBook) => {
     const endpoint = "http://localhost:3001/add-books";
@@ -18,14 +24,7 @@ const AddBooks = () => {
     try {
       await axios.post(endpoint, newBook);
 
-      setBook(() => ({
-        arTitle: "",
-        enTitle: "",
-        arDescription: "",
-        enDescription: "",
-        price: 20,
-        img: "",
-      }));
+      setBook(() => defaultFormData);
     } catch (err) {
       console.error(err);
     }
@@ -93,11 +92,47 @@ const AddBooks = () => {
       />
       <input
         onChange={handleChange}
+        name="arAuthor"
+        type="text"
+        value={book.arAuthor}
+        placeholder="Arabic Author Name"
+      />
+      <input
+        onChange={handleChange}
+        name="enAuthor"
+        type="text"
+        value={book.enAuthor}
+        placeholder="English Author Name"
+      />
+      <input
+        onChange={handleChange}
+        name="numberOfPages"
+        type="number"
+        value={book.numberOfPages}
+        placeholder="Number of Pages"
+      />
+      <input
+        onChange={handleChange}
         name="price"
         type="number"
         value={book.price}
         placeholder="Price"
       />
+      <select>
+        <option dir="rtl">اختر الفئة العمرية من فضلك</option>
+        <option value={"6 - 9 سنوات"} dir="rtl">
+          6 - 9 سنوات
+        </option>
+        <option value={"9 - 12 سنوات"} dir="rtl">
+          9 - 12 سنوات
+        </option>
+        <option value={"12 - 15 سنوات"} dir="rtl">
+          12 - 15 سنوات
+        </option>
+        <option value={"15 - 20 سنوات"} dir="rtl">
+          15 - 20 سنوات
+        </option>
+      </select>
       <label htmlFor="file-upload">
         <img
           src={`${

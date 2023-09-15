@@ -11,8 +11,9 @@
 }
 
 .add-form input {
-  border: 2px solid gray;
+  border: 1px solid #bbbbbb;
   outline: none;
+  border-radius: 0.5rem;
   padding: 0.5rem 1rem;
 }
 
@@ -34,6 +35,25 @@
   border-radius: 4px;
   border: none;
   cursor: pointer;
+}
+
+.add-form select {
+  appearance: none;
+  border: 1px solid #bbbbbb;
+  padding: 0.5rem;
+  outline: none;
+  border-radius: 0.5rem;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.add-form select::after {
+  content: "";
+}
+
+.add-form select:focus {
+  border-color: #c0114c;
+  box-shadow: 0 -8px 16px 0 rgba(192, 17, 75, 0.4);
 }
 
 @media screen and (max-width: 1023px) {
