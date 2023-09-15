@@ -15,7 +15,7 @@
   gap: 20px;
   color: #fff;
 }
-.mail p {
+.mail a {
   display: flex;
   color: #fff;
   gap: 10px;

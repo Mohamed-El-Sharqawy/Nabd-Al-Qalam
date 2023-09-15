@@ -2,6 +2,8 @@ import "./middnav.css";
 import { HiOutlineShoppingBag } from "react-icons/Hi";
 import { BsFillPersonCheckFill } from "react-icons/Bs";
 import { BiMenu } from "react-icons/bi";
+import { Link } from "react-router-dom";
+
 const MiddNav = () => {
   return (
     <>
@@ -15,25 +17,27 @@ const MiddNav = () => {
           <div className="leftlinks-search">
             <ul className="links-search">
               <li>
-                <a href="#">Home</a>
+                <Link to="/">Home</Link>
               </li>
               <li>
-                <a href="#">About</a>
+                <Link to="/about">About</Link>
               </li>
               <li>
-                <a href="#">Contact</a>
+                <Link to="/contact">Contact</Link>
               </li>
             </ul>
           </div>
           <div className="cart">
-            <span>
+            <Link to={"/shopping-cart"}>
               <HiOutlineShoppingBag />
-            </span>
-            <span className="count">0</span>
-            <BsFillPersonCheckFill />
-            <a href="#">
+              <span className="count">0</span>
+            </Link>
+            <Link to={"/login"}>
+              <BsFillPersonCheckFill />
+            </Link>
+            <button className="lang-btn">
               <img src="/src/assets/uae.jpg" alt="" />
-            </a>
+            </button>
           </div>
           <div className="menu">
             <BiMenu className="menu-icon" />

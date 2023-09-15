@@ -1,6 +1,7 @@
 import "./topnav.css";
 import { FiPhoneCall } from "react-icons/Fi";
 import { FiMail } from "react-icons/Fi";
+import { Link } from "react-router-dom";
 
 const TopNav = () => {
   return (
@@ -8,14 +9,14 @@ const TopNav = () => {
       <div className="topnav">
         <div className="container-nav">
           <div className="contact-paragraph">
-            <p>
+            <Link to={"tel:+971504880044"}>
               +971504880044 <FiPhoneCall />
-            </p>
+            </Link>
           </div>
           <div className="mail">
-            <p>
+            <Link to={"mailto:sales@nabdualqalam.ae"}>
               sales@nabdualqalam.ae <FiMail />
-            </p>
+            </Link>
           </div>
         </div>
       </div>
