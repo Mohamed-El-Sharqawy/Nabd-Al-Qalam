@@ -158,7 +158,8 @@
   width: 800px;
 }
 
-.right-popup {
+.right-popup,
+.left-popup {
   flex: 1;
 }
 
@@ -232,7 +233,7 @@ button {
 .counter {
   display: flex;
   align-items: center;
-  padding: 12px;
+  padding: 15gipx 30px;
   font-weight: bold;
   font-size: 16px;
   border: 1px solid #fff;
