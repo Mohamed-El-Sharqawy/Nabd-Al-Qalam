@@ -10,8 +10,9 @@ const AddBooks = () => {
     enDescription: "",
     arAuthor: "",
     enAuthor: "",
-    numberOfPages: null,
-    price: null,
+    numberOfPages: "",
+    price: "",
+    category: "",
     ageGroup: "اختر الفئة العمرية من فضلك",
     img: "",
   };
@@ -33,6 +34,7 @@ const AddBooks = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    console.log(book);
     createBook(book);
   };
 
@@ -63,6 +65,7 @@ const AddBooks = () => {
     <form onSubmit={handleSubmit} className="add-form">
       <h1 style={{ textAlign: "center" }}>Add a Book</h1>
       <input
+        required
         onChange={handleChange}
         name="arTitle"
         type="text"
@@ -70,6 +73,7 @@ const AddBooks = () => {
         placeholder="Arabic Title"
       />
       <input
+        required
         onChange={handleChange}
         name="enTitle"
         type="text"
@@ -77,6 +81,7 @@ const AddBooks = () => {
         placeholder="English Title"
       />
       <input
+        required
         onChange={handleChange}
         name="arDescription"
         type="text"
@@ -84,6 +89,7 @@ const AddBooks = () => {
         placeholder="Arabic Description"
       />
       <input
+        required
         onChange={handleChange}
         name="enDescription"
         type="text"
@@ -91,6 +97,7 @@ const AddBooks = () => {
         placeholder="English Description"
       />
       <input
+        required
         onChange={handleChange}
         name="arAuthor"
         type="text"
@@ -98,6 +105,7 @@ const AddBooks = () => {
         placeholder="Arabic Author Name"
       />
       <input
+        required
         onChange={handleChange}
         name="enAuthor"
         type="text"
@@ -105,6 +113,7 @@ const AddBooks = () => {
         placeholder="English Author Name"
       />
       <input
+        required
         onChange={handleChange}
         name="numberOfPages"
         type="number"
@@ -112,13 +121,51 @@ const AddBooks = () => {
         placeholder="Number of Pages"
       />
       <input
+        required
         onChange={handleChange}
         name="price"
         type="number"
         value={book.price}
         placeholder="Price"
       />
-      <select>
+      <select
+        required
+        name="category"
+        value={book.category}
+        onChange={handleChange}
+      >
+        <option dir="rtl">اختر الفئة من فضلك</option>
+        <option dir="rtl" value="مغامرات">
+          مغامرات
+        </option>
+        <option dir="rtl" value="فضاء">
+          فضاء
+        </option>
+        <option dir="rtl" value="التراث الاماراتي">
+          التراث الاماراتي
+        </option>
+        <option dir="rtl" value="الحفاظ علي البيئة">
+          الحفاظ علي البيئة
+        </option>
+        <option dir="rtl" value="روايات">
+          روايات
+        </option>
+        <option dir="rtl" value="تنمية ذاتية">
+          تنمية ذاتية
+        </option>
+        <option dir="rtl" value="كتب متنوعة">
+          كتب متنوعة
+        </option>
+        <option dir="rtl" value="كتب اسلامية">
+          كتب اسلامية
+        </option>
+      </select>
+      <select
+        required
+        name="ageGroup"
+        value={book.ageGroup}
+        onChange={handleChange}
+      >
         <option dir="rtl">اختر الفئة العمرية من فضلك</option>
         <option value={"6 - 9 سنوات"} dir="rtl">
           6 - 9 سنوات

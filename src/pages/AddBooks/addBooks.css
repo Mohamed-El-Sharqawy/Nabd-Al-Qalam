@@ -40,11 +40,12 @@
 .add-form select {
   appearance: none;
   border: 1px solid #bbbbbb;
-  padding: 0.5rem;
+  padding: 1rem;
   outline: none;
   border-radius: 0.5rem;
   width: fit-content;
   margin: 0 auto;
+  font-size: 16px;
 }
 
 .add-form select::after {
