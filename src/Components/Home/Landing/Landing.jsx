@@ -26,7 +26,7 @@ const Landing = () => {
     },
   };
   const [popup, setPopup] = useState(false);
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(1);
   const increase = () => {
     setValue(value + 1);
   };
