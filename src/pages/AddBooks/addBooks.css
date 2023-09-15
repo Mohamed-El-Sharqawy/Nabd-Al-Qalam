@@ -1,0 +1,55 @@
+#file-upload {
+  display: none;
+}
+
+.add-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 900px;
+  margin: 3rem auto;
+}
+
+.add-form input {
+  border: 2px solid gray;
+  outline: none;
+  padding: 0.5rem 1rem;
+}
+
+.add-form label {
+  width: 200px;
+  margin: 0 auto;
+}
+
+.add-form label img {
+  width: 200px;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.add-form button {
+  background-color: #c0114c;
+  color: white;
+  padding: 0.75rem 0;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1023px) {
+  .add-form {
+    width: 650px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .add-form {
+    width: 450px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .add-form {
+    width: 95%;
+  }
+}
