@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-// import axios from "axios";
+import axios from "axios";
 
 const AddBooks = () => {
   const [book, setBook] = useState({
@@ -12,18 +12,19 @@ const AddBooks = () => {
   });
 
   const createBook = async (newBook) => {
+    const endpoint = "http://localhost:3001/add-books";
+
     try {
-      console.log(newBook);
-      const myHeaders = new Headers();
-      myHeaders.append("Content-Type", "application/json");
+      await axios.post(endpoint, newBook);
 
-      const res = await fetch("http://localhost:3001/add-books", {
-        method: "POST",
-        headers: myHeaders,
-        body: JSON.stringify(newBook),
-      });
-
-      console.log(res);
+      setBook(() => ({
+        arTitle: "",
+        enTitle: "",
+        arDescription: "",
+        enDescription: "",
+        price: 20,
+        img: "",
+      }));
     } catch (err) {
       console.error(err);
     }
@@ -35,17 +36,28 @@ const AddBooks = () => {
     createBook(book);
   };
 
-  const handleFileUpload = async (e) => {
-    const file = e.target.files[0];
-    const base64 = await convertToBase64(file);
-    setBook(() => ({ ...book, img: base64 }));
-  };
-
   const handleChange = (e) => {
     setBook(() => ({ ...book, [e.target.name]: e.target.value }));
   };
 
-  useEffect(() => {}, [book]);
+  const handleFileUpload = async (e) => {
+    const file = await e.target.files[0];
+    const base64 = await convertToBase64(file);
+    setBook(() => ({ ...book, img: base64 }));
+  };
+
+  function convertToBase64(file) {
+    return new Promise((resolve, reject) => {
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(file);
+      fileReader.onload = () => {
+        resolve(fileReader.result);
+      };
+      fileReader.onerror = (error) => {
+        reject(error);
+      };
+    });
+  }
 
   return (
     <form onSubmit={handleSubmit} className="add-form">
@@ -106,18 +118,5 @@ const AddBooks = () => {
     </form>
   );
 };
-
-function convertToBase64(file) {
-  return new Promise((resolve, reject) => {
-    const fileReader = new FileReader();
-    fileReader.readAsDataURL(file);
-    fileReader.onload = () => {
-      resolve(fileReader.result);
-    };
-    fileReader.onerror = (error) => {
-      reject(error);
-    };
-  });
-}
 
 export default AddBooks;
