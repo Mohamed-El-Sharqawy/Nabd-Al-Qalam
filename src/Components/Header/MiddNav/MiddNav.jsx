@@ -3,7 +3,6 @@ import { HiOutlineShoppingBag } from "react-icons/Hi";
 import { BsFillPersonCheckFill } from "react-icons/Bs";
 import { BiMenu } from "react-icons/bi";
 import { Link } from "react-router-dom";
-
 const MiddNav = () => {
   return (
     <>
@@ -28,7 +27,7 @@ const MiddNav = () => {
             </ul>
           </div>
           <div className="cart">
-            <Link to={"/shopping-cart"}>
+            <Link to="/shopping-cart">
               <HiOutlineShoppingBag />
               <span className="count">0</span>
             </Link>

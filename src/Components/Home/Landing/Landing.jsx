@@ -146,7 +146,7 @@ const Landing = () => {
                 <button className="btnclick" onClick={() => increase()}>
                   +
                 </button>
-                <span className="counter">{value}</span>
+                <span className="counter-product">{value}</span>
                 <button className="btnclick" onClick={() => decrease()}>
                   -
                 </button>
