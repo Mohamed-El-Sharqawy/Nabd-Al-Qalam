@@ -22,7 +22,6 @@ const Cards = () => {
 
   const getAllBooks = async () => {
     const res = await axios.get(endpoint);
-    console.log(res);
     setBooks(res.data);
   };
 
