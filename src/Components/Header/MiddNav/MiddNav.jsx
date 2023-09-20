@@ -3,7 +3,17 @@ import { HiOutlineShoppingBag } from "react-icons/Hi";
 import { BsFillPersonCheckFill } from "react-icons/Bs";
 import { BiMenu } from "react-icons/bi";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { switchLang } from "../../../features/slices/langSlice";
+
 const MiddNav = () => {
+  const { lang } = useSelector((state) => state.lang);
+  const dispatch = useDispatch();
+
+  const handleLangSwitch = () => {
+    dispatch(switchLang());
+  };
+
   return (
     <>
       <div className="middnav">
@@ -34,8 +44,12 @@ const MiddNav = () => {
             <Link to={"/login"}>
               <BsFillPersonCheckFill />
             </Link>
-            <button className="lang-btn">
-              <img src="/src/assets/uae.jpg" alt="uae-flag" />
+            <button className="lang-btn" onClick={handleLangSwitch}>
+              {lang === "en" ? (
+                <img src="/src/assets/uae.jpg" alt="uae-flag" />
+              ) : (
+                <img src="/src/assets/uk.png" alt="uae-flag" />
+              )}
             </button>
           </div>
           <div className="menu">

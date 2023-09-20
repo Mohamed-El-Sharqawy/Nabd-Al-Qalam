@@ -1,6 +1,9 @@
+import { useSelector } from "react-redux";
 import Slider from "react-slick";
 
 const ComingSoon = () => {
+  const { lang } = useSelector((state) => state.lang);
+
   const settings = {
     dots: true,
     infinite: true,
@@ -13,7 +16,7 @@ const ComingSoon = () => {
 
   return (
     <div className="container">
-      <h2>Best Seller</h2>
+      <h2>{lang === "en" ? "Coming Soon" : "سيصدر قريبا"}</h2>
       <Slider {...settings}>
         <div>
           <img src="/src/assets/أنبياء الله فى قصصهم عبره.jpeg" alt="" />
