@@ -9,9 +9,9 @@ const MiddNav = () => {
       <div className="middnav">
         <div className="container-midd">
           <div className="logo">
-            <a href="#">
-              <img src="/src/assets/Logo_1.jpg" alt="" />
-            </a>
+            <Link to="/">
+              <img src="/src/assets/Logo_1.jpg" alt="logo" />
+            </Link>
           </div>
           <div className="leftlinks-search">
             <ul className="links-search">
@@ -35,7 +35,7 @@ const MiddNav = () => {
               <BsFillPersonCheckFill />
             </Link>
             <button className="lang-btn">
-              <img src="/src/assets/uae.jpg" alt="" />
+              <img src="/src/assets/uae.jpg" alt="uae-flag" />
             </button>
           </div>
           <div className="menu">

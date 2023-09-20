@@ -1,36 +1,15 @@
 import "./landing.css";
-import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { TbHeartPlus } from "react-icons/tb";
-import { BsEye } from "react-icons/Bs";
-import { AiFillCloseCircle } from "react-icons/ai";
-import { useState } from "react";
-import { Link } from "react-router-dom";
 import "./landing.css";
+import Cards from "../Cards/Cards";
+import ComingSoon from "../ComingSoon/ComingSoon";
 
 const Landing = () => {
-  const [popup, setPopup] = useState(false);
-  const [value, setValue] = useState(1);
-  const increase = () => {
-    setValue(value + 1);
-  };
-  const decrease = () => {
-    if (value == 1) return;
-    setValue(value - 1);
-  };
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 700,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-  };
   return (
     <>
       <div className="images-container">
+<<<<<<< HEAD
         <div className="container">
           <h2>Best Seller</h2>
           <Slider {...settings}>
@@ -179,6 +158,12 @@ const Landing = () => {
             </div>
           </div>
         </div>
+=======
+        {/* Slider */}
+        <ComingSoon />
+        {/* Cards */}
+        <Cards />
+>>>>>>> 84c7f59d650d73fdc5f758511df0503276fc76f1
       </div>
     </>
   );
