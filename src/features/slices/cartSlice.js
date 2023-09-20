@@ -26,18 +26,13 @@ export const cartSlice = createSlice({
       }
 
       localStorage.setItem("cart", JSON.stringify(state.cartItems));
-      console.log(action.payload);
     },
 
-    //! Delete Book from the Cart
-    deleteFromCart: () => {},
-
-    //! Clear the Cart from the Chosen Item
+    //! Clear the Cart from the Chosen Book
     clearItem: (state, action) => {
-      const newCart = state.cartItems.filter(
-        (product) => product?._id !== action.payload?._id
+      state.cartItems = state.cartItems.filter(
+        (product) => product?._id !== action?.payload
       );
-      state.cartItems = newCart;
 
       localStorage.setItem("cart", JSON.stringify(state.cartItems));
     },

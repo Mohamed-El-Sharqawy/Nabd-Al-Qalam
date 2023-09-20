@@ -4,6 +4,7 @@ import { useState } from "react";
 import axios from "axios";
 import SingleCard from "../SingleCard/SingleCard";
 import Popup from "../Popup/Popup";
+import ClipLoader from "react-spinners/ClipLoader";
 
 const Cards = () => {
   const [popup, setPopup] = useState(false);
@@ -23,34 +24,50 @@ const Cards = () => {
   return (
     <div className="cards">
       {books.length > 0 ? (
-        books.map((book) => (
-          <SingleCard
-            key={book._id}
-            popup={popup}
-            setChosenBook={setChosenBook}
-            setPopup={setPopup}
-            book={book}
-          />
-        ))
+        books.map((book, index) => {
+          if (index == 15 || index == 31) {
+            return (
+              <>
+                <SingleCard
+                  key={book._id}
+                  popup={popup}
+                  setChosenBook={setChosenBook}
+                  setPopup={setPopup}
+                  book={book}
+                />
+                <div className="twobanner">
+                  <div className="bnr">
+                    <Link to="/">
+                      <img src="/src/assets/banner-space.jpg" alt="" />
+                    </Link>
+                  </div>
+                  <div className="bnr">
+                    <Link to="/">
+                      <img src="/src/assets/banner-wardan.jpg" alt="" />
+                    </Link>
+                  </div>
+                </div>
+              </>
+            );
+          }
+
+          return (
+            <SingleCard
+              key={book._id}
+              popup={popup}
+              setChosenBook={setChosenBook}
+              setPopup={setPopup}
+              book={book}
+            />
+          );
+        })
       ) : (
-        <h1>Loading ...</h1>
+        <div className="cards">
+          <ClipLoader size={100} color="#36d7b7" />
+        </div>
       )}
 
       <Popup chosenBook={chosenBook} popup={popup} setPopup={setPopup} />
-
-      {/* Banners */}
-      <div className="twobanner">
-        <div className="bnr">
-          <Link to="/">
-            <img src="/src/assets/banner-space.jpg" alt="" />
-          </Link>
-        </div>
-        <div className="bnr">
-          <Link to="/">
-            <img src="/src/assets/banner-wardan.jpg" alt="" />
-          </Link>
-        </div>
-      </div>
     </div>
   );
 };

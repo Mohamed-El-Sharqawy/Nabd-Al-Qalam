@@ -7,6 +7,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { switchLang } from "../../../features/slices/langSlice";
 
 const MiddNav = () => {
+  const { cartItems, cartTotalPrice } = useSelector((state) => state.cart);
+
   const { lang } = useSelector((state) => state.lang);
   const dispatch = useDispatch();
 
@@ -39,11 +41,11 @@ const MiddNav = () => {
           <div className="cart">
             <Link to="/shopping-cart">
               <HiOutlineShoppingBag />
-              <span className="count">0</span>
+              <span className="count">{cartItems?.length || 0}</span>
             </Link>
-            <Link to={"/login"}>
+            {/* <Link to={"/login"}>
               <BsFillPersonCheckFill />
-            </Link>
+            </Link> */}
             <button className="lang-btn" onClick={handleLangSwitch}>
               {lang === "en" ? (
                 <img src="/src/assets/uae.jpg" alt="uae-flag" />

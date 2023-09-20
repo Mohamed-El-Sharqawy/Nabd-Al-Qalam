@@ -56,41 +56,39 @@ const AboutUs = () => {
   للقارىء الكريم.`;
 
   return (
-    <>
-      <div className="container-about">
-        <h1 dir={lang === "en" ? "ltr" : "rtl"}>
-          {lang === "en" ? "About Us" : "من نحن"}
-        </h1>
-        <div
-          style={
-            lang === "en"
-              ? { flexDirection: "row" }
-              : { flexDirection: "row-reverse" }
-          }
-          className="About"
-        >
-          <div className="left-about">
-            <h3 style={lang === "ar" ? { fontSize: "25px" } : {}}>
-              {lang === "en"
-                ? "Nabdu Al- Qalam for Publishing and Distribution"
-                : "نبض القلم للنشر والتوزيع"}
-            </h3>
-            <p
-              style={
-                lang === "en"
-                  ? { textAlign: "left", fontSize: "14px" }
-                  : { textAlign: "right", fontSize: "19px" }
-              }
-            >
-              {lang === "en" ? enAbout : arAbout}
-            </p>
-          </div>
-          <div className="right-about">
-            <img src="/src/assets/about.jpg" alt="" />
-          </div>
+    <section className="container-about">
+      <h1 dir={lang === "en" ? "ltr" : "rtl"}>
+        {lang === "en" ? "About Us" : "من نحن"}
+      </h1>
+      <div
+        style={
+          lang === "en"
+            ? { flexDirection: "row" }
+            : { flexDirection: "row-reverse" }
+        }
+        className="About"
+      >
+        <div className="left-about">
+          <h3 style={lang === "ar" ? { fontSize: "25px" } : {}}>
+            {lang === "en"
+              ? "Nabdu Al- Qalam for Publishing and Distribution"
+              : "نبض القلم للنشر والتوزيع"}
+          </h3>
+          <p
+            style={
+              lang === "en"
+                ? { textAlign: "left", fontSize: "14px" }
+                : { textAlign: "right", fontSize: "19px" }
+            }
+          >
+            {lang === "en" ? enAbout : arAbout}
+          </p>
+        </div>
+        <div className="right-about">
+          <img src="/src/assets/about.jpg" alt="" />
         </div>
       </div>
-    </>
+    </section>
   );
 };
 

@@ -4,7 +4,7 @@ import Home from "../pages/Home";
 import Contact from "../pages/Contact";
 import AddBooks from "../pages/AddBooks/AddBooks";
 import About from "../pages/About";
-import ShoppingCart from "../pages/ShoppingCart";
+import Cart from "../pages/Cart/Cart";
 
 export const router = createBrowserRouter([
   {
@@ -25,11 +25,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "about",
-        element: <About />
+        element: <About />,
       },
       {
         path: "shopping-cart",
-        element: <ShoppingCart />
+        element: <Cart />,
       },
       {
         path: "faq",

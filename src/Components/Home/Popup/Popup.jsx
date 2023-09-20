@@ -35,12 +35,12 @@ const Popup = ({ setPopup, popup, chosenBook }) => {
           {lang == "en" ? chosenBook.enDescription : chosenBook.arDescription}
         </p>
         <div className="btnpopup">
-          <button className="btnclick" onClick={() => increase()}>
-            +
-          </button>
-          <span className="counter-product">{value}</span>
           <button className="btnclick" onClick={() => decrease()}>
             -
+          </button>
+          <span className="counter-product">{value}</span>
+          <button className="btnclick" onClick={() => increase()}>
+            +
           </button>
         </div>
         <div className="addcart">

@@ -1,9 +1,11 @@
 import { useRef } from "react";
-import "./contact-form.css";
 import emailjs from "@emailjs/browser";
+import { useSelector } from "react-redux";
+import "./contact-form.css";
 
 const ContactForm = () => {
   const form = useRef();
+  const { lang } = useSelector((state) => state.lang);
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -26,15 +28,43 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="contact">
+    <div
+      style={
+        lang === "en"
+          ? { flexDirection: "row" }
+          : { flexDirection: "row-reverse" }
+      }
+      className="contact"
+    >
       {/* Left Side */}
-      <form className="left-side" onSubmit={sendEmail} ref={form}>
-        <h1>Contact Us</h1>
-        <input type="text" placeholder="Name" name="from_name" />
-        <input type="email" placeholder="Email" name="email" />
-        <input type="text" placeholder="Subject" name="subject" />
-        <textarea type="text" placeholder="Message" name="message" />
-        <button>Submit</button>
+      <form
+        dir={lang === "en" ? "ltr" : "rtl"}
+        className="left-side"
+        onSubmit={sendEmail}
+        ref={form}
+      >
+        <h1>{lang === "en" ? "Contact Us" : "تواصل معنا"}</h1>
+        <input
+          type="text"
+          placeholder={lang === "en" ? "Name" : "الاسم"}
+          name="from_name"
+        />
+        <input
+          type="email"
+          placeholder={lang === "en" ? "Email" : "البريد الألكتروني"}
+          name="email"
+        />
+        <input
+          type="text"
+          placeholder={lang === "en" ? "Subject" : "الموضوع"}
+          name="subject"
+        />
+        <textarea
+          type="text"
+          placeholder={lang === "en" ? "Message" : "الرسالة"}
+          name="message"
+        />
+        <button>{lang === "en" ? "Submit" : "ارسل"}</button>
       </form>
       {/* Right Side */}
       <div className="right-side">

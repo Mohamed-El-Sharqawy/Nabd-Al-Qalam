@@ -8,6 +8,7 @@
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
+  margin: 3rem auto;
 }
 .container {
   padding: 2rem 0 2rem 0;
@@ -263,7 +264,7 @@ button {
   margin: 0 auto;
   display: flex;
   justify-content: space-evenly;
-  margin: 20px 0 0 0;
+  margin: 20px 0;
   gap: 1rem;
 }
 .bnr {
@@ -321,5 +322,39 @@ button {
 
   .bnr:last-child {
     margin-bottom: 1rem;
+  }
+}
+
+/* POPUP Responsive Styles */
+
+@media screen and (max-width: 840px) {
+  .popup {
+    width: 600px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .popup {
+    width: 400px;
+    flex-direction: column !important;
+  }
+
+  .popup .right-popup img {
+    height: 200px;
+    object-fit: contain;
+  }
+
+  .popup .left-popup .overview {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    padding: 0 10px;
+    overflow: hidden;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .popup {
+    width: 100%;
   }
 }
