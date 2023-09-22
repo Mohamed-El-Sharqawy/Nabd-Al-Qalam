@@ -43,7 +43,6 @@ header {
 .cart .count {
   position: absolute;
   top: -5px;
-  left: 16px;
   background-color: #fa8411;
   color: #fff;
   width: 20px;

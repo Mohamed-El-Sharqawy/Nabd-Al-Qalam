@@ -64,7 +64,7 @@ const MiddNav = () => {
         >
           <Link to="/shopping-cart">
             <HiOutlineShoppingBag />
-            <span className="count">{cartItems?.length || 0}</span>
+            <span style={lang == 'en' ? {left: "16px"} : {right: "-6px"}} className="count">{cartItems?.length || 0}</span>
           </Link>
           {/* <Link to={"/login"}>
               <BsFillPersonCheckFill />
