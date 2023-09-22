@@ -77,6 +77,10 @@
   justify-content: space-between;
 }
 
+.shopping-cart .shopping-cart-info span {
+  font-size: 15px;
+}
+
 .shopping-cart .shopping-cart-info button {
   width: 100%;
   color: white;
@@ -90,4 +94,50 @@
 
 .shopping-cart .shopping-cart-info button:hover {
   background-color: #e1760b;
+}
+
+.shopping-cart .shopping-cart-link {
+  color: #c0114c;
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 1023px) {
+  .shopping-cart {
+    flex-direction: column !important;
+  }
+
+  .shopping-cart .shopping-cart-items {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .shopping-cart .shopping-cart-items .shopping-cart-item {
+    justify-content: center;
+  }
+
+  .shopping-cart .shopping-cart-items .shopping-cart-item img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .shopping-cart .shopping-cart-info {
+    padding-top: 1rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .shopping-cart .shopping-cart-items .shopping-cart-item {
+    flex-direction: column !important;
+    align-items: center;
+    text-align: center;
+  }
+
+  .shopping-cart .shopping-cart-items .shopping-cart-item .btn-group {
+    justify-content: center !important;
+  }
+
+  .shopping-cart .shopping-cart-info h3 {
+    font-size: 18px;
+  }
 }

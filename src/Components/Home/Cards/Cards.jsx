@@ -1,5 +1,5 @@
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
 import SingleCard from "../SingleCard/SingleCard";
@@ -27,9 +27,8 @@ const Cards = () => {
         books.map((book, index) => {
           if (index == 15 || index == 31) {
             return (
-              <>
+              <React.Fragment key={book._id}>
                 <SingleCard
-                  key={book._id}
                   popup={popup}
                   setChosenBook={setChosenBook}
                   setPopup={setPopup}
@@ -47,7 +46,7 @@ const Cards = () => {
                     </Link>
                   </div>
                 </div>
-              </>
+              </React.Fragment>
             );
           }
 

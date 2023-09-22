@@ -159,6 +159,9 @@ const AddBooks = () => {
         <option dir="rtl" value="كتب اسلامية">
           كتب اسلامية
         </option>
+        <option dir="rtl" value="وسائل تعليمية">
+          وسائل تعليمية
+        </option>
       </select>
       <select
         required

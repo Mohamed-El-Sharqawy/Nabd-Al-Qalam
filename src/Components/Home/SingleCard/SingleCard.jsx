@@ -2,6 +2,7 @@ import { TbHeartPlus } from "react-icons/tb";
 import { BsEye } from "react-icons/Bs";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, getTotal } from "../../../features/slices/cartSlice";
+import { toast } from "react-toastify";
 
 const SingleCard = ({ book, popup, setPopup, setChosenBook }) => {
   const { lang } = useSelector((state) => state.lang);
@@ -37,6 +38,7 @@ const SingleCard = ({ book, popup, setPopup, setChosenBook }) => {
           <TbHeartPlus />
           <BsEye
             onClick={() => {
+              if (popup) return;
               setPopup(!popup);
               setChosenBook(book);
             }}
@@ -47,6 +49,16 @@ const SingleCard = ({ book, popup, setPopup, setChosenBook }) => {
           onClick={() => {
             dispatch(addToCart(book));
             dispatch(getTotal());
+            toast.success("Added to The Cart", {
+              position: "top-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+            });
           }}
         >
           Add to cart

@@ -23,7 +23,14 @@ const Newsletter = () => {
       <h1 dir={lang === "en" ? "ltr" : "rtl"}>
         {lang === "en" ? "Subscribe to Our Newsletter" : "اشترك ليصلك كل جديد"}
       </h1>
-      <form onSubmit={(e) => e.preventDefault()}>
+      <form
+        style={
+          lang === "en"
+            ? { justifyContent: "end" }
+            : { justifyContent: "start" }
+        }
+        onSubmit={(e) => e.preventDefault()}
+      >
         <input
           required
           type="email"

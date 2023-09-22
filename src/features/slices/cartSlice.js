@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { toast } from "react-toastify";
 
 const initialState = {
   cartItems: localStorage.getItem("cart")
@@ -35,6 +36,17 @@ export const cartSlice = createSlice({
       );
 
       localStorage.setItem("cart", JSON.stringify(state.cartItems));
+
+      toast.error("Deleted from The Cart", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
     },
 
     //! Clear the Cart

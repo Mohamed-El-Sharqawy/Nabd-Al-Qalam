@@ -11,10 +11,6 @@
   margin-top: 5rem;
 }
 
-.newsletter h1 {
-  flex: 1;
-}
-
 .newsletter form {
   flex: 1;
   display: flex;
@@ -23,7 +19,7 @@
 
 .newsletter form input {
   padding: 1rem 0.6rem;
-  width: 500px;
+  max-width: 500px;
   border: none;
   outline: none;
 }
@@ -81,14 +77,18 @@
 
 @media screen and (max-width: 1200px) {
   .newsletter {
-    flex-direction: column;
     gap: 1rem;
+  }
+
+  .newsletter h1 {
+    font-size: 24px;
   }
 }
 
 @media screen and (max-width: 768px) {
   .newsletter h1 {
-    font-size: 28px;
+    font-size: 20px;
+    flex: 1;
   }
 
   .newsletter form input {
@@ -96,10 +96,11 @@
   }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 560px) {
   .newsletter {
     padding: 1rem;
     width: 100%;
+    flex-direction: column !important;
   }
 
   .newsletter form p {

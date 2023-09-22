@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
+import { addToCart, getTotal } from "../../../features/slices/cartSlice";
+import { toast } from "react-toastify";
 
 const Popup = ({ setPopup, popup, chosenBook }) => {
   const [value, setValue] = useState(1);
@@ -44,7 +46,28 @@ const Popup = ({ setPopup, popup, chosenBook }) => {
           </button>
         </div>
         <div className="addcart">
-          <button>{lang == "en" ? "Add To Cart" : "اضف الي العربة"}</button>
+          <button
+            onClick={() => {
+              setPopup(false);
+              for (let i = 0; i < value; i++) {
+                dispatch(addToCart(chosenBook));
+                dispatch(getTotal());
+              }
+
+              toast.success("Added to The Cart", {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+              });
+            }}
+          >
+            {lang == "en" ? "Add To Cart" : "اضف الي العربة"}
+          </button>
         </div>
       </div>
       <div className="right-popup">
