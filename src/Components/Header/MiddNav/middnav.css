@@ -1,5 +1,17 @@
+header {
+  height: 178px;
+}
 .middnav {
   padding-top: 10px;
+  width: 100%;
+  transition: 1s;
+  top: -80px;
+  z-index: 999;
+  background-color: white;
+}
+.middnav-scroll {
+  position: fixed;
+  top: 0;
 }
 .container-midd {
   width: 95%;

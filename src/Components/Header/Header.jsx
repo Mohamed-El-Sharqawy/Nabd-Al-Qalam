@@ -3,10 +3,10 @@ import MiddNav from "./MiddNav/MiddNav";
 
 const Header = () => {
   return (
-    <>
+    <header>
       <TopNav />
       <MiddNav />
-    </>
+    </header>
   );
 };
 
