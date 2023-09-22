@@ -28,7 +28,14 @@ const MiddNav = () => {
 
   return (
     <div className={`middnav ${headerScroll}`}>
-      <div className="container-midd">
+      <div
+        style={
+          lang === "en"
+            ? { flexDirection: "row" }
+            : { flexDirection: "row-reverse" }
+        }
+        className="container-midd"
+      >
         <div className="logo">
           <Link to="/">
             <img src="/src/assets/Logo_1.jpg" alt="logo" />
@@ -47,7 +54,14 @@ const MiddNav = () => {
             </li>
           </ul>
         </div>
-        <div className="cart">
+        <div
+          style={
+            lang === "en"
+              ? { flexDirection: "row" }
+              : { flexDirection: "row-reverse" }
+          }
+          className="cart"
+        >
           <Link to="/shopping-cart">
             <HiOutlineShoppingBag />
             <span className="count">{cartItems?.length || 0}</span>
