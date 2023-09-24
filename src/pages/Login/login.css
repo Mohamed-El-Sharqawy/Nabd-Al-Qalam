@@ -1,0 +1,47 @@
+.login-form {
+  width: 900px;
+  margin: 3rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.login-form input {
+  border: 1px solid #bbbbbb;
+  padding: 0.5rem 0.75rem;
+  outline: none;
+  border-radius: 4px;
+}
+
+.login-form button {
+  background-color: #c0114c;
+  color: white;
+  padding: 0.75rem 0;
+  border-radius: 4px;
+  border: none;
+}
+
+.login-form a {
+  color: #666;
+  font-size: 14px;
+  width: fit-content;
+}
+
+@media screen and (max-width: 1023px) {
+  .login-form {
+    width: 650px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .login-form {
+    width: 450px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .login-form {
+    width: 95%;
+  }
+}
