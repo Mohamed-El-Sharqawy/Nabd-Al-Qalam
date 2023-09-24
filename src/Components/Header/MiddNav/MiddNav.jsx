@@ -1,6 +1,7 @@
 import "./middnav.css";
 import { HiOutlineShoppingBag } from "react-icons/Hi";
 import { BiMenu } from "react-icons/bi";
+import { IoMdPerson } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { switchLang } from "../../../features/slices/langSlice";
@@ -64,11 +65,16 @@ const MiddNav = () => {
         >
           <Link to="/shopping-cart">
             <HiOutlineShoppingBag />
-            <span style={lang == 'en' ? {left: "16px"} : {right: "-6px"}} className="count">{cartItems?.length || 0}</span>
+            <span
+              style={lang == "en" ? { left: "16px" } : { right: "-6px" }}
+              className="count"
+            >
+              {cartItems?.length || 0}
+            </span>
           </Link>
-          {/* <Link to={"/login"}>
-              <BsFillPersonCheckFill />
-            </Link> */}
+          <Link to={"/login"}>
+            <IoMdPerson />
+          </Link>
           <button className="lang-btn" onClick={handleLangSwitch}>
             {lang === "en" ? (
               <img src="/src/assets/uae.jpg" alt="uae-flag" />
