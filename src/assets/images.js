@@ -17,10 +17,12 @@
 // import seventeen from './بدر و بدور فى خليه النحل.jpeg';
 // import eighteen from './بدر و شمس.JPG';
 // import ninteen from './تأملات فى الايات و الاحاديث.jpeg';
-import uae from './uae.jpg'
-import uk from './uk.png'
-import logo from './Logo_1.jpg'
-import bgBody from './bg_body.jpg'
-export {
-    uae,uk,logo,bgBody
-}
+import uae from "./uae.jpg";
+import uk from "./uk.png";
+import logo from "./Logo_1.jpg";
+import bgBody from "./bg_body.jpg";
+import space from "./banner-space.jpg";
+import wardan from "./banner-wardan.jpg";
+import about from "./about.jpg";
+
+export { uae, uk, logo, bgBody, space, wardan, about };

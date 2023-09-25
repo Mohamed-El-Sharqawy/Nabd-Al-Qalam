@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { switchLang } from "../../../features/slices/langSlice";
 import { useEffect, useState } from "react";
 import { logout } from "../../../features/slices/authSlice";
-import { logo, uae, uk } from "../../../assets/Iamges";
+import { logo, uae, uk } from "../../../assets/images";
 import MobileMenu from "../MobileMenu/MobileMenu";
 
 const MiddNav = () => {
