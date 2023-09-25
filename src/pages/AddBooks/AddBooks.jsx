@@ -20,7 +20,7 @@ const AddBooks = () => {
   const [book, setBook] = useState(defaultFormData);
 
   const createBook = async (newBook) => {
-    const endpoint = "http://localhost:3001/add-books";
+    const endpoint = "https://nabd-server.onrender.com/add-books";
 
     try {
       await axios.post(endpoint, newBook);

@@ -13,7 +13,7 @@ const Cards = () => {
   const [books, setBooks] = useState([]);
   const [chosenBook, setChosenBook] = useState({});
   const { lang } = useSelector((state) => state.lang);
-  const endpoint = "http://localhost:3001/";
+  const endpoint = "https://nabd-server.onrender.com/";
 
   const handleChange = (e) => {
     setQuery(() => ({ ...query, [e.target.name]: e.target.value }));

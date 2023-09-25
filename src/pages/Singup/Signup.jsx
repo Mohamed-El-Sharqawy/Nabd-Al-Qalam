@@ -12,7 +12,7 @@ const Signup = () => {
   });
 
   const navigate = useNavigate();
-  const endpoint = "http://localhost:3001/signup";
+  const endpoint = "https://nabd-server.onrender.com/signup";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
