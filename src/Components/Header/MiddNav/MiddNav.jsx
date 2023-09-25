@@ -8,7 +8,7 @@ import { switchLang } from "../../../features/slices/langSlice";
 import { useEffect, useState } from "react";
 import { logout } from "../../../features/slices/authSlice";
 import { logo, uae, uk } from "../../../assets/Iamges";
-import MobileMenu from "../MobileMenu/MobileMenu"
+import MobileMenu from "../MobileMenu/MobileMenu";
 
 const MiddNav = () => {
   const [headerScroll, setHeaderScroll] = useState("");
@@ -54,18 +54,24 @@ const MiddNav = () => {
           </Link>
         </div>
         <div className="leftlinks-search">
-          <ul className="links-search"
-            style={lang == "en" ?
-            { flexDirection: "row" } :
-            { flexDirection: "row-reverse" }}>
+          <ul
+            className="links-search"
+            style={
+              lang == "en"
+                ? { flexDirection: "row" }
+                : { flexDirection: "row-reverse" }
+            }
+          >
             <li>
-              <Link to="/"> {lang == "en" ? "Home" : "الرئيسيه"} </Link>
+              <Link to="/"> {lang == "en" ? "Home" : "الرئيسية"} </Link>
             </li>
             <li>
               <Link to="/about">{lang == "en" ? "About" : "من نحن"}</Link>
             </li>
             <li>
-              <Link to="/contact">{lang == "en" ? "Contact" : "تواصل معنا"}</Link>
+              <Link to="/contact">
+                {lang == "en" ? "Contact" : "تواصل معنا"}
+              </Link>
             </li>
           </ul>
         </div>
