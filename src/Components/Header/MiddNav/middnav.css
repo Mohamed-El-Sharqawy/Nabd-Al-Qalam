@@ -74,7 +74,7 @@ header {
 }
 
 .mobile-menu {
-  /* position: fixed;
+  position: fixed;
   right: 0;
   top: 0;
   width: 100%;
@@ -87,8 +87,13 @@ header {
   justify-content: center;
   flex-direction: column;
   gap: 3rem;
-  font-size: 18px; */
-  display: none;
+  font-size: 18px;
+}
+
+.mobile-menu .mobile-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 @media screen and (max-width: 767px) {

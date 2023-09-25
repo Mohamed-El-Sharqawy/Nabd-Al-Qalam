@@ -93,7 +93,7 @@ const MiddNav = () => {
             {lang === "en" ? (
               <img src="/src/assets/uae.jpg" alt="uae-flag" />
             ) : (
-              <img src="/src/assets/uk.png" alt="uae-flag" />
+              <img src="/src/assets/uk.png" alt="uk-flag" />
             )}
           </button>
         </div>
