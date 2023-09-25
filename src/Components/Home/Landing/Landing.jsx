@@ -9,9 +9,7 @@ const Landing = () => {
   return (
     <>
       <div className="images-container">
-        {/* Slider */}
-        <ComingSoon />
-        {/* Cards */}
+        {/* <ComingSoon /> */}
         <Cards />
       </div>
     </>
