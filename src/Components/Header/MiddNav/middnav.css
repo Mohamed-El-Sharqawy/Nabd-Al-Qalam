@@ -2,12 +2,13 @@ header {
   height: 178px;
 }
 .middnav {
+  position: static;
   padding-top: 10px;
   width: 100%;
   transition: 1s;
   top: -80px;
-  z-index: 999;
   background-color: white;
+  z-index: 999;
 }
 .middnav-scroll {
   position: fixed;
@@ -73,14 +74,21 @@ header {
 }
 
 .mobile-menu {
-  position: absolute;
+  /* position: fixed;
   right: 0;
   top: 0;
   width: 100%;
   color: white;
   height: 100vh;
-  z-index: 666;
+  z-index: 999;
   background-color: #fa8411;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3rem;
+  font-size: 18px; */
+  display: none;
 }
 
 @media screen and (max-width: 767px) {

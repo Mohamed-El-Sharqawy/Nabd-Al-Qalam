@@ -10,13 +10,10 @@
   align-items: center;
   padding: 0.75rem 0;
 }
-.contact-paragraph {
+.contact-paragraph,
+.mail {
   display: flex;
-  gap: 20px;
-  color: #fff;
-}
-.mail a {
-  display: flex;
+  align-items: center;
   color: #fff;
   gap: 10px;
 }

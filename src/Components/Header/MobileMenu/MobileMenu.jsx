@@ -5,9 +5,9 @@ const MobileMenu = () => {
   return (
     <ul className="mobile-menu">
       <Link to={"/"}>Home</Link>
-      <Link to={"about"}>About</Link>
-      <Link className="/contact">Contact</Link>
-      <Link className="/contact"></Link>
+      <Link to={"/about"}>About</Link>
+      <Link to="/contact">Contact</Link>
+      <Link to="/contact"></Link>
     </ul>
   );
 };
