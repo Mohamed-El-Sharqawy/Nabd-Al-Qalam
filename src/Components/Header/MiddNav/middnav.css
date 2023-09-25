@@ -27,19 +27,19 @@ header {
   display: flex;
   gap: 30px;
 }
-.links-search li{
+.links-search li {
   position: relative;
 }
-.links-search a::before{
+.links-search a::before {
   content: "";
   position: absolute;
   height: 3px;
   width: 0;
   background-color: #fa8411;
   top: 22px;
-  transition: .5s ease-in;
+  transition: 0.5s ease-in;
 }
-.links-search a:hover:before{
+.links-search a:hover:before {
   width: 100%;
 }
 
@@ -98,7 +98,7 @@ header {
   height: 100vh;
   z-index: 999;
   background-color: #fa8411;
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -121,10 +121,19 @@ header {
   top: 2rem;
 }
 
+.mobile-menu .mobile-nav-lang {
+  all: unset;
+}
+
 .mobile-menu .mobile-nav-link {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.mobile-menu .mobile-nav-lang img {
+  border-radius: 50%;
+  aspect-ratio: 1;
 }
 
 @media screen and (max-width: 767px) {

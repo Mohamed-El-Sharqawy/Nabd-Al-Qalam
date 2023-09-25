@@ -3,7 +3,7 @@
 }
 .container-about h1 {
   text-align: center;
-  padding-bottom: 50px;
+  padding: 40px 0;
   color: #fa8411;
   position: relative;
   width: fit-content;
@@ -12,7 +12,7 @@
 .container-about h1::before {
   content: "";
   position: absolute;
-  top: 40px;
+  top: 4.5rem;
   height: 3px;
   background-color: #fa8411;
   width: 100%;
