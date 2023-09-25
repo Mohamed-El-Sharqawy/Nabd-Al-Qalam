@@ -16,7 +16,7 @@ const App = () => {
 
   const getLoggedUser = async (decodedToken) => {
     const res = await axios.get(
-      `http://localhost:3001/users/${decodedToken?.id}`
+      `https://nabd-server.onrender.com/users/${decodedToken?.id}`
     );
 
     dispatch(login(res.data));

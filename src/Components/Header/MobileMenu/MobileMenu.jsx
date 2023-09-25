@@ -4,7 +4,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { switchLang } from "../../../features/slices/langSlice";
-import { uae, uk } from "../../../assets/Iamges";
+import { uae, uk } from "../../../assets/images";
 
 const MobileMenu = ({ setIsMenuHidden, isMenuHidden }) => {
   const { lang } = useSelector((state) => state.lang);

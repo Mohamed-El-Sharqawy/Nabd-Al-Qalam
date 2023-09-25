@@ -6,6 +6,7 @@ import SingleCard from "../SingleCard/SingleCard";
 import Popup from "../Popup/Popup";
 import ClipLoader from "react-spinners/ClipLoader";
 import { useSelector } from "react-redux";
+import { space, wardan } from "../../../assets/images";
 
 const Cards = () => {
   const [query, setQuery] = useState({ ageGroup: "", category: "" });
@@ -13,7 +14,7 @@ const Cards = () => {
   const [books, setBooks] = useState([]);
   const [chosenBook, setChosenBook] = useState({});
   const { lang } = useSelector((state) => state.lang);
-  const endpoint = "http://localhost:3001/";
+  const endpoint = "https://nabd-server.onrender.com/";
 
   const handleChange = (e) => {
     setQuery(() => ({ ...query, [e.target.name]: e.target.value }));
@@ -53,12 +54,12 @@ const Cards = () => {
               <div className="twobanner">
                 <div className="bnr">
                   <Link to="/">
-                    <img src="/src/assets/banner-space.jpg" alt="" />
+                    <img src={space} alt="space-banner-series" />
                   </Link>
                 </div>
                 <div className="bnr">
                   <Link to="/wardan-stories">
-                    <img src="/src/assets/banner-wardan.jpg" alt="" />
+                    <img src={wardan} alt="wardan-banner-series" />
                   </Link>
                 </div>
               </div>

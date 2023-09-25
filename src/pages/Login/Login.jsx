@@ -8,7 +8,7 @@ const Login = () => {
     email: "",
     password: "",
   });
-  const endpoint = "http://localhost:3001/login";
+  const endpoint = "https://nabd-server.onrender.com/login";
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
