@@ -72,6 +72,17 @@ header {
   font-size: 30px;
 }
 
+.mobile-menu {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  color: white;
+  height: 100vh;
+  z-index: 666;
+  background-color: #fa8411;
+}
+
 @media screen and (max-width: 767px) {
   .leftlinks-search {
     display: none;

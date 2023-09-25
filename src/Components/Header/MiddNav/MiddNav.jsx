@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { switchLang } from "../../../features/slices/langSlice";
 import { useEffect, useState } from "react";
 import { logout } from "../../../features/slices/authSlice";
+import MobileMenu from "../MobileMenu/MobileMenu";
 
 const MiddNav = () => {
   const [headerScroll, setHeaderScroll] = useState("");
@@ -99,6 +100,7 @@ const MiddNav = () => {
           <BiMenu className="menu-icon" />
         </div>
       </div>
+      <MobileMenu />
     </div>
   );
 };
