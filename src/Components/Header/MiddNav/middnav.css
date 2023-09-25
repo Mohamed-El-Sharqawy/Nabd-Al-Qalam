@@ -91,7 +91,7 @@ header {
 
 .mobile-menu {
   position: fixed;
-  right: 0;
+
   top: 0;
   width: 100%;
   color: white;
@@ -104,6 +104,21 @@ header {
   flex-direction: column;
   gap: 3rem;
   font-size: 18px;
+  transition: 0.5s ease-out;
+}
+
+.show-menu {
+  right: 0;
+}
+
+.hide-menu {
+  right: -100%;
+}
+
+.mobile-menu .close-btn {
+  position: absolute;
+  right: 1.5rem;
+  top: 2rem;
 }
 
 .mobile-menu .mobile-nav-link {

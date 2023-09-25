@@ -12,7 +12,7 @@ import MobileMenu from "../MobileMenu/MobileMenu"
 
 const MiddNav = () => {
   const [headerScroll, setHeaderScroll] = useState("");
-  const [isMenuHidden, setIsMenuHidden] = useState(false);
+  const [isMenuHidden, setIsMenuHidden] = useState(true);
   const { cartItems } = useSelector((state) => state.cart);
   const { lang } = useSelector((state) => state.lang);
   const { user } = useSelector((state) => state.auth);
@@ -102,10 +102,16 @@ const MiddNav = () => {
           </button>
         </div>
         <div className="menu">
-          <MenuOutlinedIcon className="menu-icon" />
+          <MenuOutlinedIcon
+            onClick={() => setIsMenuHidden(false)}
+            className="menu-icon"
+          />
         </div>
       </div>
-      <MobileMenu className={`${isMenuHidden ? "show-menu" : "hide-menu"}`} />
+      <MobileMenu
+        setIsMenuHidden={setIsMenuHidden}
+        isMenuHidden={isMenuHidden}
+      />
     </div>
   );
 };
