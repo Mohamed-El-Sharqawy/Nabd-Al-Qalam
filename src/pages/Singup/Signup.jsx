@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -38,6 +38,12 @@ const Signup = () => {
   const handleChange = (e) => {
     setUser(() => ({ ...user, [e.target.name]: e.target.value }));
   };
+
+  useEffect(() => {
+    if (localStorage.getItem("jwt")) {
+      navigate("/");
+    }
+  });
 
   return (
     <form method="POST" className="signup-form" onSubmit={handleSubmit}>
