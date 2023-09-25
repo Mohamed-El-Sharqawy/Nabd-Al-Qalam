@@ -21,16 +21,18 @@ const SingleCard = ({ book, popup, setPopup, setChosenBook }) => {
         }
         className="card-caption"
       >
-        <p className="caption">{lang === "en" ? book.enTitle : book.arTitle}</p>
+        <p className="caption"
+        dir={lang==="en"? "ltr":"rtl"}
+        >{lang === "en" ? book.enTitle : book.arTitle}</p>
         <span
           className="price"
+          dir={lang==="en"?"ltr":"rtl"}
           style={
-            lang === "en"
-              ? { justifyContent: "end" }
-              : { justifyContent: "start" }
+            { justifyContent: "end" }
           }
         >
-          {book.price} AED
+          {book.price}
+          {lang === "en" ? " AED" : " درهم"}
         </span>
       </div>
       <div className="shopping">
