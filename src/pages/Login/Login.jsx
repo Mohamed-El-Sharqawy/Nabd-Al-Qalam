@@ -8,9 +8,8 @@ const Login = () => {
     email: "",
     password: "",
   });
-  const navigate = useNavigate();
-
   const endpoint = "http://localhost:3001/login";
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -19,6 +18,8 @@ const Login = () => {
       email: user.email,
       password: user.password,
     });
+
+    localStorage.setItem("jwt", JSON.stringify(res?.data?.token));
 
     if (res?.data?.user) {
       navigate("/");
@@ -30,7 +31,7 @@ const Login = () => {
   };
 
   return (
-    <form className="login-form" onSubmit={handleSubmit}>
+    <form method="POST" className="login-form" onSubmit={handleSubmit}>
       <input
         type="email"
         name="email"

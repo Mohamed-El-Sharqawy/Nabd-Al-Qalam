@@ -50,7 +50,7 @@ const SingleCard = ({ book, popup, setPopup, setChosenBook }) => {
             dispatch(addToCart(book));
             dispatch(getTotal());
             toast.success("Added to The Cart", {
-              position: "top-right",
+              position: "bottom-right",
               autoClose: 5000,
               hideProgressBar: false,
               closeOnClick: true,

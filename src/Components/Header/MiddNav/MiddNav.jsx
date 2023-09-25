@@ -2,19 +2,27 @@ import "./middnav.css";
 import { HiOutlineShoppingBag } from "react-icons/Hi";
 import { BiMenu } from "react-icons/bi";
 import { IoMdPerson } from "react-icons/io";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { switchLang } from "../../../features/slices/langSlice";
 import { useEffect, useState } from "react";
+import { logout } from "../../../features/slices/authSlice";
 
 const MiddNav = () => {
   const [headerScroll, setHeaderScroll] = useState("");
   const { cartItems } = useSelector((state) => state.cart);
   const { lang } = useSelector((state) => state.lang);
+  const { user } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleLangSwitch = () => {
     dispatch(switchLang());
+  };
+
+  const handleLogout = () => {
+    dispatch(logout());
+    navigate("/login");
   };
 
   useEffect(() => {
@@ -72,9 +80,13 @@ const MiddNav = () => {
               {cartItems?.length || 0}
             </span>
           </Link>
-          <Link to={"/login"}>
-            <IoMdPerson />
-          </Link>
+          {!user?._id ? (
+            <Link to={"/login"}>
+              <IoMdPerson />
+            </Link>
+          ) : (
+            <button onClick={handleLogout}>Logout</button>
+          )}
           <button className="lang-btn" onClick={handleLangSwitch}>
             {lang === "en" ? (
               <img src="/src/assets/uae.jpg" alt="uae-flag" />

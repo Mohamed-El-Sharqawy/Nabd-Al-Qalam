@@ -38,7 +38,7 @@ export const cartSlice = createSlice({
       localStorage.setItem("cart", JSON.stringify(state.cartItems));
 
       toast.error("Deleted from The Cart", {
-        position: "top-right",
+        position: "bottom-right",
         autoClose: 5000,
         hideProgressBar: false,
         closeOnClick: true,
