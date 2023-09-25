@@ -58,7 +58,7 @@ const Cards = () => {
                   </Link>
                 </div>
                 <div className="bnr">
-                  <Link to="/wardan-stories">
+                  <Link to="/">
                     <img src={wardan} alt="wardan-banner-series" />
                   </Link>
                 </div>
