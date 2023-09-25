@@ -1,5 +1,5 @@
+import DeleteIcon from "@mui/icons-material/Delete";
 import { useDispatch, useSelector } from "react-redux";
-import { BiSolidTrash } from "react-icons/bi";
 import { clearItem, getTotal } from "../../features/slices/cartSlice";
 import "./cart.css";
 import { Link } from "react-router-dom";
@@ -69,7 +69,7 @@ const Cart = () => {
                         dispatch(getTotal());
                       }}
                     >
-                      <BiSolidTrash />{" "}
+                      <DeleteIcon />{" "}
                       {lang === "en" ? "Remove" : "احذف من العربة"}
                     </button>
                   </div>

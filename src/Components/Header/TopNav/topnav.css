@@ -10,6 +10,7 @@
   align-items: center;
   padding: 0.75rem 0;
 }
+<<<<<<< HEAD
 .contact-paragraph a{
   display: flex;
   align-items: center;
@@ -17,7 +18,12 @@
   color: #fff;
 }
 .mail a {
+=======
+.contact-paragraph,
+.mail {
+>>>>>>> 7eec79ebd3519277647ba895214215ef4ae843df
   display: flex;
+  align-items: center;
   color: #fff;
   gap: 10px;
 }

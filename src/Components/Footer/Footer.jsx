@@ -1,6 +1,7 @@
 import "./footer.css";
-import { FaPhoneAlt } from "react-icons/fa";
-import { FaLocationDot, FaEnvelope } from "react-icons/fa6";
+import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import MailIcon from "@mui/icons-material/Mail";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -31,13 +32,20 @@ const Footer = () => {
           <h1>Contact Info</h1>
         </li>
         <li className="info">
-          <FaLocationDot /> United Arab Emirates
+          <LocationOnIcon /> United Arab Emirates
         </li>
         <li className="info">
+<<<<<<< HEAD
           <FaPhoneAlt /> +971551886228
         </li>
         <li className="info">
           <FaEnvelope /> N.alqalam.p.d@gmail.com
+=======
+          <LocalPhoneIcon /> +971504880044
+        </li>
+        <li className="info">
+          <MailIcon /> sales@nabdualqalam.ae
+>>>>>>> 7eec79ebd3519277647ba895214215ef4ae843df
         </li>
       </ul>
     </footer>

@@ -1,5 +1,5 @@
+import CancelIcon from "@mui/icons-material/Cancel";
 import { useState } from "react";
-import { AiFillCloseCircle } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, getTotal } from "../../../features/slices/cartSlice";
 import { toast } from "react-toastify";
@@ -81,7 +81,7 @@ const Popup = ({ setPopup, popup, chosenBook }) => {
         />
       </div>
       <div className="close">
-        <AiFillCloseCircle className="close" onClick={() => setPopup(false)} />
+        <CancelIcon className="close" onClick={() => setPopup(false)} />
       </div>
     </div>
   );

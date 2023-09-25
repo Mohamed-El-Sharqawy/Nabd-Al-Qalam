@@ -1,16 +1,21 @@
 import "./middnav.css";
-import { HiOutlineShoppingBag } from "react-icons/Hi";
-import { BiMenu } from "react-icons/bi";
-import { IoMdPerson } from "react-icons/io";
+import PersonIcon from "@mui/icons-material/Person";
+import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
+import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { switchLang } from "../../../features/slices/langSlice";
 import { useEffect, useState } from "react";
 import { logout } from "../../../features/slices/authSlice";
+<<<<<<< HEAD
 import { logo, uae, uk } from "../../../assets/Iamges";
+=======
+import MobileMenu from "../MobileMenu/MobileMenu";
+>>>>>>> 7eec79ebd3519277647ba895214215ef4ae843df
 
 const MiddNav = () => {
   const [headerScroll, setHeaderScroll] = useState("");
+  const [isMenuHidden, setIsMenuHidden] = useState(false);
   const { cartItems } = useSelector((state) => state.cart);
   const { lang } = useSelector((state) => state.lang);
   const { user } = useSelector((state) => state.auth);
@@ -76,7 +81,7 @@ const MiddNav = () => {
           className="cart"
         >
           <Link to="/shopping-cart">
-            <HiOutlineShoppingBag />
+            <ShoppingBagOutlinedIcon />
             <span
               style={lang == "en" ? { left: "16px" } : { right: "-6px" }}
               className="count"
@@ -86,7 +91,7 @@ const MiddNav = () => {
           </Link>
           {!user?._id ? (
             <Link to={"/login"}>
-              <IoMdPerson />
+              <PersonIcon />
             </Link>
           ) : (
             <button onClick={handleLogout}>Logout</button>
@@ -95,14 +100,19 @@ const MiddNav = () => {
             {lang === "en" ? (
               <img src={uae} alt="uae-flag" />
             ) : (
+<<<<<<< HEAD
               <img src={uk} alt="uae-flag" />
+=======
+              <img src="/src/assets/uk.png" alt="uk-flag" />
+>>>>>>> 7eec79ebd3519277647ba895214215ef4ae843df
             )}
           </button>
         </div>
         <div className="menu">
-          <BiMenu className="menu-icon" />
+          <MenuOutlinedIcon className="menu-icon" />
         </div>
       </div>
+      <MobileMenu className={`${isMenuHidden ? "show-menu" : "hide-menu"}`} />
     </div>
   );
 };

@@ -1,5 +1,5 @@
-import { TbHeartPlus } from "react-icons/tb";
-import { BsEye } from "react-icons/Bs";
+import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, getTotal } from "../../../features/slices/cartSlice";
 import { toast } from "react-toastify";
@@ -35,8 +35,8 @@ const SingleCard = ({ book, popup, setPopup, setChosenBook }) => {
       </div>
       <div className="shopping">
         <div className="icons">
-          <TbHeartPlus />
-          <BsEye
+          <FavoriteBorderOutlinedIcon />
+          <RemoveRedEyeOutlinedIcon
             onClick={() => {
               if (popup) return;
               setPopup(!popup);
