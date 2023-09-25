@@ -7,11 +7,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { switchLang } from "../../../features/slices/langSlice";
 import { useEffect, useState } from "react";
 import { logout } from "../../../features/slices/authSlice";
-<<<<<<< HEAD
 import { logo, uae, uk } from "../../../assets/Iamges";
-=======
-import MobileMenu from "../MobileMenu/MobileMenu";
->>>>>>> 7eec79ebd3519277647ba895214215ef4ae843df
+import MobileMenu from "../MobileMenu/MobileMenu"
 
 const MiddNav = () => {
   const [headerScroll, setHeaderScroll] = useState("");
@@ -100,11 +97,7 @@ const MiddNav = () => {
             {lang === "en" ? (
               <img src={uae} alt="uae-flag" />
             ) : (
-<<<<<<< HEAD
               <img src={uk} alt="uae-flag" />
-=======
-              <img src="/src/assets/uk.png" alt="uk-flag" />
->>>>>>> 7eec79ebd3519277647ba895214215ef4ae843df
             )}
           </button>
         </div>

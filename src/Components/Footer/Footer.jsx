@@ -35,17 +35,10 @@ const Footer = () => {
           <LocationOnIcon /> United Arab Emirates
         </li>
         <li className="info">
-<<<<<<< HEAD
-          <FaPhoneAlt /> +971551886228
+          <LocalPhoneIcon /> +971551886228
         </li>
         <li className="info">
-          <FaEnvelope /> N.alqalam.p.d@gmail.com
-=======
-          <LocalPhoneIcon /> +971504880044
-        </li>
-        <li className="info">
-          <MailIcon /> sales@nabdualqalam.ae
->>>>>>> 7eec79ebd3519277647ba895214215ef4ae843df
+          <MailIcon /> N.alqalam.p.d@gmail.com
         </li>
       </ul>
     </footer>

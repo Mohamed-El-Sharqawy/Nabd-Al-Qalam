@@ -6,7 +6,12 @@
   list-style: none;
   font-family: "Poppins", sans-serif;
 }
-
+body{
+  background-image: url('./assets//bg_body.jpg');
+  width: 100%;
+  background-position: center;
+  background-color: #f8f8f8;
+}
 html {
   user-select: none;
 }

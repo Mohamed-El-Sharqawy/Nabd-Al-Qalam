@@ -20,6 +20,7 @@
 import uae from './uae.jpg'
 import uk from './uk.png'
 import logo from './Logo_1.jpg'
+import bgBody from './bg_body.jpg'
 export {
-    uae,uk,logo
+    uae,uk,logo,bgBody
 }
