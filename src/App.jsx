@@ -6,9 +6,9 @@ import Header from "./Components/Header/Header";
 import jwtDecode from "jwt-decode";
 import axios from "axios";
 import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import { useDispatch } from "react-redux";
 import { login } from "./features/slices/authSlice";
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   const { pathname } = useParams();
@@ -37,18 +37,7 @@ const App = () => {
 
   return (
     <>
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
+      <ToastContainer />
       <Header />
       <Outlet />
       <Newsletter />

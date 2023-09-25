@@ -1,11 +1,13 @@
 import { useRef } from "react";
-import emailjs from "@emailjs/browser";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import emailjs from "@emailjs/browser";
 import "./contact-form.css";
 
 const ContactForm = () => {
   const form = useRef();
   const { lang } = useSelector((state) => state.lang);
+  const navigate = useNavigate();
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -13,13 +15,13 @@ const ContactForm = () => {
     emailjs
       .sendForm(
         "service_mgmott9",
-        "template_qplsioj",
+        "template_go69fxb",
         form.current,
         "7ayvEk0J2UudqMQ8m"
       )
       .then(
-        (result) => {
-          console.log(result.text);
+        (_) => {
+          navigate("/");
         },
         (error) => {
           console.log(error.text);

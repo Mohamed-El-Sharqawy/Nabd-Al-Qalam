@@ -1,10 +1,10 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, redirect, useNavigate } from "react-router-dom";
 import "./login.css";
 import axios from "axios";
 
 const Login = () => {
-  const [user, setUser] = useState({
+  const [userData, setUser] = useState({
     email: "",
     password: "",
   });
@@ -15,19 +15,24 @@ const Login = () => {
     e.preventDefault();
 
     const res = await axios.post(endpoint, {
-      email: user.email,
-      password: user.password,
+      email: userData.email,
+      password: userData.password,
     });
 
     localStorage.setItem("jwt", JSON.stringify(res?.data?.token));
 
-    if (res?.data?.user) {
-      navigate("/");
-    }
+    location.reload();
+    navigate("/");
   };
 
+  useEffect(() => {
+    if (localStorage.getItem("jwt")) {
+      navigate("/");
+    }
+  });
+
   const handleChange = (e) => {
-    setUser(() => ({ ...user, [e.target.name]: e.target.value }));
+    setUser(() => ({ ...userData, [e.target.name]: e.target.value }));
   };
 
   return (
@@ -37,7 +42,7 @@ const Login = () => {
         name="email"
         placeholder="Email"
         onChange={handleChange}
-        value={user.email}
+        value={userData.email}
         required
       />
       <input
@@ -46,7 +51,7 @@ const Login = () => {
         name="password"
         placeholder="Password"
         onChange={handleChange}
-        value={user.password}
+        value={userData.password}
         required
       />
       <Link to="/signup">Don't Have an Account ? Go to Signup Page</Link>

@@ -73,6 +73,13 @@ const MiddNav = () => {
                 {lang == "en" ? "Contact" : "تواصل معنا"}
               </Link>
             </li>
+            {user.isAdmin && (
+              <li>
+                <Link to="/add-books">
+                  {lang == "en" ? "Add Books" : "اضف بعض الكتب"}
+                </Link>
+              </li>
+            )}
           </ul>
         </div>
         <div
