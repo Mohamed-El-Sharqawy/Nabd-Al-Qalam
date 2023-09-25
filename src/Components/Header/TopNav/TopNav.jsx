@@ -9,7 +9,11 @@ const TopNav = () => {
       <div className="topnav">
         <div className="container-nav">
           <Link className="contact-paragraph" to={"tel:+971551886228"}>
-            +971551886228 <LocalPhoneIcon />
+            <span>Sales</span>+971551886228 <LocalPhoneIcon />
+          </Link>
+          <Link className="owner" to={"tel:+971504628464"}>
+            <span>Managing director</span>
+            +971504628464 <LocalPhoneIcon />
           </Link>
           <Link className="mail" to={"mailto:N.alqalam.p.d@gmail.com"}>
             N.alqalam.p.d@gmail.com <MailIcon />
