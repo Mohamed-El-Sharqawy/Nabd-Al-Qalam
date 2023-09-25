@@ -23,9 +23,9 @@
 }
 
 .shopping-cart .shopping-cart-item img {
-  width: 380px;
-  height: 380px;
-  object-fit: cover;
+  width: 280px;
+  height: 270px;
+  object-fit: fill;
   border-radius: 6px;
 }
 

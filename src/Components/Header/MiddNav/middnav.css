@@ -26,8 +26,24 @@ header {
   display: flex;
   gap: 30px;
 }
+.links-search li{
+  position: relative;
+}
+.links-search a::before{
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 0;
+  background-color: #fa8411;
+  top: 22px;
+  transition: .5s ease-in;
+}
+.links-search a:hover:before{
+  width: 100%;
+}
+
 .leftlinks-search .links-search a {
-  font-size: 15px;
+  font-size: 18px;
   font-weight: bold;
   color: #fa8411;
 }

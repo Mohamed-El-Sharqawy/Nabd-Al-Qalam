@@ -37,7 +37,9 @@ const Cart = () => {
                     {lang == "en" ? book.enTitle : book.arTitle}
                   </h2>
                   <p dir={lang === "en" ? "ltr" : "rtl"}>
-                    {lang === "en" ? "Price:" : "السعر:"} {book.price} AED
+                    {lang === "en" ? "Price:" : "السعر: "}
+                    {book.price}
+                    {lang == "en" ? " AED" : " درهم"}
                   </p>
                   <p dir={lang === "en" ? "ltr" : "rtl"}>
                     {lang === "en"
@@ -87,30 +89,25 @@ const Cart = () => {
               }
             >
               {lang === "en" ? "Books" : "سعر الكتب"}
-              <span>{cartTotalPrice} AED</span>
+              <span dir={lang === "en"? "ltr" : "rtl"}>
+                {cartTotalPrice}
+                {lang == "en" ? " AED" : " درهم"}
+              </span>
             </p>
-            <p
-              style={
-                lang === "en"
-                  ? { flexDirection: "row" }
-                  : { flexDirection: "row-reverse" }
-              }
-            >
+            <p style={lang === "en" ? { flexDirection: "row" } : { flexDirection: "row-reverse" }}>
               {lang === "en" ? "Shipping" : "مصاريف الشحن"}
-              <span>{cartItems?.length > 0 ? 5 : 0} AED</span>
+              <span dir = { lang === "en" ? "ltr" : "rtl"}>
+                {cartItems?.length > 0 ? 5 : 0}{" "}
+                {lang == "en" ? " AED" : " درهم"}
+              </span>
             </p>
-            <h3
-              style={
-                lang === "en"
-                  ? { flexDirection: "row" }
-                  : { flexDirection: "row-reverse" }
-              }
-            >
+            <h3 style={lang === "en" ? { flexDirection: "row" } : { flexDirection: "row-reverse" }}>
               {lang === "en"
                 ? "The total amount (Tax Included)"
                 : "المبلغ الكلي (بمصاريف الشحن)"}{" "}
-              <span>
-                {cartTotalPrice + (cartItems?.length > 0 ? 5 : 0)} AED
+              <span dir={ lang === "en" ? "ltr" : "rtl"}>
+                {cartTotalPrice + (cartItems?.length > 0 ? 5 : 0)}
+                {lang == "en" ? " AED" : " درهم"}
               </span>
             </h3>
             <button>Go to Checkout</button>

@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { switchLang } from "../../../features/slices/langSlice";
 import { useEffect, useState } from "react";
 import { logout } from "../../../features/slices/authSlice";
+import { logo, uae, uk } from "../../../assets/Iamges";
 
 const MiddNav = () => {
   const [headerScroll, setHeaderScroll] = useState("");
@@ -47,19 +48,22 @@ const MiddNav = () => {
       >
         <div className="logo">
           <Link to="/">
-            <img src="/src/assets/Logo_1.jpg" alt="logo" />
+            <img src={logo} alt="logo" />
           </Link>
         </div>
         <div className="leftlinks-search">
-          <ul className="links-search">
+          <ul className="links-search"
+            style={lang == "en" ?
+            { flexDirection: "row" } :
+            { flexDirection: "row-reverse" }}>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/"> {lang == "en" ? "Home" : "الرئيسيه"} </Link>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <Link to="/about">{lang == "en" ? "About" : "من نحن"}</Link>
             </li>
             <li>
-              <Link to="/contact">Contact</Link>
+              <Link to="/contact">{lang == "en" ? "Contact" : "تواصل معنا"}</Link>
             </li>
           </ul>
         </div>
@@ -89,9 +93,9 @@ const MiddNav = () => {
           )}
           <button className="lang-btn" onClick={handleLangSwitch}>
             {lang === "en" ? (
-              <img src="/src/assets/uae.jpg" alt="uae-flag" />
+              <img src={uae} alt="uae-flag" />
             ) : (
-              <img src="/src/assets/uk.png" alt="uae-flag" />
+              <img src={uk} alt="uae-flag" />
             )}
           </button>
         </div>

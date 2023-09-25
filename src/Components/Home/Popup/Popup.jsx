@@ -32,7 +32,11 @@ const Popup = ({ setPopup, popup, chosenBook }) => {
         <p className="title">
           {lang == "en" ? chosenBook.enTitle : chosenBook.arTitle}
         </p>
-        <h4 className="price">{chosenBook.price} AED</h4>
+        <h4 className="price"
+          dir={lang==="en"?"ltr":"rtl"}
+        >
+          {chosenBook.price} {lang == "en" ? "AED" : "درهم"}
+        </h4>
         <p className="overview">
           {lang == "en" ? chosenBook.enDescription : chosenBook.arDescription}
         </p>
