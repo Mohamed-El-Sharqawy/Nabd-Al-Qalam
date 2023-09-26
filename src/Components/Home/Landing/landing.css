@@ -296,6 +296,12 @@ button {
   text-align: center;
 }
 
+.products-number {
+  text-align: center;
+  color: #c0114c;
+  margin-top: 2rem;
+}
+
 @media screen and (max-width: 1023px) {
   .card {
     width: 40%;

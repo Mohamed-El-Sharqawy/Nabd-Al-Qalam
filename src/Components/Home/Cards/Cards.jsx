@@ -179,6 +179,17 @@ const Cards = () => {
           )}
         </select>
       </div>
+      {query?.ageGroup == "" && query?.category == "" ? (
+        ""
+      ) : (
+        <h4 className="products-number">
+          {lang === "en"
+            ? `Results : ${displayBooks()?.length || 0} Books`
+            : `النتائج : ${displayBooks()?.length || 0} ${
+                displayBooks()?.length > 10 ? "كتاب" : "كتب"
+              }`}
+        </h4>
+      )}
       <div className="cards">
         {books.length > 0 ? (
           displayBooks()
