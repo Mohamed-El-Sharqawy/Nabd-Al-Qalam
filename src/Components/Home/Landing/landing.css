@@ -296,29 +296,32 @@ button {
   text-align: center;
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1050px) {
   .card {
-    width: 40%;
+    width: 30%;
   }
 
   .bnr {
-    width: 48.5%;
+    width: 47.5%;
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 880px) {
   .cards {
-    width: 90%;
+    width: 95%;
   }
 
   .card {
-    width: 45%;
+    width: 38%;
+  }
+  .bnr{
+    width: 38%;
   }
 }
 
-@media screen and (max-width: 516px) {
+@media screen and (max-width: 540px) {
   .card {
-    width: 90%;
+    width: 55%;
   }
 
   .twobanner {
@@ -326,14 +329,34 @@ button {
   }
 
   .bnr {
-    width: 90%;
+    width: 55%;
   }
 
   .bnr:last-child {
     margin-bottom: 1rem;
   }
 }
-
+@media screen and (max-width: 500px) {
+  .card{
+    width: 60%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .card{
+    width: 80%;
+  }
+  .bnr{
+    width: 80%;
+  }
+}
+@media screen and (max-width: 325px) {
+  .card{
+    width: 90%;
+}
+.bnr{
+  width: 87%;
+}
+}
 @media screen and (max-width: 400px) {
   .books-filter {
     flex-direction: column;
@@ -343,11 +366,24 @@ button {
 /* POPUP Responsive Styles */
 
 @media screen and (max-width: 840px) {
-  .popup {
-    width: 600px;
+  .popup{
+    width: 97%;
   }
 }
-
+@media screen and (max-width: 720px) {
+  .popup .left-popup .overview{
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    padding: 0 10px;
+    overflow: hidden;
+  }
+}
+@media screen and (max-width: 699px) {
+  .popup{
+    flex-direction: column;
+  }
+}
 @media screen and (max-width: 640px) {
   .popup {
     width: 400px;
@@ -371,5 +407,22 @@ button {
 @media screen and (max-width: 440px) {
   .popup {
     width: 100%;
+  }
+}
+
+/*FILTER*/
+@media screen and (max-width: 764px) {
+  .books-filter{
+    padding-top: 30px;
+  }
+}
+@media screen and (max-width: 552px) {
+  .books-filter{
+    padding-top: 65px;
+  }
+}
+@media screen and (max-width: 531px) {
+  .books-filter{
+    padding-top: 20px;
   }
 }

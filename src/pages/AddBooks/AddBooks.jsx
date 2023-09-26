@@ -1,4 +1,5 @@
 import { useState } from "react";
+import {useSelector} from 'react-redux'
 import axios from "axios";
 import "./addBooks.css";
 
@@ -16,6 +17,7 @@ const AddBooks = () => {
     ageGroup: "اختر الفئة العمرية من فضلك",
     img: "",
   };
+  const { lang } = useSelector((state) => state.lang);
 
   const [book, setBook] = useState(defaultFormData);
 
@@ -63,7 +65,11 @@ const AddBooks = () => {
 
   return (
     <form onSubmit={handleSubmit} className="add-form">
-      <h1 style={{ textAlign: "center" }}>Add a Book</h1>
+      <div className="heading-book">
+        <h1>
+          {lang === "en" ? "Add Book" : "أضف كتاب"}
+        </h1>
+      </div>
       <input
         required
         onChange={handleChange}

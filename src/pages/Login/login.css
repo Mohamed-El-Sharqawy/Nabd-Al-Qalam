@@ -39,9 +39,23 @@
     width: 450px;
   }
 }
-
 @media screen and (max-width: 550px) {
   .login-form {
     width: 95%;
+  }
+}
+@media screen and (max-width:531px) {
+  .login-form{
+    padding-top: 30px;
+  }
+}
+@media screen and (max-width:415px) {
+  .login-form{
+    padding-top: 50px;
+  }
+}
+@media screen and (max-width: 307px) {
+  .login-form a{
+    text-align: center;
   }
 }

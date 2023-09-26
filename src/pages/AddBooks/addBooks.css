@@ -1,7 +1,21 @@
 #file-upload {
   display: none;
 }
-
+.heading-book h1{
+color: #fa8411;
+width: fit-content;
+position: relative;
+text-align: center;
+margin: 0 auto;
+}
+.heading-book h1::before{
+  content: "";
+  position: absolute;
+  top: 40px;
+  height: 3px;
+  background-color: #fa8411;
+  width: 100%;
+} 
 .add-form {
   display: flex;
   flex-direction: column;
@@ -72,5 +86,15 @@
 @media screen and (max-width: 550px) {
   .add-form {
     width: 95%;
+  }
+}
+@media screen and (max-width: 531px) {
+  .add-form {
+padding-top: 20px;
+  }
+}
+@media screen and (max-width: 415px) {
+  .add-form {
+padding-top: 40px;
   }
 }

@@ -31,6 +31,20 @@
   transition: 0.3s ease-out;
 }
 
+@media screen and (max-width: 764px) {
+  .container-nav{
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 685px) {
+  .container-nav{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
 @media screen and (max-width: 415px) {
   .container-nav {
     flex-wrap: wrap;
@@ -39,3 +53,14 @@
     justify-content: center;
   }
 }
+@media screen and (max-width: 321px) {
+  .container-nav{
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 289px) {
+  .container-nav{
+    font-size: 12px;
+  }
+}
+

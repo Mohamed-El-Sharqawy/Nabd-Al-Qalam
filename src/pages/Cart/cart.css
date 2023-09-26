@@ -141,3 +141,13 @@
     font-size: 18px;
   }
 }
+@media screen and (max-width: 531px) {
+  .shopping-cart{
+    padding-top: 4.5rem;
+  }
+}
+@media screen and (max-width: 415px) {
+  .shopping-cart{
+    padding-top: 6rem;
+  }
+}
