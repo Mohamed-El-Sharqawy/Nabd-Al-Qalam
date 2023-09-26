@@ -101,7 +101,7 @@ const Cards = () => {
         <select onChange={handleChange} name="ageGroup">
           {lang === "en" ? (
             <>
-              <option value={""}>Select Age Group</option>
+              <option value={""}>All Age Groups</option>
               <option value={"6 - 9 سنوات"}>6 - 9 Years</option>
               <option value={"9 - 12 سنوات"}>9 - 12 Years</option>
               <option value={"12 - 15 سنوات"}>12 - 15 Years</option>
@@ -110,7 +110,7 @@ const Cards = () => {
           ) : (
             <>
               <option value={""} dir="rtl">
-                اختر الفئة العمرية
+                كل الفئات العمرية
               </option>
               <option value={"6 - 9 سنوات"} dir="rtl">
                 6 - 9 سنوات
@@ -130,7 +130,7 @@ const Cards = () => {
         <select onChange={handleChange} name="category">
           {lang === "en" ? (
             <>
-              <option value={""}>Select Category</option>
+              <option value={""}>All Categories</option>
               <option value="مغامرات">Adventures</option>
               <option value="فضاء">Space</option>
               <option value="التراث الاماراتي">Emirati Heritage</option>
@@ -146,7 +146,7 @@ const Cards = () => {
           ) : (
             <>
               <option value={""} dir="rtl">
-                اختر الفئة
+                كل الفئات
               </option>
               <option dir="rtl" value="مغامرات">
                 مغامرات
