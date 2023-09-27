@@ -24,8 +24,8 @@
 
 .shopping-cart .shopping-cart-item img {
   width: 200px;
-  height: 200px;
-  object-fit: fill;
+  height: 230px;
+  /* object-fit: contain; */
   border-radius: 6px;
 }
 
@@ -115,17 +115,15 @@
     justify-content: center;
   }
 
-  .shopping-cart .shopping-cart-items .shopping-cart-item img {
+  /* .shopping-cart .shopping-cart-items .shopping-cart-item img {
     width: 200px;
-    height: 200px;
-    object-fit: cover;
-  }
+    height: 250px;
+  } */
 
   .shopping-cart .shopping-cart-info {
     padding-top: 1rem;
   }
 }
-
 @media screen and (max-width: 450px) {
   .shopping-cart .shopping-cart-items .shopping-cart-item {
     flex-direction: column !important;

@@ -119,6 +119,12 @@
   }
 }
 
+@media screen and (max-width: 551px) {
+  .contact{
+    display: flex;
+    flex-direction: column !important;
+  }
+}
 @media screen and (max-width: 400px) {
   .contact {
     width: 295px;
@@ -129,14 +135,3 @@
     width: 100%;
   }
 }
-@media screen and (max-width: 551px) {
-  .contact{
-    display: flex;
-    flex-direction: column !important;
-  }
-}
-/* @media screen and (max-width: 532px) {
-  .heading{
-    padding-top: ;
-  }
-} */
