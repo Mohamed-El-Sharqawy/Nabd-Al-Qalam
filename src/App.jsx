@@ -1,4 +1,4 @@
-import { Outlet, useNavigate, useParams } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Newsletter from "./Components/Newsletter/Newsletter";
 import Footer from "./Components/Footer/Footer";
@@ -11,7 +11,7 @@ import { login } from "./features/slices/authSlice";
 import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
-  const { pathname } = useParams();
+  const { pathname } = useLocation();
   const dispatch = useDispatch();
 
   const getLoggedUser = async (decodedToken) => {
