@@ -12,12 +12,14 @@ const Cards = () => {
   const [query, setQuery] = useState({ ageGroup: "", category: "" });
   const [popup, setPopup] = useState(false);
   const [books, setBooks] = useState([]);
+  const [wardanSeries, setWardanSeries] = useState(false);
   const [chosenBook, setChosenBook] = useState({});
   const { lang } = useSelector((state) => state.lang);
   const endpoint = "https://nabd-server.onrender.com/";
 
   const handleChange = (e) => {
     setQuery(() => ({ ...query, [e.target.name]: e.target.value }));
+    setWardanSeries(() => false);
   };
 
   const getAllBooks = async () => {
@@ -25,6 +27,29 @@ const Cards = () => {
     setBooks(res.data);
   };
 
+  const displayWardanSeries = () => {
+    const wardanBooks = books
+      .filter((singleBook) => {
+        if (singleBook.enTitle.toLowerCase().includes("wardan")) {
+          return singleBook;
+        }
+      })
+      .map((book) => {
+        return (
+          <SingleCard
+            key={book._id}
+            popup={popup}
+            setChosenBook={setChosenBook}
+            setPopup={setPopup}
+            book={book}
+          />
+        );
+      });
+
+    return wardanBooks;
+  };
+
+  //! Filter and Display Books
   const displayBooks = () => {
     const filteredBooks = books
       .filter((singleBook) => {
@@ -52,13 +77,22 @@ const Cards = () => {
                 book={book}
               />
               <div className="twobanner">
+                {/* Space */}
                 <div className="bnr">
-                  <Link to="/">
+                  <Link>
                     <img src={space} alt="space-banner-series" />
                   </Link>
                 </div>
+                {/* Wardan */}
                 <div className="bnr">
-                  <Link to="/">
+                  <Link
+                    onClick={() => {
+                      setWardanSeries(() => true);
+                      window.scroll({
+                        top: 0,
+                      });
+                    }}
+                  >
                     <img src={wardan} alt="wardan-banner-series" />
                   </Link>
                 </div>
@@ -196,9 +230,22 @@ const Cards = () => {
               }`}
         </h4>
       )}
+      {wardanSeries && (
+        <h4
+          onClick={() => setWardanSeries(() => false)}
+          className="show-btn"
+          style={{ cursor: "pointer" }}
+        >
+          {lang === "en" ? "Show All" : "اظهار الكل"}
+        </h4>
+      )}
       <div className="cards">
         {books.length > 0 ? (
-          displayBooks()
+          !wardanSeries ? (
+            displayBooks()
+          ) : (
+            displayWardanSeries()
+          )
         ) : (
           <div className="cards">
             <ClipLoader size={100} color="#36d7b7" />

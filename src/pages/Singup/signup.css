@@ -37,11 +37,13 @@
 @media screen and (max-width: 767px) {
   .signup-form {
     width: 450px;
+    margin-top: 6rem;
   }
 }
 
 @media screen and (max-width: 550px) {
   .signup-form {
     width: 95%;
+    margin-top: 8rem;
   }
 }
