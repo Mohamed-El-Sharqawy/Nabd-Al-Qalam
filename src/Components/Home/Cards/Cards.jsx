@@ -29,22 +29,18 @@ const Cards = () => {
 
   const displayWardanSeries = () => {
     const wardanBooks = books
-      .filter((singleBook) => {
-        if (singleBook.enTitle.toLowerCase().includes("wardan")) {
-          return singleBook;
-        }
-      })
-      .map((book) => {
-        return (
-          <SingleCard
-            key={book._id}
-            popup={popup}
-            setChosenBook={setChosenBook}
-            setPopup={setPopup}
-            book={book}
-          />
-        );
-      });
+      .filter((singleBook) =>
+        singleBook.enTitle.toLowerCase().includes("wardan")
+      )
+      .map((book) => (
+        <SingleCard
+          key={book._id}
+          popup={popup}
+          setChosenBook={setChosenBook}
+          setPopup={setPopup}
+          book={book}
+        />
+      ));
 
     return wardanBooks;
   };
