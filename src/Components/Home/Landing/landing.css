@@ -432,13 +432,7 @@ button {
   }
 }
 @media screen and (max-width: 531px) {
-<<<<<<< HEAD
-  .books-filter{
-    padding-top: 70px;
-    text-align: center;
-=======
   .books-filter {
     padding-top: 50px;
->>>>>>> d3fa53c59719950183fa077e60c03bf7e6be5aee
   }
 }
