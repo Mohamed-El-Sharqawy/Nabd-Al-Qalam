@@ -185,7 +185,11 @@ const Cards = () => {
         <h4 className="products-number">
           {lang === "en"
             ? `Results : ${displayBooks()?.length || "Noting Found"} ${
-                displayBooks()?.length > 1 ? "Books" : "Book"
+                displayBooks()?.length > 1
+                  ? "Books"
+                  : displayBooks()?.length === undefined
+                  ? ""
+                  : "Book"
               }`
             : `النتائج : ${displayBooks()?.length || "لا توجد نتائج"} ${
                 displayBooks()?.length > 10 ? "كتاب" : "كتب"
