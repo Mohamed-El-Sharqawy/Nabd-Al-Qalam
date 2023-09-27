@@ -13,6 +13,7 @@ const Cards = () => {
   const [popup, setPopup] = useState(false);
   const [books, setBooks] = useState([]);
   const [wardanSeries, setWardanSeries] = useState(false);
+  const [spaceSeries, setSpaceSeries] = useState(false);
   const [chosenBook, setChosenBook] = useState({});
   const { lang } = useSelector((state) => state.lang);
   const endpoint = "https://nabd-server.onrender.com/";
@@ -20,6 +21,7 @@ const Cards = () => {
   const handleChange = (e) => {
     setQuery(() => ({ ...query, [e.target.name]: e.target.value }));
     setWardanSeries(() => false);
+    setSpaceSeries(() => false);
   };
 
   const getAllBooks = async () => {
@@ -44,6 +46,25 @@ const Cards = () => {
       ));
 
     return wardanBooks;
+  };
+
+  // Display Space Series
+  const displaySpaceSeries = () => {
+    const spaceBooks = books
+      .filter((singleBook) =>
+        singleBook.enTitle.toLowerCase().includes("space")
+      )
+      .map((book) => (
+        <SingleCard
+          key={book._id}
+          popup={popup}
+          setChosenBook={setChosenBook}
+          setPopup={setPopup}
+          book={book}
+        />
+      ));
+
+    return spaceBooks;
   };
 
   //! Filter and Display Books
@@ -76,7 +97,14 @@ const Cards = () => {
               <div className="twobanner">
                 {/* Space */}
                 <div className="bnr">
-                  <Link>
+                  <Link
+                    onClick={() => {
+                      setSpaceSeries(() => true);
+                      window.scroll({
+                        top: 0,
+                      });
+                    }}
+                  >
                     <img src={space} alt="space-banner-series" />
                   </Link>
                 </div>
@@ -215,7 +243,7 @@ const Cards = () => {
       ) : (
         <h4 className="products-number">
           {lang === "en"
-            ? `Results : ${displayBooks()?.length || "Noting Found"} ${
+            ? `Results : ${displayBooks()?.length || "Nothing Found"} ${
                 displayBooks()?.length > 1
                   ? "Books"
                   : displayBooks()?.length === undefined
@@ -227,9 +255,12 @@ const Cards = () => {
               }`}
         </h4>
       )}
-      {wardanSeries && (
+      {(wardanSeries || spaceSeries) && (
         <h4
-          onClick={() => setWardanSeries(() => false)}
+          onClick={() => {
+            setWardanSeries(() => false);
+            setSpaceSeries(() => false);
+          }}
           className="show-btn"
           style={{ cursor: "pointer" }}
         >
@@ -238,11 +269,13 @@ const Cards = () => {
       )}
       <div className="cards">
         {books.length > 0 ? (
-          !wardanSeries ? (
+          !wardanSeries && !spaceSeries ? (
             displayBooks()
-          ) : (
+          ) : wardanSeries ? (
             displayWardanSeries()
-          )
+          ) : spaceSeries ? (
+            displaySpaceSeries()
+          ) : null
         ) : (
           <div className="cards">
             <ClipLoader size={100} color="#36d7b7" />
