@@ -27,6 +27,7 @@ const Cards = () => {
     setBooks(res.data);
   };
 
+  // Display Wardan Series
   const displayWardanSeries = () => {
     const wardanBooks = books
       .filter((singleBook) =>

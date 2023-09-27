@@ -6,8 +6,8 @@
   list-style: none;
   font-family: "Poppins", sans-serif;
 }
-body{
-  background-image: url('./assets//bg_body.jpg');
+body {
+  background-image: url("./assets//bg_body.jpg");
   width: 100%;
   background-position: center;
   background-color: #f8f8f8;
@@ -32,4 +32,20 @@ a {
 
 svg {
   cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #d6d6d6;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #c0114c;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a61042;
 }
