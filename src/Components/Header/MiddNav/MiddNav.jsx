@@ -63,7 +63,7 @@ const MiddNav = () => {
             }
           >
             <li>
-              <Link to="/"> {lang == "en" ? "Home" : "الرئيسية"} </Link>
+              <Link to="/"> {lang == "en" ? "Home" : "الصفحة الرئيسية"} </Link>
             </li>
             <li>
               <Link to="/about">{lang == "en" ? "About" : "من نحن"}</Link>
@@ -104,7 +104,7 @@ const MiddNav = () => {
               <PersonIcon />
             </Link>
           ) : (
-            <button onClick={handleLogout}>Logout</button>
+            <button onClick={handleLogout}>{lang=="en"? "LOGOUT":"تسجيل خروج"}</button>
           )}
           <button className="lang-btn" onClick={handleLangSwitch}>
             {lang === "en" ? (

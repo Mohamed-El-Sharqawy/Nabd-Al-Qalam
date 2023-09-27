@@ -21,7 +21,7 @@ const MobileMenu = ({ setIsMenuHidden, isMenuHidden }) => {
     <ul className={`mobile-menu ${isMenuHidden ? "hide-menu" : "show-menu"}`}>
       <CloseIcon onClick={handleClick} className="close-btn" />
       <Link onClick={handleClick} to={"/"}>
-        {lang === "en" ? "Home" : "الرئيسية"}
+        {lang === "en" ? "Home" : "الصفحة الرئيسية"}
       </Link>
       <Link onClick={handleClick} to={"/about"}>
         {lang === "en" ? "About" : "من نحن"}

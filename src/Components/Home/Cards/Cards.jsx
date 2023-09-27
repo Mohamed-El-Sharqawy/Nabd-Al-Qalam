@@ -101,7 +101,7 @@ const Cards = () => {
         <select onChange={handleChange} name="ageGroup">
           {lang === "en" ? (
             <>
-              <option value={""}>Select Age Group</option>
+              <option value={""}>All Age Groups</option>
               <option value={"6 - 9 سنوات"}>6 - 9 Years</option>
               <option value={"9 - 12 سنوات"}>9 - 12 Years</option>
               <option value={"12 - 15 سنوات"}>12 - 15 Years</option>
@@ -110,7 +110,7 @@ const Cards = () => {
           ) : (
             <>
               <option value={""} dir="rtl">
-                اختر الفئة العمرية
+                كل الفئات العمرية
               </option>
               <option value={"6 - 9 سنوات"} dir="rtl">
                 6 - 9 سنوات
@@ -130,7 +130,7 @@ const Cards = () => {
         <select onChange={handleChange} name="category">
           {lang === "en" ? (
             <>
-              <option value={""}>Select Category</option>
+              <option value={""}>All Categories</option>
               <option value="مغامرات">Adventures</option>
               <option value="فضاء">Space</option>
               <option value="التراث الاماراتي">Emirati Heritage</option>
@@ -146,7 +146,7 @@ const Cards = () => {
           ) : (
             <>
               <option value={""} dir="rtl">
-                اختر الفئة
+                كل الفئات
               </option>
               <option dir="rtl" value="مغامرات">
                 مغامرات
@@ -179,6 +179,19 @@ const Cards = () => {
           )}
         </select>
       </div>
+      {query?.ageGroup == "" && query?.category == "" ? (
+        ""
+      ) : (
+        <h4 className="products-number">
+          {lang === "en"
+            ? `Results : ${displayBooks()?.length || "Noting Found"} ${
+                displayBooks()?.length > 1 ? "Books" : "Book"
+              }`
+            : `النتائج : ${displayBooks()?.length || "لا توجد نتائج"} ${
+                displayBooks()?.length > 10 ? "كتاب" : "كتب"
+              }`}
+        </h4>
+      )}
       <div className="cards">
         {books.length > 0 ? (
           displayBooks()
