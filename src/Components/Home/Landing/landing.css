@@ -8,7 +8,7 @@
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
-  margin: 3rem auto;
+  margin: 2rem auto;
 }
 .container {
   padding: 2rem 0 2rem 0;
@@ -296,6 +296,12 @@ button {
   text-align: center;
 }
 
+.products-number {
+  color: #c0114c;
+  text-align: center;
+  margin-top: 2rem;
+}
+
 @media screen and (max-width: 1050px) {
   .card {
     width: 30%;
@@ -311,10 +317,14 @@ button {
     width: 95%;
   }
 
+  .cards h1 {
+    margin-bottom: 1rem;
+  }
+
   .card {
     width: 38%;
   }
-  .bnr{
+  .bnr {
     width: 38%;
   }
 }
@@ -337,25 +347,25 @@ button {
   }
 }
 @media screen and (max-width: 500px) {
-  .card{
+  .card {
     width: 60%;
   }
 }
 @media screen and (max-width: 400px) {
-  .card{
+  .card {
     width: 80%;
   }
-  .bnr{
+  .bnr {
     width: 80%;
   }
 }
 @media screen and (max-width: 325px) {
-  .card{
+  .card {
     width: 90%;
-}
-.bnr{
-  width: 87%;
-}
+  }
+  .bnr {
+    width: 87%;
+  }
 }
 @media screen and (max-width: 400px) {
   .books-filter {
@@ -366,12 +376,12 @@ button {
 /* POPUP Responsive Styles */
 
 @media screen and (max-width: 840px) {
-  .popup{
+  .popup {
     width: 97%;
   }
 }
 @media screen and (max-width: 720px) {
-  .popup .left-popup .overview{
+  .popup .left-popup .overview {
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
@@ -380,7 +390,7 @@ button {
   }
 }
 @media screen and (max-width: 699px) {
-  .popup{
+  .popup {
     flex-direction: column;
   }
 }
@@ -412,18 +422,23 @@ button {
 
 /*FILTER*/
 @media screen and (max-width: 764px) {
-  .books-filter{
+  .books-filter {
     padding-top: 30px;
   }
 }
 @media screen and (max-width: 552px) {
-  .books-filter{
+  .books-filter {
     padding-top: 65px;
   }
 }
 @media screen and (max-width: 531px) {
+<<<<<<< HEAD
   .books-filter{
     padding-top: 70px;
     text-align: center;
+=======
+  .books-filter {
+    padding-top: 50px;
+>>>>>>> d3fa53c59719950183fa077e60c03bf7e6be5aee
   }
 }
