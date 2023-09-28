@@ -21,9 +21,9 @@ const SingleCard = ({ book, popup, setPopup, setChosenBook }) => {
         }
         className="card-caption"
       >
-        <p className="caption"
-        dir={lang==="en"? "ltr":"rtl"}
-        >{lang === "en" ? book.enTitle : book.arTitle}</p>
+        <p className="caption" dir={lang === "en" ? "ltr" : "rtl"}>
+          {lang === "en" ? book.enTitle : book.arTitle}
+        </p>
         <span
           className="price"
           dir={lang==="en"?"ltr":"rtl"}
@@ -63,7 +63,7 @@ const SingleCard = ({ book, popup, setPopup, setChosenBook }) => {
             });
           }}
         >
-          Add to cart
+        {lang=== "en" ? " Add to cart" : "أضف الى العربة"}
         </button>
       </div>
     </div>

@@ -30,8 +30,8 @@ const MiddNav = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      if (window.pageYOffset >= 178) {
-        setHeaderScroll("middnav-scroll");
+      if (window.pageYOffset >= 178)  {
+        setHeaderScroll("middnav-scroll")  ;
       } else {
         setHeaderScroll("");
       }

@@ -7,8 +7,6 @@ import About from "../pages/About";
 import Cart from "../pages/Cart/Cart";
 import Signup from "../pages/Singup/Signup";
 import Login from "../pages/Login/Login";
-import WardanStories from '../Components/WardanStories/Wardan'
-
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -41,10 +39,6 @@ export const router = createBrowserRouter([
       {
         path: "login",
         element: <Login />,
-      },
-      {
-        path: "wardan-stories",
-        element: <WardanStories />
       },
       {
         path: ":id",
