@@ -10,6 +10,7 @@ import { useDispatch } from "react-redux";
 import { login } from "./features/slices/authSlice";
 import "react-toastify/dist/ReactToastify.css";
 import KeyboardDoubleArrowUpIcon from "@mui/icons-material/KeyboardDoubleArrowUp";
+
 const App = () => {
   const { pathname } = useLocation();
   const dispatch = useDispatch();
@@ -60,8 +61,8 @@ const App = () => {
       <Newsletter />
       <Footer />
       <div className={`topbtn ${topbtn ? "display" : "hide"}`}>
-        <span className="top">
-          <KeyboardDoubleArrowUpIcon onClick={top} />
+        <span onClick={top} className="top">
+          <KeyboardDoubleArrowUpIcon />
         </span>
       </div>
     </>
