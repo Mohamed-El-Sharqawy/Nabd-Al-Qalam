@@ -51,15 +51,16 @@ svg {
   background-color: #a61042;
 }
 .topbtn .top {
-  background-color: #333;
   position: fixed;
   right: 20px;
   bottom: 20px;
   transition: .5s ease-in;
   cursor: pointer;
   border-radius: 50%;
-  color: #fff;
-  background-color: #c0114c;
+  color: #c0114c;
+  font-weight: bold;
+  font-size: 20px;
+  background-color: rgb(235, 184, 117);
   border: 3px solid #fff;
   padding: 13px;
 }
