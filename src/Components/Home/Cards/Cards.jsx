@@ -16,7 +16,6 @@ const Cards = () => {
   const [spaceSeries, setSpaceSeries] = useState(false);
   const [chosenBook, setChosenBook] = useState({});
   const { lang } = useSelector((state) => state.lang);
-  const endpoint = "https://nabd-server.onrender.com/";
 
   const handleChange = (e) => {
     setQuery(() => ({ ...query, [e.target.name]: e.target.value }));
@@ -25,7 +24,7 @@ const Cards = () => {
   };
 
   const getAllBooks = async () => {
-    const res = await axios.get(endpoint);
+    const res = await axios.get(import.meta.env.VITE_BOOKS_ENDPOINT);
     setBooks(res.data);
   };
 

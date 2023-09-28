@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, redirect, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./login.css";
 import axios from "axios";
 
@@ -8,13 +8,12 @@ const Login = () => {
     email: "",
     password: "",
   });
-  const endpoint = "https://nabd-server.onrender.com/login";
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const res = await axios.post(endpoint, {
+    const res = await axios.post(import.meta.env.VITE_LOGIN_ENDPOINT, {
       email: userData.email,
       password: userData.password,
     });
