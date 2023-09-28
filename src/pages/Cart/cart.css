@@ -118,7 +118,16 @@
     padding-top: 1rem;
   }
 }
-
+@media screen and (max-width: 764px) {
+  .shopping-cart{
+    margin-top: 40px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .shopping-cart{
+    margin-top: 60px;
+  }
+}
 @media screen and (max-width: 450px) {
   .shopping-cart .shopping-cart-items .shopping-cart-item {
     flex-direction: column !important;
@@ -137,12 +146,7 @@
 
 @media screen and (max-width: 531px) {
   .shopping-cart{
-    padding-top: 4.5rem;
+    margin-top: 4.5rem;
   }
 }
 
-@media screen and (max-width: 415px) {
-  .shopping-cart{
-    padding-top: 6rem;
-  }
-}
