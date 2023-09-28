@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {useSelector} from 'react-redux'
+import { useSelector } from "react-redux";
 import axios from "axios";
 import "./addBooks.css";
 
@@ -22,10 +22,8 @@ const AddBooks = () => {
   const [book, setBook] = useState(defaultFormData);
 
   const createBook = async (newBook) => {
-    const endpoint = "https://nabd-server.onrender.com/add-books";
-
     try {
-      await axios.post(endpoint, newBook);
+      await axios.post(import.meta.env.VITE_ADD_BOOKS_ENDPOINT, newBook);
 
       setBook(() => defaultFormData);
     } catch (err) {
@@ -66,9 +64,7 @@ const AddBooks = () => {
   return (
     <form onSubmit={handleSubmit} className="add-form">
       <div className="heading-book">
-        <h1>
-          {lang === "en" ? "Add Book" : "أضف كتاب"}
-        </h1>
+        <h1>{lang === "en" ? "Add Book" : "أضف كتاب"}</h1>
       </div>
       <input
         required

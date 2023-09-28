@@ -10,15 +10,13 @@ const Signup = () => {
     password: "",
     confirmPassword: "",
   });
-
   const navigate = useNavigate();
-  const endpoint = "https://nabd-server.onrender.com/signup";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (user.password === user.confirmPassword) {
-      const res = await axios.post(endpoint, {
+      const res = await axios.post(import.meta.env.VITE_SIGNUP_ENDPOINT, {
         email: user.email,
         password: user.password,
       });
