@@ -109,7 +109,7 @@
   transform: translate(-50%, -50%);
   background-color: #c0114c;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   gap: 1rem;
   z-index: 9999;
@@ -120,18 +120,13 @@
   width: 700px;
 }
 
-.right-popup,
-.left-popup {
-  flex: 1;
-}
-
 .right-popup img {
-  width: 200px;
-  height: 280px;
+  width: 220px;
+  height: 260px;
   display: flex;
   align-items: center;
   border-radius: 6px;
-  object-fit: cover;
+  object-fit: fill;
 }
 
 .left-popup p,
