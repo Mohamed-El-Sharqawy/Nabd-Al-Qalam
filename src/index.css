@@ -51,7 +51,6 @@ svg {
   background-color: #a61042;
 }
 .topbtn .top {
-  padding: 12px;
   background-color: #333;
   position: fixed;
   right: 20px;
@@ -61,6 +60,8 @@ svg {
   border-radius: 50%;
   color: #fff;
   background-color: #c0114c;
+  border: 3px solid #fff;
+  padding: 13px;
 }
 .display{
   opacity: 1;

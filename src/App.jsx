@@ -37,7 +37,7 @@ const App = () => {
 
   //SCROLL TOP
   const [topbtn, setTopBtn] = useState(false)
-  
+
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.pageYOffset >= 370) {
