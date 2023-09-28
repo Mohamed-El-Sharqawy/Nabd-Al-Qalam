@@ -7,10 +7,6 @@ import About from "../pages/About";
 import Cart from "../pages/Cart/Cart";
 import Signup from "../pages/Singup/Signup";
 import Login from "../pages/Login/Login";
-<<<<<<< HEAD
-=======
-
->>>>>>> db96a8afac769f613f8497a189eb44532e8c3ad7
 export const router = createBrowserRouter([
   {
     path: "/",
