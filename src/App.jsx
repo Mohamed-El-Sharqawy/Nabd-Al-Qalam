@@ -16,7 +16,7 @@ const App = () => {
 
   const getLoggedUser = async (decodedToken) => {
     const res = await axios.get(
-      `https://nabd-server.onrender.com/users/${decodedToken?.id}`
+      `${import.meta.env.VITE_USERS_ENDPOINT}${decodedToken?.id}`
     );
 
     dispatch(login(res.data));
@@ -28,7 +28,7 @@ const App = () => {
 
     if (token) {
       const decodedToken = jwtDecode(token);
-      
+
       if (decodedToken) {
         getLoggedUser(decodedToken);
       }
@@ -36,21 +36,21 @@ const App = () => {
   }, [pathname]);
 
   //SCROLL TOP
-  const [topbtn, setTopBtn] = useState(false)
+  const [topbtn, setTopBtn] = useState(false);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.pageYOffset >= 370) {
-        setTopBtn(true)
+        setTopBtn(true);
       } else {
-        setTopBtn(false)
+        setTopBtn(false);
       }
-    })
-  }, [])
-  
+    });
+  }, []);
+
   const top = () => {
-    window.scrollTo(0,0)
-  }
+    window.scrollTo(0, 0);
+  };
 
   return (
     <>
