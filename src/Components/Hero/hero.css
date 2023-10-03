@@ -1,6 +1,5 @@
 .hero {
   overflow: hidden;
-  margin-top: 20px;
   background: linear-gradient(
       to top right,
       #99123f,
@@ -42,7 +41,7 @@
 
 .hero .container {
   animation: scale 1s;
-  height: calc(100vh - 178px);
+  min-height: calc(100vh - 178px);
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -66,7 +65,7 @@
 .hero .container .content p {
   position: relative;
   line-height: 1.4;
-  width: 800px;
+  max-width: 800px;
   font-weight: bold;
   font-size: 17px;
   animation: slide-right ease 1s;
@@ -113,9 +112,43 @@
 
 .hero .container .image-container img {
   position: relative;
-  max-width: 100%;
+  width: 100%;
   height: auto;
   animation: up-down 2s ease-in-out alternate infinite;
+}
+
+@media screen and (max-width: 1023px) {
+  .hero .container .image-container {
+    width: 40%;
+  }
+
+  .hero .container .content h1 {
+    font-size: 35px;
+  }
+
+  .hero .container .content p {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .hero .container .content {
+    width: 100%;
+  }
+
+  .hero .container .image-container {
+    width: 100%;
+  }
+
+  .hero .container {
+    flex-direction: column !important;
+    padding-top: 3rem;
+    text-align: center;
+  }
+
+  .hero .container .content a {
+    margin: 0 auto;
+  }
 }
 
 @keyframes up-down {

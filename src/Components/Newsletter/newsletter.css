@@ -11,6 +11,24 @@
   margin-top: 2rem;
 }
 
+@media screen and (max-width: 838px) {
+  .newsletter {
+    margin-top: 3rem;
+  }
+}
+
+@media screen and (max-width: 462px) {
+  .newsletter {
+    margin-top: 4rem;
+  }
+}
+
+@media screen and (max-width: 323px) {
+  .newsletter {
+    margin-top: 5rem;
+  }
+}
+
 .newsletter form {
   flex: 1;
   display: flex;
