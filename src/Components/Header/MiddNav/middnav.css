@@ -36,7 +36,7 @@ header {
   height: 3px;
   width: 0;
   background-color: #fa8411;
-  top: 22px;
+  top: 32px;
   transition: 0.5s ease-in;
 }
 .links-search a:hover:before {
@@ -59,14 +59,14 @@ header {
 }
 .cart .count {
   position: absolute;
-  top: -5px;
+  top: -13px;
+  left: 155px;
   background-color: #fa8411;
   color: #fff;
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
   text-align: center;
-  padding-top: 2px;
   font-size: 14px;
 }
 .cart button {
