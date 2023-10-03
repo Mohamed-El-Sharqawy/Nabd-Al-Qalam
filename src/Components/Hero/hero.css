@@ -68,13 +68,14 @@
   max-width: 800px;
   font-weight: bold;
   font-size: 17px;
-  animation: slide-right ease 1s;
   margin-bottom: 2rem;
+  animation: slide-right ease 1s;
 }
 
 .hero .container .content h1.ar,
 .hero .container .content p.ar {
   animation: slide-left ease 1s;
+  margin-left: auto;
 }
 
 .hero .container .content a {
