@@ -1,9 +1,10 @@
 import { useSelector } from "react-redux";
-import "./aboutus.css";
+import "./about.css";
 import { about } from "../../assets/images";
 
-const AboutUs = () => {
+const About = () => {
   const { lang } = useSelector((state) => state.lang);
+
   const enAbout = `It is a cultural institution specialized in making and publishing
   the book according to international standards. Nabdu Al-Qalam
   started its march at the beginning of 2018 in the Culture Capital
@@ -92,4 +93,4 @@ const AboutUs = () => {
   );
 };
 
-export default AboutUs;
+export default About;

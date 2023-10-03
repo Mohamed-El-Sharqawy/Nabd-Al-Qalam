@@ -1,7 +1,7 @@
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart, getTotal } from "../../../features/slices/cartSlice";
+import { addToCart, getTotal } from "../../features/slices/cartSlice";
 import { toast } from "react-toastify";
 
 const SingleCard = ({ book, popup, setPopup, setChosenBook }) => {
@@ -26,10 +26,8 @@ const SingleCard = ({ book, popup, setPopup, setChosenBook }) => {
         </p>
         <span
           className="price"
-          dir={lang==="en"?"ltr":"rtl"}
-          style={
-            { justifyContent: "end" }
-          }
+          dir={lang === "en" ? "ltr" : "rtl"}
+          style={{ justifyContent: "end" }}
         >
           {book.price}
           {lang === "en" ? " AED" : " درهم"}
@@ -63,7 +61,7 @@ const SingleCard = ({ book, popup, setPopup, setChosenBook }) => {
             });
           }}
         >
-        {lang=== "en" ? " Add to cart" : "أضف الى العربة"}
+          {lang === "en" ? " Add to cart" : "أضف الى العربة"}
         </button>
       </div>
     </div>

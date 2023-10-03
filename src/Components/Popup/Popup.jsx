@@ -1,7 +1,7 @@
 import CancelIcon from "@mui/icons-material/Cancel";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart, getTotal } from "../../../features/slices/cartSlice";
+import { addToCart, getTotal } from "../../features/slices/cartSlice";
 import { toast } from "react-toastify";
 
 const Popup = ({ setPopup, popup, chosenBook }) => {
@@ -32,9 +32,7 @@ const Popup = ({ setPopup, popup, chosenBook }) => {
         <p className="title">
           {lang == "en" ? chosenBook.enTitle : chosenBook.arTitle}
         </p>
-        <h4 className="price"
-          dir={lang==="en"?"ltr":"rtl"}
-        >
+        <h4 className="price" dir={lang === "en" ? "ltr" : "rtl"}>
           {chosenBook.price} {lang == "en" ? "AED" : "درهم"}
         </h4>
         <p className="overview">

@@ -1,11 +1,10 @@
-import "./landing.css";
+import Cards from "../../Components/Cards/Cards";
+import "./home.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "./landing.css";
-import Cards from "../Cards/Cards";
 // import ComingSoon from "../ComingSoon/ComingSoon";
 
-const Landing = () => {
+const Home = () => {
   return (
     <>
       <div className="images-container">
@@ -15,4 +14,4 @@ const Landing = () => {
     </>
   );
 };
-export default Landing;
+export default Home;

@@ -1,157 +1,26 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { useState } from "react";
-import axios from "axios";
-import SingleCard from "../SingleCard/SingleCard";
+import React from "react";
 import Popup from "../Popup/Popup";
 import ClipLoader from "react-spinners/ClipLoader";
+import useDisplayBooks from "../../hooks/useDisplayBooks";
 import { useSelector } from "react-redux";
-import { space, wardan } from "../../../assets/images";
 
 const Cards = () => {
-  const [query, setQuery] = useState({ ageGroup: "", category: "" });
-  const [popup, setPopup] = useState(false);
-  const [books, setBooks] = useState([]);
-  const [wardanSeries, setWardanSeries] = useState(false);
-  const [spaceSeries, setSpaceSeries] = useState(false);
-  const [chosenBook, setChosenBook] = useState({});
   const { lang } = useSelector((state) => state.lang);
-
-  const handleChange = (e) => {
-    setQuery(() => ({ ...query, [e.target.name]: e.target.value }));
-    setWardanSeries(() => false);
-    setSpaceSeries(() => false);
-  };
-
-  const getAllBooks = async () => {
-    const res = await axios.get(import.meta.env.VITE_BOOKS_ENDPOINT);
-    setBooks(res.data);
-  };
-
-  // Display Wardan Series
-  const displayWardanSeries = () => {
-    const wardanBooks = books
-      .filter((singleBook) =>
-        singleBook.enTitle.toLowerCase().includes("wardan")
-      )
-      .map((book) => (
-        <SingleCard
-          key={book._id}
-          popup={popup}
-          setChosenBook={setChosenBook}
-          setPopup={setPopup}
-          book={book}
-        />
-      ));
-
-    return wardanBooks;
-  };
-
-  // Display Space Series
-  const displaySpaceSeries = () => {
-    const spaceBooks = books
-      .filter((singleBook) =>
-        singleBook.enTitle.toLowerCase().includes("space")
-      )
-      .map((book) => (
-        <SingleCard
-          key={book._id}
-          popup={popup}
-          setChosenBook={setChosenBook}
-          setPopup={setPopup}
-          book={book}
-        />
-      ));
-
-    return spaceBooks;
-  };
-
-  //! Filter and Display Books
-  const displayBooks = () => {
-    const filteredBooks = books
-      .filter((singleBook) => {
-        if (query.ageGroup == "" && query.category == "") {
-          return singleBook;
-        } else if (query.ageGroup == "") {
-          return singleBook.category == query.category;
-        } else if (query.category == "") {
-          return singleBook.ageGroup == query.ageGroup;
-        } else {
-          return (
-            singleBook.ageGroup == query?.ageGroup &&
-            singleBook.category == query?.category
-          );
-        }
-      })
-      .map((book, index) => {
-        if (index == 15 || index == 31) {
-          return (
-            <React.Fragment key={book._id}>
-              <SingleCard
-                popup={popup}
-                setChosenBook={setChosenBook}
-                setPopup={setPopup}
-                book={book}
-              />
-              <div className="twobanner">
-                {/* Space */}
-                <div className="bnr">
-                  <Link
-                    onClick={() => {
-                      setSpaceSeries(() => true);
-                      window.scroll({
-                        top: 0,
-                      });
-                    }}
-                  >
-                    <img src={space} alt="space-banner-series" />
-                  </Link>
-                </div>
-                {/* Wardan */}
-                <div className="bnr">
-                  <Link
-                    onClick={() => {
-                      setWardanSeries(() => true);
-                      window.scroll({
-                        top: 0,
-                      });
-                    }}
-                  >
-                    <img src={wardan} alt="wardan-banner-series" />
-                  </Link>
-                </div>
-              </div>
-            </React.Fragment>
-          );
-        }
-
-        return (
-          <SingleCard
-            key={book._id}
-            popup={popup}
-            setChosenBook={setChosenBook}
-            setPopup={setPopup}
-            book={book}
-          />
-        );
-      });
-
-    if (filteredBooks.length == 0) {
-      return (
-        <h1 style={{ color: "#c0114c", textAlign: "center", fontSize: "22px" }}>
-          {lang === "en"
-            ? "There is No Books for this Age and Category"
-            : "لا يوجد كتب لهذه الفئة والفئة العمرية"}
-        </h1>
-      );
-    } else {
-      return filteredBooks;
-    }
-  };
-
-  useEffect(() => {
-    getAllBooks();
-  }, []);
+  const {
+    handleChange,
+    displayBooks,
+    displayWardanSeries,
+    displaySpaceSeries,
+    setWardanSeries,
+    setSpaceSeries,
+    setPopup,
+    popup,
+    wardanSeries,
+    spaceSeries,
+    chosenBook,
+    query,
+    books,
+  } = useDisplayBooks();
 
   return (
     <>
@@ -250,7 +119,11 @@ const Cards = () => {
                   : "Book"
               }`
             : `النتائج : ${displayBooks()?.length || "لا توجد نتائج"} ${
-                displayBooks()?.length > 10 ? "كتاب" : "كتب"
+                displayBooks()?.length > 10
+                  ? "كتاب"
+                  : displayBooks()?.length === undefined
+                  ? ""
+                  : "كتب"
               }`}
         </h4>
       )}

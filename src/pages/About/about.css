@@ -73,16 +73,16 @@
 }
 @media screen and (max-width: 764px) {
   .container-about {
-    padding: 40px 0 0 0 ;
+    padding: 40px 0 0 0;
   }
 }
 @media screen and (max-width: 416) {
-  .container-about{
-    padding-top:  500px;
+  .container-about {
+    padding-top: 500px;
   }
 }
 @media screen and (max-width: 552px) {
   .container-about {
-    margin-top: 20px ;
+    margin-top: 20px;
   }
 }

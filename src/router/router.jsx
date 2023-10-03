@@ -1,12 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import Home from "../pages/Home";
+import Home from "../pages/Home/Home";
 import Contact from "../pages/Contact";
 import AddBooks from "../pages/AddBooks/AddBooks";
-import About from "../pages/About";
+import About from "../pages/About/About";
 import Cart from "../pages/Cart/Cart";
 import Signup from "../pages/Singup/Signup";
 import Login from "../pages/Login/Login";
+
 export const router = createBrowserRouter([
   {
     path: "/",
