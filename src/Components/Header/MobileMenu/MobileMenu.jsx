@@ -19,46 +19,60 @@ const MobileMenu = ({ setIsMenuHidden, isMenuHidden }) => {
 
   return (
     <ul className={`mobile-menu ${isMenuHidden ? "hide-menu" : "show-menu"}`}>
-      <CloseIcon onClick={handleClick} className="close-btn" />
-      <Link onClick={handleClick} to={"/"}>
-        {lang === "en" ? "Home" : "الصفحة الرئيسية"}
-      </Link>
-      <Link onClick={handleClick} to={"/about"}>
-        {lang === "en" ? "About" : "من نحن"}
-      </Link>
-      <Link onClick={handleClick} to="/contact">
-        {lang === "en" ? "Contact" : "تواصل معنا"}
-      </Link>
-      <Link
-        onClick={handleClick}
-        to="/shopping-cart"
-        className="mobile-nav-link"
-        dir={lang === "en" ? "ltr" : "rtl"}
-      >
-        {lang === "en" ? "Shoppign Cart" : "العربة"}
-        <ShoppingBagOutlinedIcon />
-      </Link>
-      {user?._id ? (
-        <button
-          onClick={() => {
-            dispatch(logout());
-            handleClick();
-            navigate("/login");
-          }}
-          style={{ all: "unset", cursor: "pointer" }}
-        >
-          {lang === "en" ? "Logout" : "تسجيل خروج"}
-        </button>
-      ) : (
-        <Link
-          dir={lang === "en" ? "ltr" : "rtl"}
-          onClick={handleClick}
-          to="/login"
-          className="mobile-nav-link"
-        >
-          {lang === "en" ? "Login" : "تسجيل الدخول"}
-          <PersonIcon />
+      <li>
+        <CloseIcon onClick={handleClick} className="close-btn" />
+      </li>
+      <li>
+        <Link onClick={handleClick} to={"/"}>
+          {lang === "en" ? "Home" : "الصفحة الرئيسية"}
         </Link>
+      </li>
+      <li>
+        <Link onClick={handleClick} to={"/about"}>
+          {lang === "en" ? "About" : "من نحن"}
+        </Link>
+      </li>
+      <li>
+        <Link onClick={handleClick} to="/contact">
+          {lang === "en" ? "Contact" : "تواصل معنا"}
+        </Link>
+      </li>
+      <li>
+        <Link
+          onClick={handleClick}
+          to="/shopping-cart"
+          className="mobile-nav-link"
+          dir={lang === "en" ? "ltr" : "rtl"}
+        >
+          {lang === "en" ? "Shoppign Cart" : "العربة"}
+          <ShoppingBagOutlinedIcon />
+        </Link>
+      </li>
+      {user?._id ? (
+        <li>
+          <button
+            onClick={() => {
+              dispatch(logout());
+              handleClick();
+              navigate("/login");
+            }}
+            style={{ all: "unset", cursor: "pointer" }}
+          >
+            {lang === "en" ? "Logout" : "تسجيل خروج"}
+          </button>
+        </li>
+      ) : (
+        <li>
+          <Link
+            dir={lang === "en" ? "ltr" : "rtl"}
+            onClick={handleClick}
+            to="/login"
+            className="mobile-nav-link"
+          >
+            {lang === "en" ? "Login" : "تسجيل الدخول"}
+            <PersonIcon />
+          </Link>
+        </li>
       )}
       <button
         dir={lang === "en" ? "ltr" : "rtl"}
