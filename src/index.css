@@ -37,15 +37,15 @@ svg {
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #d6d6d6;
+  background-color: #fff;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #c0114c;
+  background-color: rgb(235, 184, 117);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #a61042;
+  background-color: rgb(235, 184, 117);
 }
 .topbtn .top {
   position: fixed;
