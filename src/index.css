@@ -1,16 +1,13 @@
+/*TODO Cairo (Arabic Font) */
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Inter:wght@400;600;700&display=swap");
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   text-decoration: none;
   list-style: none;
-  font-family: "Poppins", sans-serif;
-}
-body {
-  background-image: url("./assets//bg_body.jpg");
-  width: 100%;
-  background-position: center;
-  background-color: #f8f8f8;
+  font-family: "Cairo", sans-serif;
 }
 html {
   user-select: none;
@@ -54,7 +51,7 @@ svg {
   position: fixed;
   right: 20px;
   bottom: 20px;
-  transition: .5s ease-in;
+  transition: 0.5s ease-in;
   cursor: pointer;
   border-radius: 50%;
   color: #c0114c;
@@ -64,9 +61,9 @@ svg {
   border: 3px solid #fff;
   padding: 13px;
 }
-.display{
+.display {
   opacity: 1;
 }
-.hide{
+.hide {
   opacity: 0;
 }

@@ -9,8 +9,8 @@ const useDisplayBooks = () => {
   const [query, setQuery] = useState({ ageGroup: "", category: "" });
   const [wardanSeries, setWardanSeries] = useState(false);
   const [spaceSeries, setSpaceSeries] = useState(false);
-  const [chosenBook, setChosenBook] = useState({});
   const [popup, setPopup] = useState(false);
+  const [chosenBook, setChosenBook] = useState({});
 
   const handleChange = (e) => {
     setQuery(() => ({ ...query, [e.target.name]: e.target.value }));

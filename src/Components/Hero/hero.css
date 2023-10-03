@@ -1,0 +1,139 @@
+.hero {
+  background: linear-gradient(
+      to top right,
+      #99123f,
+      #99123f,
+      #fa8411,
+      #fa8411,
+      #99123f,
+      transparent
+    ),
+    linear-gradient(
+      to top right,
+      #99123f,
+      #99123f,
+      #fa8411,
+      #fa8411,
+      #99123f,
+      transparent
+    ),
+    linear-gradient(
+      to top left,
+      #fa8411,
+      #fa8411,
+      #99123f,
+      #99123f,
+      #99123f,
+      transparent
+    ),
+    linear-gradient(
+      to top left,
+      #fa8411,
+      #fa8411,
+      #99123f,
+      #99123f,
+      #99123f,
+      transparent
+    );
+  background-blend-mode: screen;
+}
+
+.hero .container {
+  animation: scale 1s;
+  height: calc(100vh - 178px);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.hero .container .content {
+  color: white;
+}
+
+.hero .container .content h1 {
+  position: relative;
+  font-size: 40px;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  animation: slide-right ease 1s;
+}
+
+.hero .container .content p {
+  position: relative;
+  line-height: 1.4;
+  width: 800px;
+  font-weight: bold;
+  font-size: 17px;
+  animation: slide-right ease 1s;
+  margin-bottom: 2rem;
+}
+
+.hero .container .content a {
+  display: block;
+  width: fit-content;
+  background: linear-gradient(
+    to bottom right,
+    #c0114c,
+    #c0114c,
+    #c0114c,
+    #fa8411,
+    #fa8411,
+    #fa8411
+  );
+  background-blend-mode: hard-light;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  padding: 0.8rem 1.4rem;
+  animation: appear 2s;
+  transition: 0.35s;
+}
+
+.hero .container .content a:hover {
+  background: linear-gradient(
+    to top left,
+    #c0114c,
+    #c0114c,
+    #c0114c,
+    #fa8411,
+    #fa8411,
+    #fa8411
+  );
+}
+
+.hero .container .image-container img {
+  position: relative;
+  width: 100%;
+  animation: up-down 2s ease-in-out alternate infinite;
+}
+
+@keyframes up-down {
+  from {
+    top: 3rem;
+  }
+  to {
+    top: -1rem;
+  }
+}
+
+@keyframes slide-right {
+  from {
+    left: -100%;
+    opacity: 0;
+  }
+  to {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

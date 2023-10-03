@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import Slider from "react-slick";
-import NextArrow from "../../NextArrow";
-import PreviousArrow from "../../PreviousArrow";
+import NextArrow from "../../Components/CustomArrows/NextArrow";
+import PreviousArrow from "../../Components/CustomArrows/PreviousArrow";
 
 const ComingSoon = () => {
   const { lang } = useSelector((state) => state.lang);
