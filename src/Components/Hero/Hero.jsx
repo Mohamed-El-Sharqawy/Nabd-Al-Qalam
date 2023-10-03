@@ -16,12 +16,18 @@ const Hero = () => {
         className="container"
       >
         <div className="content">
-          <h1 dir={lang === "en" ? "ltr" : "rtl"}>
+          <h1
+            className={`${lang === "ar" ? "ar" : ""}`}
+            dir={lang === "en" ? "ltr" : "rtl"}
+          >
             {lang === "en"
               ? "Welcome to Nabdu Al-Qalam"
               : "اهلا بك في نبض القلم"}
           </h1>
-          <p dir={lang === "en" ? "ltr" : "rtl"}>
+          <p
+            className={`${lang === "ar" ? "ar" : ""}`}
+            dir={lang === "en" ? "ltr" : "rtl"}
+          >
             {lang === "en"
               ? `Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum odit, quaerat deserunt doloremque delectus voluptate sed rem temporibus pariatur, assumenda enim doloribus alias deleniti dolor consequuntur unde magni quae earum.`
               : `مؤسسة

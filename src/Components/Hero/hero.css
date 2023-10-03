@@ -70,6 +70,11 @@
   margin-bottom: 2rem;
 }
 
+.hero .container .content h1.ar,
+.hero .container .content p.ar {
+  animation: slide-left ease 1s;
+}
+
 .hero .container .content a {
   display: block;
   width: fit-content;
@@ -121,6 +126,17 @@
 @keyframes slide-right {
   from {
     left: -100%;
+    opacity: 0;
+  }
+  to {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes slide-left {
+  from {
+    left: 100%;
     opacity: 0;
   }
   to {
