@@ -1,16 +1,11 @@
 .hero {
-<<<<<<< HEAD
-    overflow: hidden;
-  margin-top: 20px;
-=======
   overflow: hidden;
->>>>>>> 341235596177d40bbec5358609efb6489accd1e4
   background: linear-gradient(
       to top right,
       #99123f,
       #99123f,
-      #4a0d9e,
-      #4a0d9e,
+      #fa8411,
+      #fa8411,
       #99123f,
       transparent
     ),
@@ -18,15 +13,15 @@
       to top right,
       #99123f,
       #99123f,
-      #4a0d9e,
-      #4a0d9e,
+      #fa8411,
+      #fa8411,
       #99123f,
       transparent
     ),
     linear-gradient(
       to top left,
-      #4a0d9e,
-      #4a0d9e,
+      #fa8411,
+      #fa8411,
       #99123f,
       #99123f,
       #99123f,
@@ -34,8 +29,8 @@
     ),
     linear-gradient(
       to top left,
-      #4a0d9e,
-      #4a0d9e,
+      #fa8411,
+      #fa8411,
       #99123f,
       #99123f,
       #99123f,
@@ -90,9 +85,9 @@
     #c0114c,
     #c0114c,
     #c0114c,
-    #4a0d9e,
-    #4a0d9e,
-    #4a0d9e
+    #fa8411,
+    #fa8411,
+    #fa8411
   );
   background-blend-mode: hard-light;
   border: none;
@@ -109,9 +104,9 @@
     #c0114c,
     #c0114c,
     #c0114c,
-    #4a0d9e,
-    #4a0d9e,
-    #4a0d9e
+    #fa8411,
+    #fa8411,
+    #fa8411
   );
 }
 
