@@ -30,8 +30,8 @@ const MiddNav = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      if (window.pageYOffset >= 178)  {
-        setHeaderScroll("middnav-scroll")  ;
+      if (window.pageYOffset >= 178) {
+        setHeaderScroll("middnav-scroll");
       } else {
         setHeaderScroll("");
       }
@@ -93,8 +93,8 @@ const MiddNav = () => {
           <Link to="/shopping-cart">
             <ShoppingBagOutlinedIcon />
             <span
-              style={lang == "en" ? { left: "16px" } : { right: "-6px" }}
               className="count"
+              style={lang === "en" ? { left: "15px" } : { right: "-10px" }}
             >
               {cartItems?.length || 0}
             </span>
@@ -104,7 +104,9 @@ const MiddNav = () => {
               <PersonIcon />
             </Link>
           ) : (
-            <button onClick={handleLogout}>{lang=="en"? "LOGOUT":"تسجيل خروج"}</button>
+            <button onClick={handleLogout}>
+              {lang == "en" ? "LOGOUT" : "تسجيل خروج"}
+            </button>
           )}
           <button className="lang-btn" onClick={handleLangSwitch}>
             {lang === "en" ? (

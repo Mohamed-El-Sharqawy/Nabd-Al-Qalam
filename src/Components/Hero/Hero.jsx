@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import "./hero.css";
 import { useSelector } from "react-redux";
+import { hero } from "../../assets/images";
 
 const Hero = () => {
   const { lang } = useSelector((state) => state.lang);
@@ -47,7 +48,7 @@ const Hero = () => {
         </div>
         <div className="image-container">
           <img
-            src="https://o.remove.bg/downloads/d206b238-d967-4ed4-92cd-4cf58876e75b/image-removebg-preview.png"
+            src={hero}
             width={600}
             height={800}
             style={{ objectFit: "cover" }}

@@ -1,6 +1,6 @@
 .topnav {
   width: 100%;
-  background-color: #4a0d9e;
+  background-color: #fa8411;
 }
 .container-nav {
   width: 95%;
@@ -32,7 +32,7 @@
 }
 
 @media screen and (max-width: 764px) {
-  .container-nav{
+  .container-nav {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
@@ -40,7 +40,7 @@
   }
 }
 @media screen and (max-width: 685px) {
-  .container-nav{
+  .container-nav {
     flex-wrap: wrap;
     justify-content: center;
   }
@@ -54,13 +54,12 @@
   }
 }
 @media screen and (max-width: 321px) {
-  .container-nav{
+  .container-nav {
     font-size: 14px;
   }
 }
 @media screen and (max-width: 289px) {
-  .container-nav{
+  .container-nav {
     font-size: 12px;
   }
 }
-

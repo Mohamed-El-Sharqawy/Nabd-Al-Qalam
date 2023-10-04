@@ -1,4 +1,3 @@
-import React from "react";
 import Popup from "../Popup/Popup";
 import ClipLoader from "react-spinners/ClipLoader";
 import useDisplayBooks from "../../hooks/useDisplayBooks";

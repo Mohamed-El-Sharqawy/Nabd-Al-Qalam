@@ -1,12 +1,11 @@
 .hero {
-    overflow: hidden;
-  margin-top: 20px;
+  overflow: hidden;
   background: linear-gradient(
       to top right,
       #99123f,
       #99123f,
-      #4a0d9e,
-      #4a0d9e,
+      #fa8411,
+      #fa8411,
       #99123f,
       transparent
     ),
@@ -14,15 +13,15 @@
       to top right,
       #99123f,
       #99123f,
-      #4a0d9e,
-      #4a0d9e,
+      #fa8411,
+      #fa8411,
       #99123f,
       transparent
     ),
     linear-gradient(
       to top left,
-      #4a0d9e,
-      #4a0d9e,
+      #fa8411,
+      #fa8411,
       #99123f,
       #99123f,
       #99123f,
@@ -30,8 +29,8 @@
     ),
     linear-gradient(
       to top left,
-      #4a0d9e,
-      #4a0d9e,
+      #fa8411,
+      #fa8411,
       #99123f,
       #99123f,
       #99123f,
@@ -68,13 +67,14 @@
   width: 800px;
   font-weight: bold;
   font-size: 17px;
-  animation: slide-right ease 1s;
   margin-bottom: 2rem;
+  animation: slide-right ease 1s;
 }
 
 .hero .container .content h1.ar,
 .hero .container .content p.ar {
   animation: slide-left ease 1s;
+  margin-left: auto;
 }
 
 .hero .container .content a {
@@ -85,9 +85,9 @@
     #c0114c,
     #c0114c,
     #c0114c,
-    #4a0d9e,
-    #4a0d9e,
-    #4a0d9e
+    #fa8411,
+    #fa8411,
+    #fa8411
   );
   background-blend-mode: hard-light;
   border: none;
@@ -104,9 +104,9 @@
     #c0114c,
     #c0114c,
     #c0114c,
-    #4a0d9e,
-    #4a0d9e,
-    #4a0d9e
+    #fa8411,
+    #fa8411,
+    #fa8411
   );
 }
 

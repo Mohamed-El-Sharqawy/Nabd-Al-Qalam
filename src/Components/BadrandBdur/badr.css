@@ -1,0 +1,20 @@
+.slide-containerBadr {
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+.slide-containerBadr h2 {
+    text-align: center;
+    padding-bottom: 30px;
+    color: #fa8411;
+}
+.sliderImageBadr {
+    height: 200px;
+}
+
+.sliderImageBadr img {
+    width: 90%;
+    height: 100%;
+    object-fit: fill;
+    cursor: pointer;
+}
