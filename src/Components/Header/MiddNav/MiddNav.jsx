@@ -50,7 +50,7 @@ const MiddNav = () => {
       >
         <div className="logo">
           <Link to="/">
-            <img src={logo} alt="logo" />
+            <img width={120} height={121} src={logo} alt="logo" />
           </Link>
         </div>
         <div className="leftlinks-search">
