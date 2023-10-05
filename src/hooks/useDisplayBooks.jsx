@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { space, wardan } from "../assets/images";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import SingleCard from "../Components/SingleCard/SingleCard";
 import { useSelector } from "react-redux";
 
@@ -13,11 +13,40 @@ const useDisplayBooks = () => {
   const [spaceSeries, setSpaceSeries] = useState(false);
   const [popup, setPopup] = useState(false);
   const [chosenBook, setChosenBook] = useState({});
+  const [searchParams, setSearchParams] = useSearchParams();
+  const group = searchParams.get("group");
+  const category = searchParams.get("category");
+
+  const ageGroups = {
+    threeSix: ["6 - 9 سنوات", "From 3 years to 6 years"],
+    sixNine: ["9 - 12 سنوات", "From 6 years to 9 years"],
+    nineTwelve: ["12 - 15 سنوات", "From 9 years to 12 years"],
+    twelveFifteen: ["15 - 20 سنوات", "From 12 years to 15 years"],
+  };
 
   const handleChange = (e) => {
     setQuery(() => ({ ...query, [e.target.name]: e.target.value }));
     setWardanSeries(() => false);
     setSpaceSeries(() => false);
+    setSearchParams((prev) => {
+      if (e.target.name == "ageGroup") {
+        if (e.target.value == ageGroups.threeSix[0]) {
+          prev.set("group", ageGroups.threeSix[1]);
+        } else if (e.target.value == ageGroups.sixNine[0]) {
+          prev.set("group", ageGroups.sixNine[1]);
+        } else if (e.target.value == ageGroups.nineTwelve[0]) {
+          prev.set("group", ageGroups.nineTwelve[1]);
+        } else if (e.target.value == ageGroups.twelveFifteen[0]) {
+          prev.set("group", ageGroups.twelveFifteen[1]);
+        } else {
+          prev.set("group", "");
+        }
+      } else {
+        prev.set("category", e.target.value);
+      }
+
+      return prev;
+    });
   };
 
   //* Filter and Display Books
@@ -151,6 +180,24 @@ const useDisplayBooks = () => {
     getAllBooks();
   }, []);
 
+  useEffect(() => {
+    if (group === "From 3 years to 6 years") {
+      //! 3 - 6
+      setQuery((prev) => ({ ...prev, ageGroup: "6 - 9 سنوات" }));
+    } else if (group === "From 6 years to 9 years") {
+      //! 6 - 9
+      setQuery((prev) => ({ ...prev, ageGroup: "9 - 12 سنوات" }));
+    } else if (group === "From 9 years to 12 years") {
+      //! 9 - 12
+      setQuery((prev) => ({ ...prev, ageGroup: "12 - 15 سنوات" }));
+    } else if (group === "From 12 years to 15 years") {
+      //! 12 - 15
+      setQuery((prev) => ({ ...prev, ageGroup: "15 - 20 سنوات" }));
+    }
+
+    if (category) setQuery((prev) => ({ ...prev, category }));
+  }, []);
+
   return {
     displayBooks,
     displayWardanSeries,
@@ -160,7 +207,10 @@ const useDisplayBooks = () => {
     setSpaceSeries,
     setPopup,
     setQuery,
+    setSearchParams,
     popup,
+    group,
+    category,
     lang,
     wardanSeries,
     spaceSeries,
