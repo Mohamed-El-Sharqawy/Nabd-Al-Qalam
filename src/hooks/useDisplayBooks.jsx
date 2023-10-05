@@ -3,8 +3,10 @@ import axios from "axios";
 import { space, wardan } from "../assets/images";
 import { Link } from "react-router-dom";
 import SingleCard from "../Components/SingleCard/SingleCard";
+import { useSelector } from "react-redux";
 
 const useDisplayBooks = () => {
+  const { lang } = useSelector((state) => state.lang);
   const [books, setBooks] = useState([]);
   const [query, setQuery] = useState({ ageGroup: "", category: "" });
   const [wardanSeries, setWardanSeries] = useState(false);
@@ -157,7 +159,9 @@ const useDisplayBooks = () => {
     setWardanSeries,
     setSpaceSeries,
     setPopup,
+    setQuery,
     popup,
+    lang,
     wardanSeries,
     spaceSeries,
     chosenBook,

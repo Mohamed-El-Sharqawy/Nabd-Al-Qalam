@@ -4,7 +4,8 @@
   justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
-  padding: 3rem;
+  padding: 3rem 0;
+  overflow: hidden;
 }
 
 .age-groups .age-card,
@@ -17,6 +18,7 @@
   min-height: 400px;
   border-radius: 15px;
   overflow: hidden;
+  padding: 0.5rem;
 }
 
 .age-groups .age-card-reverse {
@@ -122,5 +124,34 @@
   .age-groups .age-card .content button,
   .age-groups .age-card-reverse .content button {
     margin: 0 auto 1rem;
+  }
+}
+
+@media screen and (max-width: 629px) {
+  .age-groups .age-card,
+  .age-groups .age-card-reverse {
+    gap: 1rem;
+  }
+
+  .age-groups .age-card div img,
+  .age-groups .age-card-reverse div img {
+    max-height: 250px;
+  }
+
+  .age-groups .age-card .content p,
+  .age-groups .age-card-reverse .content p {
+    font-size: 13px;
+  }
+
+  .age-groups .age-card .content h3,
+  .age-groups .age-card-reverse .content h3 {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .age-groups .age-card,
+  .age-groups .age-card-reverse {
+    width: 90%;
   }
 }

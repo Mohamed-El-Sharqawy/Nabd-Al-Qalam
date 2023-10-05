@@ -166,10 +166,10 @@
 
 @keyframes up-down {
   from {
-    top: 2.5rem;
+    top: 3rem;
   }
   to {
-    top: 0rem;
+    top: -1rem;
   }
 }
 

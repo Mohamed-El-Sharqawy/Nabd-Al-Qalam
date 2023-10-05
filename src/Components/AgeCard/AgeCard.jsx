@@ -1,10 +1,25 @@
 import { useSelector } from "react-redux";
+import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const AgeCard = ({ card }) => {
   const { lang } = useSelector((state) => state.lang);
+  const navigate = useNavigate();
+
+  const handleClick = (href) => {
+    navigate("books");
+    window.history.pushState(null, null, href);
+  };
 
   return (
-    <div className={`${lang === "en" ? "age-card" : "age-card-reverse"}`}>
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{
+        opacity: 1,
+        transition: { duration: 0.75, delay: 0.4 * (card.id - 1) },
+      }}
+      className={`${lang === "en" ? "age-card" : "age-card-reverse"}`}
+    >
       <div className="content">
         <p dir={lang === "en" ? "ltr" : "rtl"}>
           {lang === "en"
@@ -19,14 +34,21 @@ const AgeCard = ({ card }) => {
             lang === "en" ? { marginRight: "auto" } : { marginLeft: "auto" }
           }
           dir={lang === "en" ? "ltr" : "rtl"}
+          onClick={() => handleClick(`?group=${card?.enAge}`)}
         >
           Browse Books
         </button>
       </div>
-      <div>
+      <motion.div
+        initial={{ scale: 0 }}
+        whileInView={{
+          scale: 1,
+          transition: { duration: 1, delay: 0.5 * card.id - 1 },
+        }}
+      >
         <img src={card.img} alt="age group" />
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

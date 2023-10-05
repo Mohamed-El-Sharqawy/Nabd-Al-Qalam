@@ -94,7 +94,7 @@ const MiddNav = () => {
             <ShoppingBagOutlinedIcon />
             <span
               className="count"
-              style={lang === "en" ? { left: "16px" } : { right: "-6px" }}
+              style={lang === "en" ? { left: "15px" } : { right: "-10px" }}
             >
               {cartItems?.length || 0}
             </span>
