@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { img_12_15, img_3_6, img_6_9, img_9_12 } from "../../assets/images";
 import AgeCard from "../AgeCard/AgeCard";
-import "./AgeGroups.css";
+import "./ageGroups.css";
 
 const AgeGroups = () => {
   const { lang } = useSelector((state) => state.lang);
