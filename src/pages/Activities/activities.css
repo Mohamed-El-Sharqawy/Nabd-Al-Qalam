@@ -1,0 +1,29 @@
+
+.containerActive h1 {
+    text-align: center;
+    color: #fa8411;
+    position: relative;
+    width: fit-content;
+    margin: 20px auto 50px;
+    font-size: 24px;
+}
+
+.containerActive h1::before {
+    content: "";
+    position: absolute;
+    top: 3rem;
+    height: 3px;
+    background-color: #fa8411;
+    width: 100%;
+}
+.paragraphActiveEn{
+    padding: 5px 20px;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.paragraphActiveAr{
+    padding: 5px 20px;
+    font-size: 18px;
+    font-weight: 600;
+}

@@ -1,16 +1,15 @@
 .heading h1 {
   text-align: center;
-  padding: 20px 0;
   color: #fa8411;
   position: relative;
   width: fit-content;
-  margin: 30px auto;
+  margin: 20px auto 50px;
   font-size: 24px;
 }
 .heading h1::before {
   content: "";
   position: absolute;
-  top: 4rem;
+  top: 3rem;
   height: 3px;
   background-color: #fa8411;
   width: 100%;
@@ -105,17 +104,11 @@
   .contact {
     width: 500px;
   }
-  .heading{
-    padding-top: 20px ;
-  }
 }
 
 @media screen and (max-width: 552px) {
   .contact {
     width: 350px;
-  }
-  .heading{
-    padding-top: 65px;
   }
 }
 

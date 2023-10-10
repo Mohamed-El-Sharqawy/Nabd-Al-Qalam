@@ -3,17 +3,16 @@
 }
 .container-about h1 {
   text-align: center;
-  padding: 20px 0;
   color: #fa8411;
   position: relative;
   width: fit-content;
-  margin: 30px auto;
+  margin: 20px auto 50px;
   font-size: 24px;
 }
 .container-about h1::before {
   content: "";
   position: absolute;
-  top: 4rem;
+  top: 3rem;
   height: 3px;
   background-color: #fa8411;
   width: 100%;
@@ -71,14 +70,9 @@
     width: 100%;
   }
 }
-@media screen and (max-width: 764px) {
-  .container-about {
-    padding: 40px 0 0 0;
-  }
-}
 @media screen and (max-width: 416) {
   .container-about {
-    padding-top: 500px;
+    padding-top: 100px;
   }
 }
 @media screen and (max-width: 552px) {

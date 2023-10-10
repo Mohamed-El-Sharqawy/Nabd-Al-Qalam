@@ -151,6 +151,7 @@ button {
   height: 45px;
   border-radius: 50%;
   font-size: 18px;
+  padding-top: 4px;
   border: 1px solid #fff;
   background-color: transparent;
   color: #fff;
@@ -185,7 +186,7 @@ button {
 .counter-product {
   display: flex;
   align-items: center;
-  padding: 15px 30px;
+  padding: 8px 30px;
   font-weight: bold;
   font-size: 16px;
   border: 1px solid #fff;
@@ -243,7 +244,7 @@ button {
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  margin-top: 4rem;
+  margin-top: 3rem;
 }
 
 .books-filter select {
@@ -388,7 +389,7 @@ button {
 }
 
 /*FILTER*/
-@media screen and (max-width: 764px) {
+/* @media screen and (max-width: 764px) {
   .books-filter {
     padding-top: 30px;
   }
@@ -402,4 +403,4 @@ button {
   .books-filter {
     padding-top: 50px;
   }
-}
+} */

@@ -17,15 +17,6 @@ const Footer = () => {
         <li>
           <Link to={"/contact"}>Contact Us</Link>
         </li>
-        <li>Need Help ?</li>
-        <li>Terms Of Use</li>
-      </ul>
-      <ul>
-        <li>
-          <h1>For Questions</h1>
-        </li>
-        <li>FQA</li>
-        <li>Our Services</li>
       </ul>
       <ul>
         <li>
