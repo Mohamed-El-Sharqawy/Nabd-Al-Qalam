@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import './activities.css'
 import { Fragment } from "react";
+import { sunrise } from "../../assets/images";
 const Activities = () => {
   const { lang } = useSelector((state) => state.lang);
   return (
@@ -16,8 +17,11 @@ const Activities = () => {
           {lang == "en" ? "Activities" : "أنشطة الدار"}
         </h1>
         <div className="contentActive">
+          <div className="sunrise">
+            <img src={sunrise} alt="" />
+          </div>
           {lang == "en" ? (
-            <>
+            <div className="paragEN">
               <p className="paragraphActiveEn">
                 Stories for children and young people
               </p>
@@ -43,21 +47,21 @@ const Activities = () => {
               <p className="paragraphActiveEn">
                 Literary works evaluation service
               </p>
-            </>
+            </div>
           ) : (
             <div className="paragAR" dir={lang === 'en' ? 'ltr' : 'rtl'}>
-              <p className="paragraphActiveAr">قصص للأطفال واليافعيين</p>
-              <p className="paragraphActiveAr">معارض دولية و محلية</p>
               <p className="paragraphActiveAr">ورش تعليمية</p>
               <p className="paragraphActiveAr">ندوات ثقافية</p>
+              <p className="paragraphActiveAr">معارض دولية و محلية</p>
+              <p className="paragraphActiveAr">قصص للأطفال واليافعيين</p>
               <p className="paragraphActiveAr">عضو اتحاد الناشرين الأماراتيين</p>
               <p className="paragraphActiveAr">عضو ملتقي ناشري كتب الأطفال</p>
-              <p className="paragraphActiveAr">
-                نخبة من أنجح المؤلفين و الرسامين في الوطن العربي
-              </p>
               <p className="paragraphActiveAr">خدمة النشر والتوزيع</p>
               <p className="paragraphActiveAr">خدمة التدقيق اللغوى</p>
               <p className="paragraphActiveAr">خدمة تقييم الأعمال الأدبية</p>
+              <p className="paragraphActiveAr">
+                نخبة من أنجح المؤلفين و الرسامين في الوطن العربي
+              </p>
             </div>
           )}
         </div>

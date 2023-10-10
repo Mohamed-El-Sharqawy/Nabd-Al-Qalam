@@ -11,6 +11,7 @@ import img_3_6 from "./3-6.png";
 import img_6_9 from "./6-9.png";
 import img_9_12 from "./9-12.png";
 import img_12_15 from "./12-15.png";
+import sunrise from "./sunrise.jpg"
 
 export {
   uae,
@@ -26,4 +27,5 @@ export {
   img_6_9,
   img_9_12,
   img_12_15,
+  sunrise
 };
