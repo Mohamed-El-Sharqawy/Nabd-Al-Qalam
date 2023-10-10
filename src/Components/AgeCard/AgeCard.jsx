@@ -1,14 +1,20 @@
 import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 const AgeCard = ({ card }) => {
   const { lang } = useSelector((state) => state.lang);
+  const [_, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
 
   const handleClick = (href) => {
     navigate("books");
-    window.history.pushState(null, null, href);
+    setSearchParams((prev) => {
+      prev.set("group", href);
+      return prev;
+    });
+
+    // window.history.pushState(null, null, href);
   };
 
   return (
@@ -34,7 +40,7 @@ const AgeCard = ({ card }) => {
             lang === "en" ? { marginRight: "auto" } : { marginLeft: "auto" }
           }
           dir={lang === "en" ? "ltr" : "rtl"}
-          onClick={() => handleClick(`?group=${card?.enAge}`)}
+          onClick={() => handleClick(card?.enAge)}
         >
           Browse Books
         </button>

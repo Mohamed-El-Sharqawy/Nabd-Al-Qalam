@@ -1,11 +1,8 @@
 import Popup from "../Popup/Popup";
 import ClipLoader from "react-spinners/ClipLoader";
 import useDisplayBooks from "../../hooks/useDisplayBooks";
-import { useEffect } from "react";
 
 const Cards = () => {
-  const queryParameters = new URLSearchParams(window.location.search);
-  const group = queryParameters.get("group");
   const {
     handleChange,
     displayBooks,
@@ -14,7 +11,7 @@ const Cards = () => {
     setWardanSeries,
     setSpaceSeries,
     setPopup,
-    setQuery,
+    category,
     popup,
     lang,
     wardanSeries,
@@ -23,22 +20,6 @@ const Cards = () => {
     query,
     books,
   } = useDisplayBooks();
-
-  useEffect(() => {
-    if (group === "From 3 years to 6 years") {
-      //! 3 - 6
-      setQuery((prev) => ({ ...prev, ageGroup: "6 - 9 سنوات" }));
-    } else if (group === "From 6 years to 9 years") {
-      //! 6 - 9
-      setQuery((prev) => ({ ...prev, ageGroup: "9 - 12 سنوات" }));
-    } else if (group === "From 9 years to 12 years") {
-      //! 9 - 12
-      setQuery((prev) => ({ ...prev, ageGroup: "12 - 15 سنوات" }));
-    } else if (group === "From 12 years to 15 years") {
-      //! 12 - 15
-      setQuery((prev) => ({ ...prev, ageGroup: "15 - 20 سنوات" }));
-    }
-  }, []);
 
   return (
     <>
@@ -72,7 +53,7 @@ const Cards = () => {
             </>
           )}
         </select>
-        <select onChange={handleChange} name="category">
+        <select value={category} onChange={handleChange} name="category">
           {lang === "en" ? (
             <>
               <option value={""}>All Categories</option>
