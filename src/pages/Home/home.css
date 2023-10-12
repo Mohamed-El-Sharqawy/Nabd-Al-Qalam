@@ -97,6 +97,7 @@
   border-radius: 4px;
   border: 2px solid #c0114c;
   transition: 0.5s ease-in;
+  min-width: 110px;
 }
 .btn:hover {
   background-color: #c0114c;

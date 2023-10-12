@@ -1,6 +1,7 @@
 import Popup from "../Popup/Popup";
 import ClipLoader from "react-spinners/ClipLoader";
 import useDisplayBooks from "../../hooks/useDisplayBooks";
+import { memo } from "react";
 
 const Cards = () => {
   const {
@@ -24,7 +25,7 @@ const Cards = () => {
   return (
     <>
       <div className="books-filter">
-        <select value={query.ageGroup} onChange={handleChange} name="ageGroup">
+        <select value={query?.ageGroup} onChange={handleChange} name="ageGroup">
           {lang === "en" ? (
             <>
               <option value={""}>All Age Groups</option>
@@ -53,7 +54,11 @@ const Cards = () => {
             </>
           )}
         </select>
-        <select value={category} onChange={handleChange} name="category">
+        <select
+          value={category || query?.category}
+          onChange={handleChange}
+          name="category"
+        >
           {lang === "en" ? (
             <>
               <option value={""}>All Categories</option>
@@ -159,4 +164,4 @@ const Cards = () => {
   );
 };
 
-export default Cards;
+export default memo(Cards);

@@ -41,7 +41,7 @@
 
 .hero .container {
   animation: scale 1s;
-  min-height: calc(100vh - 178px);
+  min-height: calc(100vh - 153px);
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -166,31 +166,31 @@
 
 @keyframes up-down {
   from {
-    top: 3rem;
+    transform: translateY(3rem);
   }
   to {
-    top: -1rem;
+    transform: translateY(-1rem);
   }
 }
 
 @keyframes slide-right {
   from {
-    left: -100%;
+    transform: translateX(-100%);
     opacity: 0;
   }
   to {
-    left: 0;
+    transform: translateX(0);
     opacity: 1;
   }
 }
 
 @keyframes slide-left {
   from {
-    left: 100%;
+    transform: translateX(100%);
     opacity: 0;
   }
   to {
-    left: 0;
+    transform: translateX(0);
     opacity: 1;
   }
 }

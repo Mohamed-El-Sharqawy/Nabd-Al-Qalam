@@ -1,21 +1,22 @@
 #file-upload {
   display: none;
 }
-.heading-book h1{
-color: #fa8411;
-width: fit-content;
-position: relative;
-text-align: center;
-margin: 0 auto;
+.heading-book h1 {
+  color: #fa8411;
+  width: fit-content;
+  position: relative;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 24px;
 }
-.heading-book h1::before{
+.heading-book h1::before {
   content: "";
   position: absolute;
   top: 40px;
   height: 3px;
   background-color: #fa8411;
   width: 100%;
-} 
+}
 .add-form {
   display: flex;
   flex-direction: column;
@@ -90,11 +91,11 @@ margin: 0 auto;
 }
 @media screen and (max-width: 531px) {
   .add-form {
-padding-top: 20px;
+    padding-top: 20px;
   }
 }
 @media screen and (max-width: 415px) {
   .add-form {
-padding-top: 40px;
+    padding-top: 40px;
   }
 }

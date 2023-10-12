@@ -13,8 +13,6 @@ const AgeCard = ({ card }) => {
       prev.set("group", href);
       return prev;
     });
-
-    // window.history.pushState(null, null, href);
   };
 
   return (
@@ -24,6 +22,7 @@ const AgeCard = ({ card }) => {
         opacity: 1,
         transition: { duration: 0.75, delay: 0.4 * (card.id - 1) },
       }}
+      viewport={{ once: true }}
       className={`${lang === "en" ? "age-card" : "age-card-reverse"}`}
     >
       <div className="content">
@@ -51,6 +50,7 @@ const AgeCard = ({ card }) => {
           scale: 1,
           transition: { duration: 1, delay: 0.5 * card.id - 1 },
         }}
+        viewport={{ once: true }}
       >
         <img src={card.img} alt="age group" />
       </motion.div>

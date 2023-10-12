@@ -1,11 +1,14 @@
 import TopNav from "./TopNav/TopNav";
 import MiddNav from "./MiddNav/MiddNav";
+import { useRef } from "react";
 
 const Header = () => {
+  const headerRef = useRef(null);
+
   return (
-    <header>
+    <header ref={headerRef}>
       <TopNav />
-      <MiddNav />
+      <MiddNav headerRef={headerRef} />
     </header>
   );
 };

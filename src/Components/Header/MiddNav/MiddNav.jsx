@@ -10,7 +10,7 @@ import { logout } from "../../../features/slices/authSlice";
 import { logo, uae, uk } from "../../../assets/images";
 import MobileMenu from "../MobileMenu/MobileMenu";
 
-const MiddNav = () => {
+const MiddNav = ({ headerRef }) => {
   const [headerScroll, setHeaderScroll] = useState("");
   const [isMenuHidden, setIsMenuHidden] = useState(true);
   const { cartItems } = useSelector((state) => state.cart);
@@ -30,7 +30,7 @@ const MiddNav = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      if (window.pageYOffset >= 178) {
+      if (window.pageYOffset >= headerRef?.current.clientHeight) {
         setHeaderScroll("middnav-scroll");
       } else {
         setHeaderScroll("");
@@ -50,7 +50,7 @@ const MiddNav = () => {
       >
         <div className="logo">
           <Link to="/">
-            <img width={120} height={121} src={logo} alt="logo" />
+            <img width={80} height={80} src={logo} alt="logo" />
           </Link>
         </div>
         <div className="leftlinks-search">

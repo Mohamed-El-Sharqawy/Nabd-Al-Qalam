@@ -1,5 +1,5 @@
 header {
-  min-height: 178px;
+  min-height: 153px;
 }
 .middnav {
   position: static;
@@ -134,7 +134,7 @@ header {
   aspect-ratio: 1;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1023px) {
   .leftlinks-search {
     display: none;
   }
@@ -145,5 +145,17 @@ header {
 
   .menu {
     display: block;
+  }
+
+  .mobile-menu {
+    gap: 2rem;
+  }
+
+  .mobile-menu li {
+    font-size: 14px;
+  }
+
+  .mobile-menu li img {
+    width: 25px;
   }
 }

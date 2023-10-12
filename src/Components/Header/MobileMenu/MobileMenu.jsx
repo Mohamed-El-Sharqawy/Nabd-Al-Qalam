@@ -37,6 +37,18 @@ const MobileMenu = ({ setIsMenuHidden, isMenuHidden }) => {
           {lang === "en" ? "Contact" : "تواصل معنا"}
         </Link>
       </li>
+      {user.isAdmin && (
+        <li>
+          <Link onClick={handleClick} to="/add-books">
+            {lang === "en" ? "Add Books" : "أضف بعض الكتب"}
+          </Link>
+        </li>
+      )}
+      <li>
+        <Link onClick={handleClick} to="/activities">
+          {lang === "en" ? "Activities" : "أنشطة الدار"}
+        </Link>
+      </li>
       <li>
         <Link
           onClick={handleClick}
@@ -74,32 +86,34 @@ const MobileMenu = ({ setIsMenuHidden, isMenuHidden }) => {
           </Link>
         </li>
       )}
-      <button
-        dir={lang === "en" ? "ltr" : "rtl"}
-        onClick={() => {
-          dispatch(switchLang());
-          handleClick();
-        }}
-        style={{ cursor: "pointer" }}
-        className="mobile-nav-lang mobile-nav-link"
-      >
-        <span>{lang === "en" ? "Switch Language" : "تغيير اللغة"}</span>
-        {lang === "en" ? (
-          <img
-            src={uae}
-            width={30}
-            style={{ objectFit: "cover" }}
-            alt="uae-flag"
-          />
-        ) : (
-          <img
-            src={uk}
-            width={30}
-            style={{ objectFit: "cover" }}
-            alt="uk-flag"
-          />
-        )}
-      </button>
+      <li>
+        <button
+          dir={lang === "en" ? "ltr" : "rtl"}
+          onClick={() => {
+            dispatch(switchLang());
+            handleClick();
+          }}
+          style={{ cursor: "pointer" }}
+          className="mobile-nav-lang mobile-nav-link"
+        >
+          <span>{lang === "en" ? "Switch Language" : "تغيير اللغة"}</span>
+          {lang === "en" ? (
+            <img
+              src={uae}
+              width={30}
+              style={{ objectFit: "cover" }}
+              alt="uae-flag"
+            />
+          ) : (
+            <img
+              src={uk}
+              width={30}
+              style={{ objectFit: "cover" }}
+              alt="uk-flag"
+            />
+          )}
+        </button>
+      </li>
     </ul>
   );
 };
