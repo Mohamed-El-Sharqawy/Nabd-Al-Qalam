@@ -32,6 +32,26 @@ footer ul li:has(h1) {
   gap: 0.6rem;
 }
 
+footer .payment-methods {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer .payment-methods li {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  column-gap: 8rem;
+  cursor: default;
+}
+
+footer .payment-methods li img {
+  width: 75px;
+  height: 75px;
+  object-fit: contain;
+}
+
 @media screen and (max-width: 1165px) {
   footer {
     flex-wrap: wrap;
@@ -40,6 +60,10 @@ footer ul li:has(h1) {
 
   footer ul {
     width: 46.5%;
+  }
+
+  footer .payment-methods {
+    justify-content: start;
   }
 }
 
@@ -52,6 +76,10 @@ footer ul li:has(h1) {
 @media screen and (max-width: 550px) {
   footer {
     width: 100%;
+  }
+
+  footer .payment-methods li {
+    column-gap: 2rem;
   }
 }
 
