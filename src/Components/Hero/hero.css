@@ -95,7 +95,7 @@
   border-radius: 6px;
   color: white;
   padding: 0.8rem 1.4rem;
-  animation: appear 2s;
+  animation: appear ease 2s;
   transition: 0.35s;
   z-index: 1;
 }

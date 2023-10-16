@@ -9,6 +9,7 @@ import Signup from "../pages/Singup/Signup";
 import Login from "../pages/Login/Login";
 import Cards from "../Components/Cards/Cards";
 import Activities from "../pages/Activities/Activities";
+
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -32,7 +33,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "activities",
-        element: <Activities />
+        element: <Activities />,
       },
       {
         path: "shopping-cart",

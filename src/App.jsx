@@ -14,6 +14,7 @@ import KeyboardDoubleArrowUpIcon from "@mui/icons-material/KeyboardDoubleArrowUp
 const App = () => {
   const { pathname } = useLocation();
   const dispatch = useDispatch();
+  const [isLoading, setIsLoading] = useState(true);
 
   const getLoggedUser = async (decodedToken) => {
     const res = await axios.get(
@@ -49,8 +50,17 @@ const App = () => {
     });
   }, []);
 
+  useEffect(() => {
+    let timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  });
+
   const top = () => {
     window.scrollTo(0, 0);
+    setIsLoading(false);
   };
 
   return (
@@ -64,6 +74,14 @@ const App = () => {
         <span onClick={top} className="top">
           <KeyboardDoubleArrowUpIcon />
         </span>
+      </div>
+      {/* Loader */}
+      <div
+        className={`loader-container ${
+          !isLoading && "loader-container-fadeOut"
+        }`}
+      >
+        <span class="loader"></span>
       </div>
     </>
   );
