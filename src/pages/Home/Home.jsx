@@ -1,5 +1,5 @@
 import Hero from "../../Components/Hero/Hero";
-// import SliderWardan from "../../Components/SliderWardan/SliderWardan";
+import SliderWardan from "../../Components/SliderWardan/SliderWardan";
 // import BadrandBdur from "../../Components/BadrandBdur/Badr";
 import AgeGroups from "../../Components/AgeGroups/AgeGroups";
 import "./home.css";
@@ -13,8 +13,8 @@ const Home = () => {
       <div className="images-container">
         <Hero />
         <AgeGroups />
-        {/* <SliderWardan />
-        <BadrandBdur /> */}
+        <SliderWardan />
+        {/* <BadrandBdur /> */}
         <Design />
       </div>
     </>

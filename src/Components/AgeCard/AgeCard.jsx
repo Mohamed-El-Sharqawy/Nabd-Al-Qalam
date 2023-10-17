@@ -41,7 +41,7 @@ const AgeCard = ({ card }) => {
           dir={lang === "en" ? "ltr" : "rtl"}
           onClick={() => handleClick(card?.enAge)}
         >
-          Browse Books
+          {lang === "en" ? "Browse Books" : "تصفح الكتب"}
         </button>
       </div>
       <motion.div

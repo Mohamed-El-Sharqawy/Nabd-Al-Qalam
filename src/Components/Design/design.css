@@ -1,5 +1,6 @@
 .design{
-    width: 100%;
+    width: 95%;
+    margin: 0 auto;
     height: 100vh;
     background-image: url("../../assets/char.jpg");
     background-position: center;
