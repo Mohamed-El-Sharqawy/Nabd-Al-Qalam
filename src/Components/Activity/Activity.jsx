@@ -7,10 +7,10 @@ const Activity = ({ activity }) => {
 
   return (
     <motion.div
-      initial={{ scale: 0 }}
+      initial={{ opacity: 0 }}
       whileInView={{
-        scale: 1,
-        transition: { duration: 0.75, type: "spring", bounce: 0.2 },
+        opacity: 1,
+        transition: { duration: 1.5 },
       }}
       viewport={{ once: true }}
       className="activity"

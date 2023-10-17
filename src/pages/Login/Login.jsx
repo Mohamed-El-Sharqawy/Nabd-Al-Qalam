@@ -7,21 +7,27 @@ const Login = () => {
   const [userData, setUser] = useState({
     email: "",
     password: "",
+    isError: false,
   });
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const res = await axios.post(import.meta.env.VITE_LOGIN_ENDPOINT, {
-      email: userData.email,
-      password: userData.password,
-    });
+    try {
+      setUser((prev) => ({ ...prev, isError: false }));
+      const res = await axios.post(import.meta.env.VITE_LOGIN_ENDPOINT, {
+        email: userData.email,
+        password: userData.password,
+      });
 
-    localStorage.setItem("jwt", JSON.stringify(res?.data?.token));
+      localStorage.setItem("jwt", JSON.stringify(res?.data?.token));
 
-    location.reload();
-    navigate("/");
+      location.reload();
+      navigate("/");
+    } catch (err) {
+      setUser((prev) => ({ ...prev, isError: true }));
+    }
   };
 
   useEffect(() => {
@@ -53,6 +59,9 @@ const Login = () => {
         value={userData.password}
         required
       />
+      <span className="error">
+        {userData?.isError && "* Incorrect Email Address or Password."}
+      </span>
       <Link to="/signup">Don't Have an Account ? Go to Signup Page</Link>
       <button>Login</button>
     </form>

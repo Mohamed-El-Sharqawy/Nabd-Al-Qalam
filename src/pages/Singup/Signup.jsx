@@ -9,6 +9,8 @@ const Signup = () => {
     email: "",
     password: "",
     confirmPassword: "",
+    isError: false,
+    isNotUnique: false,
   });
   const navigate = useNavigate();
 
@@ -16,20 +18,27 @@ const Signup = () => {
     e.preventDefault();
 
     if (user.password === user.confirmPassword) {
-      const res = await axios.post(import.meta.env.VITE_SIGNUP_ENDPOINT, {
-        email: user.email,
-        password: user.password,
-      });
+      try {
+        setUser((prev) => ({ ...prev, isError: false, isNotUnique: false }));
+        const res = await axios.post(import.meta.env.VITE_SIGNUP_ENDPOINT, {
+          email: user.email,
+          password: user.password,
+        });
 
-      localStorage.setItem("jwt", JSON.stringify(res?.data?.token));
+        localStorage.setItem("jwt", JSON.stringify(res?.data?.token));
 
-      if (res?.data?.user) {
-        navigate("/");
+        if (res?.data?.user) {
+          navigate("/");
+        }
+
+        setUser({ email: "", password: "", confirmPassword: "" });
+      } catch (err) {
+        if (err.response.data.errors.email == "Email already exists") {
+          setUser((prev) => ({ ...prev, isNotUnique: true }));
+        }
       }
-
-      setUser({ email: "", password: "", confirmPassword: "" });
     } else {
-      throw new Error("Passwords don't match");
+      setUser((prev) => ({ ...prev, isError: true }));
     }
   };
 
@@ -71,6 +80,10 @@ const Signup = () => {
         value={user.confirmPassword}
         required
       />
+      <span className="error">
+        {user?.isNotUnique && "* This Email Already Exists."}
+        {user?.isError && "* Passwords Don't Match."}
+      </span>
       <Link to="/login">Already Registered ? Go to Login Page</Link>
       <button>Sign Up</button>
     </form>
