@@ -70,7 +70,7 @@ const About = () => {
         className="About"
       >
         <div className="left-about">
-          <h3 style={lang === "ar" ? { fontSize: "25px" } : {}}>
+          <h3 style={lang === "ar" ? { fontSize: "22px" } : {}}>
             {lang === "en"
               ? "Nabdu Al- Qalam for Publishing and Distribution"
               : "نبض القلم للنشر والتوزيع"}
@@ -79,7 +79,7 @@ const About = () => {
             style={
               lang === "en"
                 ? { textAlign: "left", fontSize: "14px" }
-                : { textAlign: "right", fontSize: "19px" }
+                : { textAlign: "right", fontSize: "17px" }
             }
           >
             {lang === "en" ? enAbout : arAbout}

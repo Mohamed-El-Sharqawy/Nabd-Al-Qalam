@@ -21,7 +21,7 @@ const Cart = () => {
           ? { flexDirection: "row" }
           : { flexDirection: "row-reverse" }
       }
-      className="shopping-cart"
+      className={`shopping-cart ${!cartItems.length > 0 ? "empty-cart" : ""}`}
     >
       {cartItems.length > 0 ? (
         <>
@@ -148,21 +148,21 @@ const Cart = () => {
           </div>
         </>
       ) : (
-        <h1>
+        <h1 className="empty-heading">
           {lang === "en" ? (
-            <>
+            <span>
               Cart is Empty{" "}
               <Link className="shopping-cart-link" to="/">
                 Go Add a Book to Buy
               </Link>
-            </>
+            </span>
           ) : (
-            <>
+            <span>
               العربة فارغة{" "}
               <Link className="shopping-cart-link" to="/">
                 اذهب لاضافة بعض الكتب للشراء
               </Link>
-            </>
+            </span>
           )}
         </h1>
       )}

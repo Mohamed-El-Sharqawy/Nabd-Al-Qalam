@@ -37,7 +37,6 @@ const AddBooks = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log(book);
     createBook(book);
   };
 

@@ -6,6 +6,10 @@
   justify-content: space-between;
 }
 
+.shopping-cart.empty-cart {
+  height: 50vh;
+}
+
 .shopping-cart-items {
   display: flex;
   flex-direction: column;
@@ -98,6 +102,14 @@
 .shopping-cart .shopping-cart-link {
   color: #c0114c;
   text-decoration: underline;
+  margin: 0 0.5rem;
+}
+
+.shopping-cart h1.empty-heading {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .shopping-cart .quantity {

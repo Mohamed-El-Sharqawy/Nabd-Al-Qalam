@@ -1,5 +1,6 @@
 .container-about {
   position: relative;
+  margin: 0 0 3rem;
 }
 .container-about h1 {
   text-align: center;
