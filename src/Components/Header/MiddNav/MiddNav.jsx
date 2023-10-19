@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import { logout } from "../../../features/slices/authSlice";
 import { logo, uae, uk } from "../../../assets/images";
 import MobileMenu from "../MobileMenu/MobileMenu";
-
+import axios from "axios"
 const MiddNav = ({ headerRef }) => {
   const [headerScroll, setHeaderScroll] = useState("");
   const [isMenuHidden, setIsMenuHidden] = useState(true);
@@ -37,6 +37,19 @@ const MiddNav = ({ headerRef }) => {
       }
     });
   }, []);
+
+  //currency convert
+  const getRates = async() => {
+    const data = axios.get(
+      `https://api.currencyfreaks.com/v2.0/rates/latest?apikey=88ca8ee0d52b4a0d9c7d2351f3eb7b8e`
+    );
+    console.log(data);
+  }
+
+  useEffect(() => {
+    getRates();
+  }, [])
+  
 
   return (
     <div className={`middnav ${headerScroll}`}>
@@ -113,11 +126,17 @@ const MiddNav = ({ headerRef }) => {
               {lang == "en" ? "LOGOUT" : "تسجيل خروج"}
             </button>
           )}
+          <select className="countryPrice">
+            <option value="AED">AED</option>
+            <option value="SAR">SAR</option>
+            <option value="OMR">OMR</option>
+            <option value="QAR">QAR</option>
+          </select>
           <button className="lang-btn" onClick={handleLangSwitch}>
             {lang === "en" ? (
-              <img src={uae} alt="uae-flag" />
+              <img src={uae} alt="UAE-flag" />
             ) : (
-              <img src={uk} alt="uae-flag" />
+              <img src={uk} alt="UK-flag" />
             )}
           </button>
         </div>

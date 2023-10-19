@@ -1,7 +1,8 @@
 import Activity from "../../Components/Activity/Activity";
 import "./activities.css";
-
+import { useSelector } from "react-redux";
 const Activities = () => {
+  const {lang} = useSelector((state)=>state.lang)
   const activites = [
     { ar: "ورش تعليمية", en: "Educational Workshops" },
     {
@@ -43,10 +44,13 @@ const Activities = () => {
   ];
 
   return (
-    <section className="activities">
+    <section className="headingActivity">
+      <h1>{lang === "en" ? "Activities" : "أنشطة الدار"} </h1>
+      <div className="activities">
       {activites.map((activity) => (
         <Activity activity={activity} />
       ))}
+      </div>
     </section>
   );
 };
