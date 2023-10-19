@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./addBooks.css";
 
@@ -18,6 +19,8 @@ const AddBooks = () => {
     img: "",
   };
   const { lang } = useSelector((state) => state.lang);
+  const { user } = useSelector((state) => state.auth);
+  const navigate = useNavigate();
 
   const [book, setBook] = useState(defaultFormData);
 
@@ -60,6 +63,12 @@ const AddBooks = () => {
       };
     });
   }
+
+  useEffect(() => {
+    if (!user.isAdmin) {
+      navigate("/");
+    }
+  }, []);
 
   return (
     <form onSubmit={handleSubmit} className="add-form">
