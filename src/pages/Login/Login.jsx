@@ -34,7 +34,7 @@ const Login = () => {
     if (localStorage.getItem("jwt")) {
       navigate("/");
     }
-  });
+  }, []);
 
   const handleChange = (e) => {
     setUser(() => ({ ...userData, [e.target.name]: e.target.value }));

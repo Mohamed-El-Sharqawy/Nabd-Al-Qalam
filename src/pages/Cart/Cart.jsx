@@ -1,6 +1,11 @@
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useDispatch, useSelector } from "react-redux";
-import { clearItem, getTotal } from "../../features/slices/cartSlice";
+import {
+  addToCart,
+  clearItem,
+  getTotal,
+  deleteFromCart,
+} from "../../features/slices/cartSlice";
 import "./cart.css";
 import { Link } from "react-router-dom";
 
@@ -37,7 +42,7 @@ const Cart = () => {
                     {lang == "en" ? book.enTitle : book.arTitle}
                   </h2>
                   <p dir={lang === "en" ? "ltr" : "rtl"}>
-                    {lang === "en" ? "Price:" : "السعر: "}
+                    {lang === "en" ? "Price: " : "السعر: "}
                     {book.price}
                     {lang == "en" ? " AED" : " درهم"}
                   </p>
@@ -52,8 +57,25 @@ const Cart = () => {
                       {book.numberOfPages}
                     </p>
                   )}
-                  <p dir={lang === "en" ? "ltr" : "rtl"}>
-                    {lang === "en" ? "َQuantity: " : "الكمية: "} {book.quantity}
+                  <p className="quantity" dir={lang === "en" ? "ltr" : "rtl"}>
+                    {lang === "en" ? "َQuantity: " : "الكمية: "}{" "}
+                    <button
+                      onClick={() => {
+                        dispatch(addToCart(book));
+                        dispatch(getTotal());
+                      }}
+                    >
+                      +
+                    </button>
+                    <span>{book.quantity}</span>{" "}
+                    <button
+                      onClick={() => {
+                        dispatch(deleteFromCart(book));
+                        dispatch(getTotal());
+                      }}
+                    >
+                      -
+                    </button>
                   </p>
                   <div
                     style={
@@ -89,23 +111,35 @@ const Cart = () => {
               }
             >
               {lang === "en" ? "Books" : "سعر الكتب"}
-              <span dir={lang === "en"? "ltr" : "rtl"}>
+              <span dir={lang === "en" ? "ltr" : "rtl"}>
                 {cartTotalPrice}
                 {lang == "en" ? " AED" : " درهم"}
               </span>
             </p>
-            <p style={lang === "en" ? { flexDirection: "row" } : { flexDirection: "row-reverse" }}>
+            <p
+              style={
+                lang === "en"
+                  ? { flexDirection: "row" }
+                  : { flexDirection: "row-reverse" }
+              }
+            >
               {lang === "en" ? "Shipping" : "مصاريف الشحن"}
-              <span dir = { lang === "en" ? "ltr" : "rtl"}>
+              <span dir={lang === "en" ? "ltr" : "rtl"}>
                 {cartItems?.length > 0 ? 5 : 0}{" "}
                 {lang == "en" ? " AED" : " درهم"}
               </span>
             </p>
-            <h3 style={lang === "en" ? { flexDirection: "row" } : { flexDirection: "row-reverse" }}>
+            <h3
+              style={
+                lang === "en"
+                  ? { flexDirection: "row" }
+                  : { flexDirection: "row-reverse" }
+              }
+            >
               {lang === "en"
                 ? "The total amount (Tax Included)"
                 : "المبلغ الكلي (بمصاريف الشحن)"}{" "}
-              <span dir={ lang === "en" ? "ltr" : "rtl"}>
+              <span dir={lang === "en" ? "ltr" : "rtl"}>
                 {cartTotalPrice + (cartItems?.length > 0 ? 5 : 0)}
                 {lang == "en" ? " AED" : " درهم"}
               </span>

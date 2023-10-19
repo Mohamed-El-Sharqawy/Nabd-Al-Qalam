@@ -14,5 +14,5 @@
   width: 90%;
   height: 200px;
   object-fit: fill;
-  cursor: pointer;
+  cursor: grab;
 }

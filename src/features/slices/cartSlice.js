@@ -29,6 +29,20 @@ export const cartSlice = createSlice({
       localStorage.setItem("cart", JSON.stringify(state.cartItems));
     },
 
+    //! Delete a Specific Item from The Cart
+    deleteFromCart: (state, action) => {
+      const itemIndex = state.cartItems.findIndex(
+        (item) => item?._id == action.payload?._id
+      );
+
+      if (state.cartItems[itemIndex].quantity > 1) {
+        state.cartItems[itemIndex].quantity -= 1;
+      } else {
+        state.cartItems.splice(itemIndex, 1);
+      }
+
+      localStorage.setItem("cart", JSON.stringify(state.cartItems));
+    },
     //! Clear the Cart from the Chosen Book
     clearItem: (state, action) => {
       state.cartItems = state.cartItems.filter(

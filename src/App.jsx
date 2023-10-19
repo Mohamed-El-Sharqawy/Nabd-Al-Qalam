@@ -3,38 +3,16 @@ import { useEffect, useState } from "react";
 import Newsletter from "./Components/Newsletter/Newsletter";
 import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
-import jwtDecode from "jwt-decode";
-import axios from "axios";
 import { ToastContainer } from "react-toastify";
-import { useDispatch } from "react-redux";
-import { login } from "./features/slices/authSlice";
 import "react-toastify/dist/ReactToastify.css";
 import KeyboardDoubleArrowUpIcon from "@mui/icons-material/KeyboardDoubleArrowUp";
 
 const App = () => {
   const { pathname } = useLocation();
-  const dispatch = useDispatch();
   const [isLoading, setIsLoading] = useState(true);
-
-  const getLoggedUser = async (decodedToken) => {
-    const res = await axios.get(
-      `${import.meta.env.VITE_USERS_ENDPOINT}${decodedToken?.id}`
-    );
-
-    dispatch(login(res.data));
-  };
 
   useEffect(() => {
     window.scroll({ top: 0 });
-    const token = localStorage.getItem("jwt");
-
-    if (token) {
-      const decodedToken = jwtDecode(token);
-
-      if (decodedToken) {
-        getLoggedUser(decodedToken);
-      }
-    }
   }, [pathname]);
 
   //SCROLL TOP
@@ -81,7 +59,7 @@ const App = () => {
           !isLoading && "loader-container-fadeOut"
         }`}
       >
-        <span class="loader"></span>
+        <span className="loader"></span>
       </div>
     </>
   );
