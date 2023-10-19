@@ -8,6 +8,8 @@
 
 .shopping-cart.empty-cart {
   height: 50vh;
+  width: 100%;
+  padding: 6rem 0;
 }
 
 .shopping-cart-items {
@@ -100,9 +102,13 @@
 }
 
 .shopping-cart .shopping-cart-link {
-  color: #c0114c;
+  color: #d11e5a;
   text-decoration: underline;
-  margin: 0 0.5rem;
+}
+
+.shopping-cart .shopping-cart-link:hover {
+  color: #a61c4a;
+  text-decoration: none;
 }
 
 .shopping-cart h1.empty-heading {
@@ -156,6 +162,13 @@
 @media screen and (max-width: 550px) {
   .shopping-cart {
     margin-top: 60px;
+  }
+
+  .shopping-cart .shopping-cart-link {
+    color: #c0114c;
+    text-decoration: underline;
+    display: block;
+    font-size: 20px;
   }
 }
 @media screen and (max-width: 450px) {

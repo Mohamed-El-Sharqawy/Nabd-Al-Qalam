@@ -152,14 +152,14 @@ const Cart = () => {
           {lang === "en" ? (
             <span>
               Cart is Empty{" "}
-              <Link className="shopping-cart-link" to="/">
+              <Link className="shopping-cart-link" to="/books">
                 Go Add a Book to Buy
               </Link>
             </span>
           ) : (
             <span>
               العربة فارغة{" "}
-              <Link className="shopping-cart-link" to="/">
+              <Link className="shopping-cart-link" to="/books">
                 اذهب لاضافة بعض الكتب للشراء
               </Link>
             </span>

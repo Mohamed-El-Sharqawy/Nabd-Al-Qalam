@@ -9,7 +9,7 @@
   align-items: center;
   flex-wrap: wrap;
   margin: 3rem auto;
-  height: 50vh;
+  min-height: 50vh;
 }
 .card {
   width: 220px;
@@ -389,20 +389,3 @@ button {
     width: 100%;
   }
 }
-
-/*FILTER*/
-/* @media screen and (max-width: 764px) {
-  .books-filter {
-    padding-top: 30px;
-  }
-}
-@media screen and (max-width: 552px) {
-  .books-filter {
-    padding-top: 65px;
-  }
-}
-@media screen and (max-width: 531px) {
-  .books-filter {
-    padding-top: 50px;
-  }
-} */

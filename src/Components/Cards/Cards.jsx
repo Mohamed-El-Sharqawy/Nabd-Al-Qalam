@@ -29,10 +29,10 @@ const Cards = () => {
           {lang === "en" ? (
             <>
               <option value={""}>All Age Groups</option>
-              <option value={"6 - 9 سنوات"}>6 - 9 Years</option>
-              <option value={"9 - 12 سنوات"}>9 - 12 Years</option>
-              <option value={"12 - 15 سنوات"}>12 - 15 Years</option>
-              <option value={"15 - 20 سنوات"}>15 - 20 Years</option>
+              <option value={"6 - 9 سنوات"}>3 - 6 Years</option>
+              <option value={"9 - 12 سنوات"}>6 - 9 Years</option>
+              <option value={"12 - 15 سنوات"}>9 - 12 Years</option>
+              <option value={"15 - 20 سنوات"}>12 - 15 Years</option>
             </>
           ) : (
             <>
@@ -40,16 +40,16 @@ const Cards = () => {
                 كل الفئات العمرية
               </option>
               <option value={"6 - 9 سنوات"} dir="rtl">
-                6 - 9 سنوات
+                3 - 6 سنوات
               </option>
               <option value={"9 - 12 سنوات"} dir="rtl">
-                9 - 12 سنوات
+                6 - 9 سنوات
               </option>
               <option value={"12 - 15 سنوات"} dir="rtl">
-                12 - 15 سنوات
+                9 - 12 سنوات
               </option>
               <option value={"15 - 20 سنوات"} dir="rtl">
-                15 - 20 سنوات
+                12 - 15 سنوات
               </option>
             </>
           )}

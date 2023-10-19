@@ -181,16 +181,16 @@ const AddBooks = () => {
       >
         <option dir="rtl">اختر الفئة العمرية من فضلك</option>
         <option value={"6 - 9 سنوات"} dir="rtl">
-          6 - 9 سنوات
+          3 - 6 سنوات
         </option>
         <option value={"9 - 12 سنوات"} dir="rtl">
-          9 - 12 سنوات
+          6 - 9 سنوات
         </option>
         <option value={"12 - 15 سنوات"} dir="rtl">
-          12 - 15 سنوات
+          9 - 12 سنوات
         </option>
         <option value={"15 - 20 سنوات"} dir="rtl">
-          15 - 20 سنوات
+          12 - 15 سنوات
         </option>
       </select>
       <label htmlFor="file-upload">
