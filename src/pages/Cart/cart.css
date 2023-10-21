@@ -90,15 +90,19 @@
   width: 100%;
   color: white;
   margin-top: 1.5rem;
-  background-color: #fa8411;
+  /* background-color: #fa8411; */
+  background-color: rgba(0,0,0,0.6);
   border: none;
   border-radius: 8px;
   padding: 0.75rem 0;
   transition: 0.35s;
+  font-weight: bold;
 }
 
 .shopping-cart .shopping-cart-info button:hover {
-  background-color: #e1760b;
+  /* background-color: #e1760b; */
+  background-color: rgb(235, 184, 117);
+  color: #333;
 }
 
 .shopping-cart .shopping-cart-link {
@@ -123,17 +127,29 @@
   align-items: center;
   gap: 0.5rem;
 }
-
+.countQuantity{
+  font-weight: bold;
+  font-size: 18px;
+}
 .shopping-cart .quantity button {
-  background-color: #fa8411;
+  /* background-color: #fa8411; */
+  background-color: rgba(0,0,0,0.6);
   border: none;
   color: white;
-  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 16px;
   transition: 0.35s ease-out;
 }
 
 .shopping-cart .quantity button:hover {
-  background-color: #e1760b;
+  /* background-color: #e1760b; */
+  background-color: rgb(235, 184, 117);
+  color: #333;
 }
 
 @media screen and (max-width: 1023px) {

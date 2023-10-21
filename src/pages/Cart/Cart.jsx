@@ -67,7 +67,7 @@ const Cart = () => {
                     >
                       +
                     </button>
-                    <span>{book.quantity}</span>{" "}
+                    <span className="countQuantity">{book.quantity}</span>{" "}
                     <button
                       onClick={() => {
                         dispatch(deleteFromCart(book));

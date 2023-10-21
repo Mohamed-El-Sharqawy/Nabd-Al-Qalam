@@ -100,7 +100,9 @@
   opacity: 0;
   transition: 0.35s;
   z-index: 4;
-  background-color: #c0114c;
+  /* background-color: #c0114c; */
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 2px solid rgb(235, 184, 117);
   padding: 0.5rem 1rem;
   font-size: 14px;
   border-radius: 4px;
@@ -109,7 +111,8 @@
 }
 
 .activities .activity a:hover {
-  background-color: #99123f;
+  /* background-color: #99123f; */
+  background-color: rgb(235, 184, 117);
 }
 
 .activities .activity:hover a,

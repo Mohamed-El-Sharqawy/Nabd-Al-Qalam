@@ -16,7 +16,9 @@
   border-radius: 6px;
   position: relative;
   margin: 10px;
-  background-color: #c0114c;
+  /* background-color: #c0114c; */
+  /* background-color: teal; */
+  background-color: rgb(235, 184, 117);
 }
 .card-img img {
   width: 100%;
@@ -37,18 +39,16 @@
   opacity: 1;
 }
 .card-caption {
-  padding: 8px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 0.25rem;
-  background-color: #c0114c;
   padding: 1.5rem 8px;
 }
 .card-caption .caption {
   font-size: 14px;
   font-weight: bold;
-  color: #fff;
+  color: #333;
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
@@ -57,7 +57,7 @@
 .card-caption .price {
   font-size: 14px;
   font-weight: bold;
-  color: #fff;
+  color: #333;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -89,19 +89,24 @@
   cursor: pointer;
 }
 .icons svg:hover {
-  color: #c0114c;
+  color: #bbbbbb;
   transform: scale(1.2);
 }
 .btn {
   background: transparent;
   color: #fff;
   border-radius: 4px;
-  border: 2px solid #c0114c;
+  /* border: 2px solid #c0114c; */
+  /* border: 2px solid teal; */
+  border: 2px solid rgb(235, 184, 117);
   transition: 0.5s ease-in;
   min-width: 110px;
+  font-size: 12px;
+  font-weight: bold;
 }
 .btn:hover {
-  background-color: #c0114c;
+  background-color: rgb(235, 184, 117);
+  color: #333;
 }
 
 .popup {
