@@ -1,6 +1,5 @@
 import { useSelector } from "react-redux";
 import "./about.css";
-import { about } from "../../assets/images";
 
 const About = () => {
   const { lang } = useSelector((state) => state.lang);
@@ -86,7 +85,12 @@ const About = () => {
           </p>
         </div>
         <div className="right-about">
-          <img src={about} alt="about-image" />
+          <img
+            src={
+              "https://res.cloudinary.com/dxfphp6to/image/upload/v1697903947/nabdu_al_qalam/about_ewapvl.jpg"
+            }
+            alt="about-image"
+          />
         </div>
       </div>
     </section>

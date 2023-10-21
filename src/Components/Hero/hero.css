@@ -1,42 +1,8 @@
 .hero {
   overflow: hidden;
-  background: linear-gradient(
-      to top right,
-      #99123f,
-      #99123f,
-      #fa8411,
-      #fa8411,
-      #99123f,
-      transparent
-    ),
-    linear-gradient(
-      to top right,
-      #99123f,
-      #99123f,
-      #fa8411,
-      #fa8411,
-      #99123f,
-      transparent
-    ),
-    linear-gradient(
-      to top left,
-      #fa8411,
-      #fa8411,
-      #99123f,
-      #99123f,
-      #99123f,
-      transparent
-    ),
-    linear-gradient(
-      to top left,
-      #fa8411,
-      #fa8411,
-      #99123f,
-      #99123f,
-      #99123f,
-      transparent
-    );
-  background-blend-mode: screen;
+  background-image: url("https://free4kwallpapers.com/uploads/originals/2022/04/04/gradient-wallpaper.jpg");
+  background-size: cover;
+  background-position: top;
 }
 
 .hero .container {
@@ -82,45 +48,18 @@
   position: relative;
   display: block;
   width: fit-content;
-  background: linear-gradient(
-    to bottom right,
-    #c0114c,
-    #c0114c,
-    #c0114c,
-    #fa8411,
-    #fa8411,
-    #fa8411
-  );
-  border: none;
+  background-color: #c0114c;
+  border: 1px solid #c0114c;
   border-radius: 6px;
   color: white;
   padding: 0.8rem 1.4rem;
   animation: appear ease 2s;
-  transition: 0.35s;
   z-index: 1;
+  transition: 0.35s;
 }
 
-.hero .container .content a::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  opacity: 0;
-  background: linear-gradient(
-    to top left,
-    #c0114c,
-    #c0114c,
-    #c0114c,
-    #fa8411,
-    #fa8411,
-    #fa8411
-  );
-  border-radius: 6px;
-  transition: 0.5s;
-}
-
-.hero .container .content a:hover::before {
-  opacity: 1;
+.hero .container .content a:hover {
+  background-color: #9c1441;
 }
 
 .hero .container .image-container img {

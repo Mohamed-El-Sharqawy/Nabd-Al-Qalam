@@ -1,5 +1,4 @@
 import { useSelector } from "react-redux";
-import { img_12_15, img_3_6, img_6_9, img_9_12 } from "../../assets/images";
 import AgeCard from "../AgeCard/AgeCard";
 import "./ageGroups.css";
 
@@ -9,25 +8,25 @@ const AgeGroups = () => {
   const cards = [
     {
       id: 1,
-      img: img_3_6,
+      img: "https://res.cloudinary.com/dxfphp6to/image/upload/v1697903920/nabdu_al_qalam/3-6_xpfzvq.png",
       arAge: "من 3 سنوات ل 6 سنوات",
       enAge: "From 3 years to 6 years",
     },
     {
       id: 2,
-      img: img_6_9,
+      img: "https://res.cloudinary.com/dxfphp6to/image/upload/v1697903942/nabdu_al_qalam/6-9_fo2hjt.png",
       arAge: "من 6 سنوات ل 9 سنوات",
       enAge: "From 6 years to 9 years",
     },
     {
       id: 3,
-      img: img_9_12,
+      img: "https://res.cloudinary.com/dxfphp6to/image/upload/v1697903946/nabdu_al_qalam/9-12_zmhwr0.png",
       arAge: "من 9 سنوات ل 12 سنة",
       enAge: "From 9 years to 12 years",
     },
     {
       id: 4,
-      img: img_12_15,
+      img: "https://res.cloudinary.com/dxfphp6to/image/upload/v1697903949/nabdu_al_qalam/12-15_jmtt53.png",
       arAge: "من 12 سنة ل 15 سنة",
       enAge: "From 12 years to 15 years",
     },

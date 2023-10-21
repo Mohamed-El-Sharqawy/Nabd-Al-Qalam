@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { space, wardan } from "../assets/images";
 import { Link, useSearchParams } from "react-router-dom";
 import SingleCard from "../Components/SingleCard/SingleCard";
 import { useSelector } from "react-redux";
@@ -87,7 +86,12 @@ const useDisplayBooks = () => {
                       });
                     }}
                   >
-                    <img src={space} alt="space-banner-series" />
+                    <img
+                      src={
+                        "https://res.cloudinary.com/dxfphp6to/image/upload/v1697903946/nabdu_al_qalam/banner-space_zrprfy.jpg"
+                      }
+                      alt="space-banner-series"
+                    />
                   </Link>
                 </div>
                 {/* Wardan */}
@@ -100,7 +104,12 @@ const useDisplayBooks = () => {
                       });
                     }}
                   >
-                    <img src={wardan} alt="wardan-banner-series" />
+                    <img
+                      src={
+                        "https://res.cloudinary.com/dxfphp6to/image/upload/v1697903946/nabdu_al_qalam/banner-wardan_xd8n1t.jpg"
+                      }
+                      alt="wardan-banner-series"
+                    />
                   </Link>
                 </div>
               </div>

@@ -59,7 +59,7 @@ header {
 }
 .cart .count {
   position: absolute;
-  top: -13px;
+  top: -6px;
   background-color: #fa8411;
   color: #fff;
   width: 25px;
@@ -73,21 +73,38 @@ header {
   background-color: transparent;
   border: none;
 }
+.cart a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .cart button img {
   width: 30px;
   height: 30px;
   border-radius: 50%;
   object-fit: cover;
 }
-
+button.auth-btn {
+  background-color: #fa8411;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: 0.35s;
+}
+button.auth-btn:hover {
+  background-color: #e27f1c;
+}
+button.lang-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .menu {
   display: none;
 }
-
 .menu .menu-icon {
   font-size: 30px;
 }
-
 .mobile-menu {
   position: fixed;
   top: 0;
