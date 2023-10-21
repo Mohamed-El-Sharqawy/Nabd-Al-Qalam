@@ -29,6 +29,8 @@ const AddBooks = () => {
       headers: {
         "Content-Type": "application/json;charset=UTF-8",
         "Access-Control-Allow-Origin": "https://nabd-al-qalam.vercel.app",
+        "Access-Control-Allow-Headers":
+          "access-control-allow-origin,content-type",
       },
     };
 
