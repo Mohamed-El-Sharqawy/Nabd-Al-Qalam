@@ -36,8 +36,6 @@ const MiddNav = ({ headerRef }) => {
     });
   }, []);
 
-  console.log(user);
-
   return (
     <div className={`middnav ${headerScroll}`}>
       <div
