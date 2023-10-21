@@ -29,7 +29,7 @@ const AddBooks = () => {
       headers: {
         "Content-Type": "application/json;charset=UTF-8",
         "Access-Control-Allow-Headers":
-          "Access-Control-Allow-Origin, Content-Type, Origin",
+          "access-control-allow-headers,access-control-allow-methods,access-control-allow-origin,content-type",
         "Access-Control-Allow-Origin": "https://nabd-al-qalam.vercel.app",
         "Access-Control-Allow-Methods": "GET, POST, OPTIONS, PUT, DELETE",
       },
