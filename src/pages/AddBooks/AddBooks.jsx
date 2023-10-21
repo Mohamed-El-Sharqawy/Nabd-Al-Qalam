@@ -25,8 +25,19 @@ const AddBooks = () => {
   const [book, setBook] = useState(defaultFormData);
 
   const createBook = async (newBook) => {
+    const axiosConfig = {
+      headers: {
+        "Content-Type": "application/json;charset=UTF-8",
+        "Access-Control-Allow-Origin": "https://nabd-al-qalam.vercel.app",
+      },
+    };
+
     try {
-      await axios.post(import.meta.env.VITE_ADD_BOOKS_ENDPOINT, newBook);
+      await axios.post(
+        import.meta.env.VITE_ADD_BOOKS_ENDPOINT,
+        newBook,
+        axiosConfig
+      );
 
       setBook(() => defaultFormData);
     } catch (err) {
