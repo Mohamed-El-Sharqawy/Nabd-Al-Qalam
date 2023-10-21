@@ -3,7 +3,7 @@ footer {
   display: flex;
   justify-content: space-between;
   gap: 3rem;
-  background-color: #c0114c;
+  background-color: rgb(235, 184, 117);
   color: white;
   padding: 2rem 3rem;
 }

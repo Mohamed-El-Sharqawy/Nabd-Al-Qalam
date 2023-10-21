@@ -20,7 +20,7 @@
 .contact {
   width: 900px;
   margin: 0 auto;
-  background-color: #c0114c;
+  background-color: rgb(235, 184, 117);
   color: white;
   padding: 1.5rem;
   display: flex;
@@ -40,11 +40,11 @@
 .contact .left-side textarea {
   padding: 0.5rem 0.75rem 0.5rem 0;
   border: none;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid #ddd;
   background-color: transparent;
   outline: none;
-  caret-color: #fa8411;
-  color: #fa8411;
+  caret-color: #c0114c;
+
   font-size: 16px;
 }
 
@@ -55,7 +55,7 @@
 
 .contact .left-side input::placeholder,
 .contact .left-side textarea::placeholder {
-  color: lightgray;
+  color: #333;
   transition: 0.35s;
   font-size: 13px;
 }
@@ -68,8 +68,8 @@
 }
 
 .contact .left-side button {
-  background-color: #fa8411;
-  border: 2px solid #fa8411;
+  background-color: #c0114c;
+  border: 2px solid #c0114c;
   color: white;
   cursor: pointer;
   width: fit-content;
@@ -79,8 +79,8 @@
 }
 
 .contact .left-side button:hover {
-  background-color: #e6790c;
-  border-color: #e6790c;
+  background-color: #9e1342;
+  border-color: #9e1342;
 }
 
 .contact .right-side {

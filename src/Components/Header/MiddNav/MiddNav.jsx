@@ -7,9 +7,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { switchLang } from "../../../features/slices/langSlice";
 import { useEffect, useState } from "react";
 import { logout } from "../../../features/slices/authSlice";
-import { logo, uae, uk } from "../../../assets/images";
 import MobileMenu from "../MobileMenu/MobileMenu";
-import axios from "axios"
+import axios from "axios";
 const MiddNav = ({ headerRef }) => {
   const [headerScroll, setHeaderScroll] = useState("");
   const [isMenuHidden, setIsMenuHidden] = useState(true);
@@ -38,18 +37,17 @@ const MiddNav = ({ headerRef }) => {
     });
   }, []);
 
-  //currency convert
-  const getRates = async() => {
-    const data = axios.get(
-      `https://api.currencyfreaks.com/v2.0/rates/latest?apikey=88ca8ee0d52b4a0d9c7d2351f3eb7b8e`
-    );
-    console.log(data);
-  }
+  // //currency convert
+  // const getRates = async () => {
+  //   const data = await axios.get(
+  //     `https://api.currencyfreaks.com/v2.0/rates/latest?apikey=88ca8ee0d52b4a0d9c7d2351f3eb7b8e`
+  //   );
+  //   console.log(data);
+  // };
 
-  useEffect(() => {
-    getRates();
-  }, [])
-  
+  // useEffect(() => {
+  //   getRates();
+  // }, []);
 
   return (
     <div className={`middnav ${headerScroll}`}>
@@ -63,7 +61,14 @@ const MiddNav = ({ headerRef }) => {
       >
         <div className="logo">
           <Link to="/">
-            <img width={80} height={80} src={logo} alt="logo" />
+            <img
+              width={80}
+              height={80}
+              src={
+                "https://res.cloudinary.com/dxfphp6to/image/upload/v1697903938/nabdu_al_qalam/logo_chdt9x.jpg"
+              }
+              alt="logo"
+            />
           </Link>
         </div>
         <div className="leftlinks-search">
@@ -122,21 +127,35 @@ const MiddNav = ({ headerRef }) => {
               <PersonIcon />
             </Link>
           ) : (
-            <button onClick={handleLogout}>
+            <button className="auth-btn" onClick={handleLogout}>
               {lang == "en" ? "LOGOUT" : "تسجيل خروج"}
             </button>
           )}
-          <select className="countryPrice">
+          {/* <select className="countryPrice">
             <option value="AED">AED</option>
             <option value="SAR">SAR</option>
             <option value="OMR">OMR</option>
             <option value="QAR">QAR</option>
-          </select>
+          </select> */}
           <button className="lang-btn" onClick={handleLangSwitch}>
             {lang === "en" ? (
-              <img src={uae} alt="UAE-flag" />
+              <img
+                src={
+                  "https://res.cloudinary.com/dxfphp6to/image/upload/v1697903939/nabdu_al_qalam/uae_lfhvbc.jpg"
+                }
+                width={30}
+                height={30}
+                alt="UAE-flag"
+              />
             ) : (
-              <img src={uk} alt="UK-flag" />
+              <img
+                src={
+                  "https://res.cloudinary.com/dxfphp6to/image/upload/v1697903939/nabdu_al_qalam/uk_twgwxa.png"
+                }
+                width={30}
+                height={30}
+                alt="UK-flag"
+              />
             )}
           </button>
         </div>

@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import "./hero.css";
 import { useSelector } from "react-redux";
-import { hero } from "../../assets/images";
 
 const Hero = () => {
   const { lang } = useSelector((state) => state.lang);
@@ -48,7 +47,9 @@ const Hero = () => {
         </div>
         <div className="image-container">
           <img
-            src={hero}
+            src={
+              "https://res.cloudinary.com/dxfphp6to/image/upload/v1697903940/nabdu_al_qalam/hero_okolhr.png"
+            }
             width={600}
             height={800}
             style={{ objectFit: "cover" }}

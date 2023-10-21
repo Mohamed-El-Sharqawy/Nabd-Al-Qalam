@@ -178,8 +178,8 @@ button {
 }
 
 .addcart button {
-  background-color: #fa4811;
-  border: 1px solid #fa4811;
+  background-color: #fa8411;
+  border: 1px solid #fa8411;
   border-radius: 6px;
   color: #fff;
   font-weight: bold;
@@ -188,6 +188,11 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: 0.35s;
+}
+
+.addcart button:hover {
+  background-color: #e77e16;
 }
 
 .counter-product {

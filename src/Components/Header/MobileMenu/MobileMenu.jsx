@@ -5,7 +5,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { switchLang } from "../../../features/slices/langSlice";
 import { logout } from "../../../features/slices/authSlice";
-import { uae, uk } from "../../../assets/images";
 
 const MobileMenu = ({ setIsMenuHidden, isMenuHidden }) => {
   const { lang } = useSelector((state) => state.lang);
@@ -99,14 +98,18 @@ const MobileMenu = ({ setIsMenuHidden, isMenuHidden }) => {
           <span>{lang === "en" ? "Switch Language" : "تغيير اللغة"}</span>
           {lang === "en" ? (
             <img
-              src={uae}
+              src={
+                "https://res.cloudinary.com/dxfphp6to/image/upload/v1697903939/nabdu_al_qalam/uae_lfhvbc.jpg"
+              }
               width={30}
               style={{ objectFit: "cover" }}
               alt="uae-flag"
             />
           ) : (
             <img
-              src={uk}
+              src={
+                "https://res.cloudinary.com/dxfphp6to/image/upload/v1697903939/nabdu_al_qalam/uk_twgwxa.png"
+              }
               width={30}
               style={{ objectFit: "cover" }}
               alt="uk-flag"

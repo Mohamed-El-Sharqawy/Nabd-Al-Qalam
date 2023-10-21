@@ -34,7 +34,7 @@ const App = () => {
     }, 1000);
 
     return () => clearTimeout(timer);
-  });
+  }, []);
 
   const top = () => {
     window.scrollTo(0, 0);

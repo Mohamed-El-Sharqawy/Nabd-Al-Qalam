@@ -27,22 +27,22 @@
 
 .age-groups .age-card:nth-child(1),
 .age-groups .age-card-reverse:nth-child(1) {
-  background: linear-gradient(200deg, #ffe064, #f944ac);
+  background-color: #ebb875;
 }
 
 .age-groups .age-card:nth-child(2),
 .age-groups .age-card-reverse:nth-child(2) {
-  background: linear-gradient(160deg, #ffe064, #f944ac);
+  background-color: #ebb875;
 }
 
 .age-groups .age-card:nth-child(3),
 .age-groups .age-card-reverse:nth-child(3) {
-  background: linear-gradient(300deg, #ffe064, #f944ac);
+  background-color: #ebb875;
 }
 
 .age-groups .age-card:nth-child(4),
 .age-groups .age-card-reverse:nth-child(4) {
-  background: linear-gradient(60deg, #ffe064, #f944ac);
+  background-color: #ebb875;
 }
 
 .age-groups .age-card div img,
@@ -78,8 +78,8 @@
   position: relative;
   display: block;
   width: fit-content;
-  background: transparent;
-  border: 1px solid white;
+  background: #c0114c;
+  border: 1px solid #c0114c;
   color: white;
   border-radius: 6px;
   font-size: 15px;
@@ -87,21 +87,9 @@
   z-index: 1;
 }
 
-.age-groups .age-card .content button::before,
-.age-groups .age-card-reverse .content button::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(60deg, #fff041, #f944ac);
-  opacity: 0;
-  z-index: -1;
-  transition: 0.5s;
-  border-radius: 6px;
-}
-
-.age-groups .age-card .content button:hover::before,
-.age-groups .age-card-reverse .content button:hover::before {
-  opacity: 1;
+.age-groups .age-card .content button:hover,
+.age-groups .age-card-reverse .content button:hover {
+  background-color: #9c1441;
 }
 
 @media screen and (max-width: 1280px) {

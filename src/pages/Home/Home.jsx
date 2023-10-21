@@ -43,8 +43,8 @@ const Home = () => {
         <Hero />
         <AgeGroups />
         <SliderWardan />
-        {/* <BadrandBdur /> */}
         <Design />
+        {/* <BadrandBdur /> */}
       </div>
     </>
   );
