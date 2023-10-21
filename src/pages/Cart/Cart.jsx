@@ -25,7 +25,12 @@ const Cart = () => {
     >
       {cartItems.length > 0 ? (
         <>
-          <div className="shopping-cart-items">
+          <div
+            className="shopping-cart-items"
+            style={
+              lang === "en" ? { alignItems: "start" } : { alignItems: "end" }
+            }
+          >
             {cartItems.map((book) => (
               <div
                 style={

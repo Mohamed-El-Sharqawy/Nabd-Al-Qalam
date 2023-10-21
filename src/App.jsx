@@ -10,22 +10,30 @@ import KeyboardDoubleArrowUpIcon from "@mui/icons-material/KeyboardDoubleArrowUp
 const App = () => {
   const { pathname } = useLocation();
   const [isLoading, setIsLoading] = useState(true);
+  const [topbtn, setTopBtn] = useState(false);
+
+  const top = () => {
+    window.scrollTo(0, 0);
+  };
+
+  const handleScroll = () => {
+    if (window.scrollY >= 370) {
+      setTopBtn(true);
+    } else {
+      setTopBtn(false);
+    }
+  };
 
   useEffect(() => {
     window.scroll({ top: 0 });
   }, [pathname]);
 
-  //SCROLL TOP
-  const [topbtn, setTopBtn] = useState(false);
-
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (window.pageYOffset >= 370) {
-        setTopBtn(true);
-      } else {
-        setTopBtn(false);
-      }
-    });
+    window.addEventListener("scroll", handleScroll);
+
+    () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   useEffect(() => {
@@ -35,11 +43,6 @@ const App = () => {
 
     return () => clearTimeout(timer);
   }, []);
-
-  const top = () => {
-    window.scrollTo(0, 0);
-    setIsLoading(false);
-  };
 
   return (
     <>

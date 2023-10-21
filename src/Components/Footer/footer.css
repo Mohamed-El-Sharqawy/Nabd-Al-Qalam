@@ -63,7 +63,8 @@ footer .payment-methods li img {
   }
 
   footer .payment-methods {
-    justify-content: start;
+    width: 100%;
+    justify-content: center;
   }
 }
 

@@ -26,14 +26,14 @@ const AgeCard = ({ card }) => {
       className={`${lang === "en" ? "age-card" : "age-card-reverse"}`}
     >
       <div className="content">
+        <h3 dir={lang === "en" ? "ltr" : "rtl"}>
+          {lang === "en" ? card.enAge : card.arAge}
+        </h3>
         <p dir={lang === "en" ? "ltr" : "rtl"}>
           {lang === "en"
             ? "Books appropriate for every class"
             : "كتب مناسبة لكل فئة"}
         </p>
-        <h3 dir={lang === "en" ? "ltr" : "rtl"}>
-          {lang === "en" ? card.enAge : card.arAge}
-        </h3>
         <button
           style={
             lang === "en" ? { marginRight: "auto" } : { marginLeft: "auto" }
