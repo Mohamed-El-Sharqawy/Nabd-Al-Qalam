@@ -194,3 +194,8 @@
     font-size: 18px;
   }
 }
+@media screen and (max-width: 331px) {
+  .shopping-cart-info h3{
+    font-size: 14px;
+  }
+}
