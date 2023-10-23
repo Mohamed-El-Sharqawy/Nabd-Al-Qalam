@@ -23,6 +23,7 @@
   color: #fff;
   font-size: 18px;
   line-height: 2;
+  width: 680px;
 }
 .containerDesgin p {
   text-align: center;
@@ -41,4 +42,16 @@
 .containerDesgin a:hover {
   background-color: white;
   color: black;
+}
+
+@media screen and (max-width: 767px) {
+  .containerDesgin {
+    width: 380px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .containerDesgin {
+    width: 240px;
+  }
 }

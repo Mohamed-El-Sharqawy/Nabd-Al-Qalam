@@ -23,7 +23,6 @@ const Login = () => {
 
       localStorage.setItem("jwt", JSON.stringify(res?.data?.token));
 
-      location.reload();
       navigate("/");
     } catch (err) {
       setUser((prev) => ({ ...prev, isError: true }));
