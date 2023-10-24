@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { Link, createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import Home from "../pages/Home/Home";
 import Contact from "../pages/Contact";
@@ -53,6 +53,16 @@ export const router = createBrowserRouter([
       },
       {
         path: "*",
+        element: (
+          <h1 className="error-heading">
+            404 <br />
+            Not Found !
+            <br />
+            <span>
+              Go To <Link to="/">Home Page</Link>
+            </span>
+          </h1>
+        ),
       },
     ],
   },

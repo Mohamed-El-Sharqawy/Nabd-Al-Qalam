@@ -85,6 +85,33 @@ svg {
   line-height: 1.4;
 }
 
+.error-heading {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.6;
+  letter-spacing: 1.4px;
+  height: 45vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.error-heading span {
+  color: black;
+}
+
+.error-heading span a {
+  color: #ebb875;
+  text-decoration: underline;
+  transition: 0.35s;
+}
+
+.error-heading span a:hover {
+  color: #d7a767;
+}
+
 /* Loader */
 .loader-container {
   background-color: rgb(235, 184, 117);
