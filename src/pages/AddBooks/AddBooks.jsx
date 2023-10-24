@@ -30,7 +30,7 @@ const AddBooks = () => {
         "Access-Control-Allow-Headers":
           "access-control-allow-headers,access-control-allow-methods,access-control-allow-origin,content-type",
         "Access-Control-Allow-Methods": "GET, POST, OPTIONS, PUT, DELETE",
-        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Origin": "https://nabd-al-qalam.vercel.app",
       },
     };
 
