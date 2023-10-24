@@ -27,11 +27,11 @@ const AddBooks = () => {
   const createBook = async (newBook) => {
     const axiosConfig = {
       headers: {
-        "Content-Type": "application/json;charset=UTF-8",
         "Access-Control-Allow-Headers":
-          "Access-Control-Allow-Origin, Content-Type, Origin",
-        "Access-Control-Allow-Origin": "https://nabd-al-qalam.vercel.app",
+          "Access-Control-Allow-Origin, Content-Type, Origin, Access-Control-Allow-Methods",
+        "Content-Type": "application/json;charset=UTF-8",
         "Access-Control-Allow-Methods": "GET, POST, OPTIONS, PUT, DELETE",
+        "Access-Control-Allow-Origin": "*",
       },
     };
 
