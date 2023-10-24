@@ -9,15 +9,13 @@
   align-items: center;
   flex-wrap: wrap;
   margin: 3rem auto;
-  min-height: 50vh;
+  min-height: 25vh;
 }
 .card {
   width: 220px;
   border-radius: 6px;
   position: relative;
   margin: 10px;
-  /* background-color: #c0114c; */
-  /* background-color: teal; */
   background-color: rgb(235, 184, 117);
 }
 .card-img img {
@@ -71,7 +69,8 @@
   opacity: 0;
   transition: 0.5s ease-in;
 }
-.card:hover .shopping {
+.card:hover .shopping,
+.card:focus .shopping {
   opacity: 1;
 }
 .icons {
@@ -119,7 +118,7 @@
   justify-content: space-around;
   align-items: center;
   gap: 1rem;
-  z-index: 9999;
+  z-index: 99999;
   padding: 20px 20px;
   border-radius: 6px;
   transition: 0.3s ease-in;
@@ -151,6 +150,20 @@ button {
   justify-content: center;
   gap: 25px;
   margin: 1rem 0 1.5rem;
+}
+
+.popup-overlay-hidden {
+  position: fixed;
+  inset: 0;
+  background-color: transparent;
+  transition: 0.5s;
+  transition-delay: z-index 0.5s;
+  z-index: -1;
+}
+
+.popup-overlay-show {
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
 }
 
 .btnclick {
