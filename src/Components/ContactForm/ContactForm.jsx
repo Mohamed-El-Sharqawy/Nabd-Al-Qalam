@@ -53,21 +53,25 @@ const ContactForm = () => {
             type="text"
             placeholder={lang === "en" ? "Name" : "الاسم"}
             name="from_name"
+            required
           />
           <input
             type="email"
             placeholder={lang === "en" ? "Email" : "البريد الألكتروني"}
             name="email"
+            required
           />
           <input
             type="text"
             placeholder={lang === "en" ? "Subject" : "الموضوع"}
             name="subject"
+            required
           />
           <textarea
             type="text"
             placeholder={lang === "en" ? "Message" : "الرسالة"}
             name="message"
+            required
           />
           <button>{lang === "en" ? "Submit" : "ارسل"}</button>
         </form>
