@@ -7,6 +7,12 @@
   gap: 1.5rem;
 }
 
+.login-form img {
+  max-width: 900px;
+  height: 300px;
+  object-fit: cover;
+}
+
 .login-form input {
   border: 1px solid #bbbbbb;
   padding: 0.5rem 0.75rem;
@@ -20,12 +26,25 @@
   padding: 0.75rem 0;
   border-radius: 4px;
   border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .login-form a {
   color: #666;
   font-size: 14px;
   width: fit-content;
+}
+
+.login-form .loader {
+  width: 24px;
+  height: 24px;
+}
+
+.login-form .loader::after,
+.login-form .loader::before {
+  display: none;
 }
 
 @media screen and (max-width: 1023px) {
@@ -44,18 +63,18 @@
     width: 95%;
   }
 }
-@media screen and (max-width:531px) {
-  .login-form{
+@media screen and (max-width: 531px) {
+  .login-form {
     padding-top: 30px;
   }
 }
-@media screen and (max-width:415px) {
-  .login-form{
+@media screen and (max-width: 415px) {
+  .login-form {
     padding-top: 50px;
   }
 }
 @media screen and (max-width: 307px) {
-  .login-form a{
+  .login-form a {
     text-align: center;
   }
 }

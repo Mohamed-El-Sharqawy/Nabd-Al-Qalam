@@ -1,68 +1,41 @@
-import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./login.css";
-import axios from "axios";
+import useFormHandling from "../../hooks/useFormHandling";
 
 const Login = () => {
-  const [userData, setUser] = useState({
-    email: "",
-    password: "",
-    isError: false,
-  });
-  const navigate = useNavigate();
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    try {
-      setUser((prev) => ({ ...prev, isError: false }));
-      const res = await axios.post(import.meta.env.VITE_LOGIN_ENDPOINT, {
-        email: userData.email,
-        password: userData.password,
-      });
-
-      localStorage.setItem("jwt", JSON.stringify(res?.data?.token));
-
-      navigate("/");
-    } catch (err) {
-      setUser((prev) => ({ ...prev, isError: true }));
-    }
-  };
-
-  useEffect(() => {
-    if (localStorage.getItem("jwt")) {
-      navigate("/");
-    }
-  }, []);
-
-  const handleChange = (e) => {
-    setUser(() => ({ ...userData, [e.target.name]: e.target.value }));
-  };
+  const { isLoading, userData, lang, handleLogin, handleChange } =
+    useFormHandling();
 
   return (
-    <form method="POST" className="login-form" onSubmit={handleSubmit}>
+    <form method="POST" className="login-form" onSubmit={handleLogin}>
+      <img
+        src="https://hips.hearstapps.com/hmg-prod/images/best-childrens-kids-books-1599680383.jpg"
+        alt="login_form_image"
+      />
       <input
         type="email"
         name="email"
         placeholder="Email"
         onChange={handleChange}
         value={userData.email}
-        required
       />
       <input
-        minLength={8}
         type="password"
         name="password"
         placeholder="Password"
         onChange={handleChange}
         value={userData.password}
-        required
       />
-      <span className="error">
-        {userData?.isError && "* Incorrect Email Address or Password."}
-      </span>
       <Link to="/signup">Don't Have an Account ? Go to Signup Page</Link>
-      <button>Login</button>
+      <button>
+        {isLoading ? (
+          <span className="loader"></span>
+        ) : lang === "en" ? (
+          "Login"
+        ) : (
+          "تسجيل الدخول"
+        )}
+      </button>
     </form>
   );
 };

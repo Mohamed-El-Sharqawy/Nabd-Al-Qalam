@@ -156,3 +156,28 @@
     font-size: 12px;
   }
 }
+
+.newsletter .loader {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  display: inline-block !important;
+  border-top: 3px solid #fff;
+  border-right: 3px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+.newsletter .loader::after,
+.newsletter .loader::before {
+  display: none;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

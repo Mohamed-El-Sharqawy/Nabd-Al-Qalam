@@ -46,7 +46,7 @@ const App = () => {
 
   return (
     <>
-      <ToastContainer />
+      <ToastContainer position="bottom-right" />
       <Header />
       <Outlet />
       <Newsletter />

@@ -1,33 +1,10 @@
 import { useRef } from "react";
-import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import emailjs from "@emailjs/browser";
 import "./contact-form.css";
+import useFormHandling from "../../hooks/useFormHandling";
 
 const ContactForm = () => {
   const form = useRef();
-  const { lang } = useSelector((state) => state.lang);
-  const navigate = useNavigate();
-
-  const sendEmail = (e) => {
-    e.preventDefault();
-
-    emailjs
-      .sendForm(
-        "service_mgmott9",
-        "template_go69fxb",
-        form.current,
-        "7ayvEk0J2UudqMQ8m"
-      )
-      .then(
-        (_) => {
-          navigate("/");
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-  };
+  const { isLoading, lang, sendMail } = useFormHandling({ form });
 
   return (
     <>
@@ -46,34 +23,38 @@ const ContactForm = () => {
         <form
           dir={lang === "en" ? "ltr" : "rtl"}
           className="left-side"
-          onSubmit={sendEmail}
+          onSubmit={sendMail}
           ref={form}
         >
           <input
             type="text"
             placeholder={lang === "en" ? "Name" : "الاسم"}
             name="from_name"
-            required
           />
           <input
             type="email"
             placeholder={lang === "en" ? "Email" : "البريد الألكتروني"}
             name="email"
-            required
           />
           <input
             type="text"
             placeholder={lang === "en" ? "Subject" : "الموضوع"}
             name="subject"
-            required
           />
           <textarea
             type="text"
             placeholder={lang === "en" ? "Message" : "الرسالة"}
             name="message"
-            required
           />
-          <button>{lang === "en" ? "Submit" : "ارسل"}</button>
+          <button>
+            {isLoading ? (
+              <span className="loader"></span>
+            ) : lang === "en" ? (
+              "Submit"
+            ) : (
+              "ارسل"
+            )}
+          </button>
         </form>
         {/* Right Side */}
         <div className="right-side">

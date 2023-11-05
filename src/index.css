@@ -16,10 +16,12 @@ html {
 
 li,
 button {
+  overflow: none;
   cursor: pointer;
 }
 
 button {
+  overflow: none;
   cursor: pointer;
 }
 
@@ -75,14 +77,6 @@ svg {
 .hide {
   opacity: 0;
   pointer-events: none;
-}
-
-.error {
-  color: red;
-  font-weight: bold;
-  font-size: 13px;
-  letter-spacing: 1px;
-  line-height: 1.4;
 }
 
 .error-heading {
@@ -145,10 +139,7 @@ svg {
   content: "";
   box-sizing: border-box;
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
+  inset: 0;
   margin: auto;
   border: 3px solid;
   border-color: transparent transparent #ff3d00 #ff3d00;

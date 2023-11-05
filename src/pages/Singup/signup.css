@@ -7,6 +7,12 @@
   gap: 1.5rem;
 }
 
+.signup-form img {
+  max-width: 900px;
+  height: 300px;
+  object-fit: cover;
+}
+
 .signup-form input {
   border: 1px solid #bbbbbb;
   padding: 0.5rem 0.75rem;
@@ -26,6 +32,16 @@
   color: #666;
   font-size: 14px;
   width: fit-content;
+}
+
+.signup-form .loader {
+  width: 24px;
+  height: 24px;
+}
+
+.signup-form .loader::after,
+.signup-form .loader::before {
+  display: none;
 }
 
 @media screen and (max-width: 1023px) {
