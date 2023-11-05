@@ -4,7 +4,7 @@ import useFormHandling from "../../hooks/useFormHandling";
 
 const ContactForm = () => {
   const form = useRef();
-  const { isLoading, lang, sendMail } = useFormHandling({ form });
+  const { isLoading, lang, sendMail } = useFormHandling(form);
 
   return (
     <>

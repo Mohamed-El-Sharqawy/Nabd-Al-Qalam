@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import { useSelector } from "react-redux";
 import axios from "axios";
 
-const useFormHandling = ({ form }) => {
+const useFormHandling = (form) => {
   const navigate = useNavigate();
   const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
   const { lang } = useSelector((state) => state.lang);
@@ -163,47 +163,47 @@ const useFormHandling = ({ form }) => {
   const sendMail = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-    if (!form.current.from_name.value) {
+    if (!form?.current?.from_name.value) {
       toast.error("Please Enter Your Name", {
         toastId: "from_name",
       });
       delayLoading(750);
-    } else if (!form.current.email.value) {
+    } else if (!form?.current?.email.value) {
       toast.error("Please Enter Your Email", {
         toastId: "contact_email",
       });
       delayLoading(500);
     } else if (
-      form.current.email.value &&
-      !emailRegex.test(form.current.email.value)
+      form?.current?.email.value &&
+      !emailRegex.test(form?.current?.email.value)
     ) {
       toast.error("Please Enter a Valid Email", {
         toastId: "contact_email",
       });
       delayLoading(1000);
-    } else if (!form.current.subject.value) {
+    } else if (!form?.current?.subject.value) {
       toast.error("Please Enter a Subject", {
         toastId: "contact_subject",
       });
       delayLoading(500);
-    } else if (!form.current.message.value) {
+    } else if (!form?.current?.message.value) {
       toast.error("Please Enter a Subject", {
         toastId: "contact_message",
       });
       delayLoading(500);
     } else {
       const emailMessage = getEmailMessage({
-        from_name: form.current.from_name.value,
-        email: form.current.email.value,
-        subject: form.current.subject.value,
-        message: form.current.message.value,
+        from_name: form?.current?.from_name.value,
+        email: form?.current?.email.value,
+        subject: form?.current?.subject.value,
+        message: form?.current?.message.value,
       });
 
       const res = await fetch("https://sendmail-api-docs.vercel.app/api/send", {
         method: "POST",
         body: JSON.stringify({
           to: "dev.elbehery@gmail.com",
-          subject: form.current.subject.value,
+          subject: form?.current?.subject.value,
           message: emailMessage,
         }),
       });
@@ -215,7 +215,7 @@ const useFormHandling = ({ form }) => {
           toastId: "contact_success_message",
         });
         setIsLoading(() => false);
-        form.current.reset();
+        form?.current?.reset();
       } else {
         toast.success("Something Went Wrong Please Retry Again !", {
           toastId: "contact_fail_message",
