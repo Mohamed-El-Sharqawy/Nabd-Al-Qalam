@@ -142,7 +142,11 @@ const useFormHandling = (form) => {
   };
 
   useEffect(() => {
-    if (localStorage.getItem("jwt")) {
+    if (
+      localStorage.getItem("jwt") &&
+      (window.location.pathname.includes("login") ||
+        window.location.pathname.includes("signup"))
+    ) {
       navigate("/");
     }
   }, []);
@@ -187,7 +191,7 @@ const useFormHandling = (form) => {
       });
       delayLoading(500);
     } else if (!form?.current?.message.value) {
-      toast.error("Please Enter a Subject", {
+      toast.error("Please Enter a Message", {
         toastId: "contact_message",
       });
       delayLoading(500);
