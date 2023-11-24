@@ -8,7 +8,7 @@ const AgeGroups = () => {
   const cards = [
     {
       id: 1,
-      img: "https://res.cloudinary.com/dxfphp6to/image/upload/v1697903920/nabdu_al_qalam/3-6_xpfzvq.png",
+      img: "https://res.cloudinary.com/dxfphp6to/image/upload/v1700853169/nabdu_al_qalam/3-6-removebg-preview_mafbf9.webp",
       arAge: "من 3 سنوات ل 6 سنوات",
       enAge: "From 3 years to 6 years",
     },
@@ -26,7 +26,7 @@ const AgeGroups = () => {
     },
     {
       id: 4,
-      img: "https://res.cloudinary.com/dxfphp6to/image/upload/v1697903949/nabdu_al_qalam/12-15_jmtt53.png",
+      img: "https://res.cloudinary.com/dxfphp6to/image/upload/v1700853253/nabdu_al_qalam/12-15-removebg-preview_hmlkpm.webp",
       arAge: "من 12 سنة ل 15 سنة",
       enAge: "From 12 years to 15 years",
     },

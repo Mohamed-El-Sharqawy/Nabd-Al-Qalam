@@ -19,7 +19,7 @@ const Cards = () => {
     spaceSeries,
     chosenBook,
     query,
-    books,
+    isLoading,
   } = useDisplayBooks();
 
   return (
@@ -29,6 +29,7 @@ const Cards = () => {
           {lang === "en" ? (
             <>
               <option value={""}>All Age Groups</option>
+              <option value={"0 - 3 سنوات"}>0 - 3 Years</option>
               <option value={"6 - 9 سنوات"}>3 - 6 Years</option>
               <option value={"9 - 12 سنوات"}>6 - 9 Years</option>
               <option value={"12 - 15 سنوات"}>9 - 12 Years</option>
@@ -38,6 +39,9 @@ const Cards = () => {
             <>
               <option value={""} dir="rtl">
                 كل الفئات العمرية
+              </option>
+              <option value={"0 - 3 سنوات"} dir="rtl">
+                0 - 3 سنوات
               </option>
               <option value={"6 - 9 سنوات"} dir="rtl">
                 3 - 6 سنوات
@@ -144,7 +148,7 @@ const Cards = () => {
         </h4>
       )}
       <div className="cards">
-        {books.length > 0 ? (
+        {!isLoading ? (
           !wardanSeries && !spaceSeries ? (
             displayBooks()
           ) : wardanSeries ? (

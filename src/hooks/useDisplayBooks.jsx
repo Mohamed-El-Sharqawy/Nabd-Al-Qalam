@@ -3,10 +3,10 @@ import axios from "axios";
 import { Link, useSearchParams } from "react-router-dom";
 import SingleCard from "../Components/SingleCard/SingleCard";
 import { useSelector } from "react-redux";
+import { useQuery } from "@tanstack/react-query";
 
 const useDisplayBooks = () => {
   const { lang } = useSelector((state) => state.lang);
-  const [books, setBooks] = useState([]);
   const [query, setQuery] = useState({ ageGroup: "", category: "" });
   const [wardanSeries, setWardanSeries] = useState(false);
   const [spaceSeries, setSpaceSeries] = useState(false);
@@ -15,6 +15,16 @@ const useDisplayBooks = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const group = searchParams.get("group");
   const category = searchParams.get("category");
+
+  const getAllBooks = async () => {
+    const res = await axios.get(import.meta.env.VITE_BOOKS_ENDPOINT);
+    return res.data;
+  };
+
+  const { data: books, isLoading } = useQuery({
+    queryKey: ["books"],
+    queryFn: getAllBooks,
+  });
 
   const ageGroups = {
     threeSix: ["6 - 9 سنوات", "From 3 years to 6 years"],
@@ -51,7 +61,7 @@ const useDisplayBooks = () => {
   //* Filter and Display Books
   const displayBooks = () => {
     const filteredBooks = books
-      .filter((singleBook) => {
+      ?.filter((singleBook) => {
         if (query.ageGroup == "" && query.category == "") {
           return singleBook;
         } else if (query.ageGroup == "") {
@@ -65,7 +75,7 @@ const useDisplayBooks = () => {
           );
         }
       })
-      .map((book, index) => {
+      ?.map((book, index) => {
         if (index == 15 || index == 31) {
           return (
             <React.Fragment key={book._id}>
@@ -144,10 +154,10 @@ const useDisplayBooks = () => {
   //* Filter and Display Wardan Series
   const displayWardanSeries = () => {
     const wardanBooks = books
-      .filter((singleBook) =>
+      ?.filter((singleBook) =>
         singleBook.enTitle.toLowerCase().includes("wardan")
       )
-      .map((book) => (
+      ?.map((book) => (
         <SingleCard
           key={book._id}
           popup={popup}
@@ -163,10 +173,10 @@ const useDisplayBooks = () => {
   //* Filter and Display Space Series
   const displaySpaceSeries = () => {
     const spaceBooks = books
-      .filter((singleBook) =>
+      ?.filter((singleBook) =>
         singleBook.enTitle.toLowerCase().includes("space")
       )
-      .map((book) => (
+      ?.map((book) => (
         <SingleCard
           key={book._id}
           popup={popup}
@@ -178,16 +188,6 @@ const useDisplayBooks = () => {
 
     return spaceBooks;
   };
-
-  //* Fetch the Books Endpoint
-  const getAllBooks = async () => {
-    const res = await axios.get(import.meta.env.VITE_BOOKS_ENDPOINT);
-    setBooks(res.data);
-  };
-
-  useEffect(() => {
-    getAllBooks();
-  }, []);
 
   useEffect(() => {
     if (group === "From 3 years to 6 years") {
@@ -226,6 +226,7 @@ const useDisplayBooks = () => {
     chosenBook,
     query,
     books,
+    isLoading,
   };
 };
 

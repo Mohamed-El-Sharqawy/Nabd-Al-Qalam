@@ -72,6 +72,54 @@
   box-shadow: 0 -8px 16px 0 rgba(192, 17, 75, 0.4);
 }
 
+.add-form button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-form .loader {
+  width: 24px;
+  height: 24px;
+}
+
+.add-form .loader::after,
+.add-form .loader::before {
+  display: none;
+}
+
+@media screen and (max-width: 1023px) {
+  .add-form {
+    width: 650px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .add-form {
+    width: 450px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .add-form {
+    width: 95%;
+  }
+}
+@media screen and (max-width: 531px) {
+  .add-form {
+    padding-top: 30px;
+  }
+}
+@media screen and (max-width: 415px) {
+  .add-form {
+    padding-top: 50px;
+  }
+}
+@media screen and (max-width: 307px) {
+  .add-form a {
+    text-align: center;
+  }
+}
+
 @media screen and (max-width: 1023px) {
   .add-form {
     width: 650px;

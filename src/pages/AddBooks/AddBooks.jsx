@@ -1,6 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useMutation } from "@tanstack/react-query";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import axios from "axios";
 import "./addBooks.css";
 
@@ -18,39 +20,51 @@ const AddBooks = () => {
     ageGroup: "اختر الفئة العمرية من فضلك",
     img: "",
   };
+
   const { lang } = useSelector((state) => state.lang);
   const { user } = useSelector((state) => state.auth);
+  const [book, setBook] = useState(defaultFormData);
+  const formRef = useRef(null);
   const navigate = useNavigate();
 
-  const [book, setBook] = useState(defaultFormData);
+  const axiosConfig = {
+    headers: {
+      "Access-Control-Allow-Headers":
+        "access-control-allow-headers,access-control-allow-methods,access-control-allow-origin,content-type",
+      "Access-Control-Allow-Methods": "GET, POST, OPTIONS, PUT, DELETE",
+      "Access-Control-Allow-Origin": "https://nabd-al-qalam.vercel.app",
+    },
+  };
 
-  const createBook = async (newBook) => {
-    const axiosConfig = {
-      headers: {
-        "Access-Control-Allow-Headers":
-          "access-control-allow-headers,access-control-allow-methods,access-control-allow-origin,content-type",
-        "Access-Control-Allow-Methods": "GET, POST, OPTIONS, PUT, DELETE",
-        "Access-Control-Allow-Origin": "https://nabd-al-qalam.vercel.app",
-      },
-    };
-
+  const postBook = async (newBook) => {
     try {
       await axios.post(
         import.meta.env.VITE_ADD_BOOKS_ENDPOINT,
         newBook,
         axiosConfig
       );
-
-      setBook(() => defaultFormData);
     } catch (err) {
-      console.error(err);
+      toast.error("Please Try Again !", {
+        toastId: "invalid_book_data",
+      });
+      console.error("Couldn't read => ", err);
     }
   };
 
+  // Mutations
+  const mutation = useMutation({
+    mutationFn: postBook,
+    onSuccess: () => {
+      // Invalidate and refetch
+      queryClient.invalidateQueries({ queryKey: ["books"] });
+    },
+  });
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    mutation.mutate(book);
 
-    createBook(book);
+    setBook(defaultFormData);
   };
 
   const handleChange = (e) => {
@@ -83,7 +97,7 @@ const AddBooks = () => {
   }, []);
 
   return (
-    <form onSubmit={handleSubmit} className="add-form">
+    <form ref={formRef} onSubmit={handleSubmit} className="add-form">
       <div className="heading-book">
         <h1>{lang === "en" ? "Add Book" : "أضف كتاب"}</h1>
       </div>
@@ -193,6 +207,9 @@ const AddBooks = () => {
         onChange={handleChange}
       >
         <option dir="rtl">اختر الفئة العمرية من فضلك</option>
+        <option value={"0 - 3 سنوات"} dir="rtl">
+          0 - 3 سنوات
+        </option>
         <option value={"6 - 9 سنوات"} dir="rtl">
           3 - 6 سنوات
         </option>
@@ -219,11 +236,14 @@ const AddBooks = () => {
         type="file"
         aria-label="Image"
         id="file-upload"
-        accept=".jpeg, .png, .jpg"
+        accept=".jpeg, .png, .jpg, .webp"
         onChange={(e) => handleFileUpload(e)}
       />
 
-      <button>Add Book</button>
+      <button>
+        {" "}
+        {mutation.isPending ? <span className="loader"></span> : "Add Book"}
+      </button>
     </form>
   );
 };
