@@ -19,12 +19,6 @@ const useFormHandling = (form) => {
   });
   const [isLoading, setIsLoading] = useState(false);
 
-  const delayLoading = (delayTime) => {
-    setTimeout(() => {
-      setIsLoading(false);
-    }, delayTime);
-  };
-
   //! Login Form
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -32,24 +26,20 @@ const useFormHandling = (form) => {
 
     if (!userData.email) {
       toast.error("Please Enter Your Email", { toastId: "login_email" });
-      delayLoading(750);
     } else if (userData.email && !emailRegex.test(userData.email)) {
       toast.error("Please Enter a Valid Email", {
         toastId: "login_invalid_email",
       });
-      delayLoading(1000);
     } else if (userData.password.length < 8) {
       toast.error("Minimum Password Length is 8 Characters", {
         toastId: "login_minimum_length",
       });
-      delayLoading(750);
     } else {
       try {
         const res = await axios.post(import.meta.env.VITE_LOGIN_ENDPOINT, {
           email: userData.email,
           password: userData.password,
         });
-        delayLoading(500);
 
         localStorage.setItem("jwt", JSON.stringify(res?.data?.token));
 
@@ -58,7 +48,7 @@ const useFormHandling = (form) => {
         toast.error("Wrong Password or Email", {
           toastId: "login_wrong_data",
         });
-        delayLoading(500);
+        setIsLoading(false);
       }
     }
   };
@@ -72,22 +62,18 @@ const useFormHandling = (form) => {
       toast.error("Please Enter Your Email", {
         toastId: "signup_email",
       });
-      delayLoading(750);
     } else if (user.email && !emailRegex.test(user.email)) {
       toast.error("Please Enter a Valid Email", {
         toastId: "signup_invalid_email",
       });
-      delayLoading(1000);
     } else if (user.password.length < 8) {
       toast.error("Minimum Password Length is 8 Characters", {
         toastId: "signup_password",
       });
-      delayLoading(750);
     } else if (user.confirmPassword.length < 8) {
       toast.error("Minimum Confirm Password Length is 8 Characters", {
         toastId: "signup_confirm_password",
       });
-      delayLoading(750);
     } else if (user.password === user.confirmPassword) {
       try {
         const res = await axios.post(import.meta.env.VITE_SIGNUP_ENDPOINT, {
@@ -171,12 +157,10 @@ const useFormHandling = (form) => {
       toast.error("Please Enter Your Name", {
         toastId: "from_name",
       });
-      delayLoading(750);
     } else if (!form?.current?.email.value) {
       toast.error("Please Enter Your Email", {
         toastId: "contact_email",
       });
-      delayLoading(500);
     } else if (
       form?.current?.email.value &&
       !emailRegex.test(form?.current?.email.value)
@@ -184,17 +168,14 @@ const useFormHandling = (form) => {
       toast.error("Please Enter a Valid Email", {
         toastId: "contact_email",
       });
-      delayLoading(1000);
     } else if (!form?.current?.subject.value) {
       toast.error("Please Enter a Subject", {
         toastId: "contact_subject",
       });
-      delayLoading(500);
     } else if (!form?.current?.message.value) {
       toast.error("Please Enter a Message", {
         toastId: "contact_message",
       });
-      delayLoading(500);
     } else {
       const emailMessage = getEmailMessage({
         from_name: form?.current?.from_name.value,
@@ -238,7 +219,6 @@ const useFormHandling = (form) => {
     handleLogin,
     handleChange,
     sendMail,
-    delayLoading,
   };
 };
 

@@ -2,7 +2,7 @@ import "./middnav.css";
 import PersonIcon from "@mui/icons-material/Person";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { switchLang } from "../../../features/slices/langSlice";
 import { useEffect, useState } from "react";
@@ -47,7 +47,7 @@ const MiddNav = ({ headerRef }) => {
         className="container-midd"
       >
         <div className="logo">
-          <Link to="/">
+          <NavLink className={"active"} to="/">
             <img
               width={80}
               height={80}
@@ -56,7 +56,7 @@ const MiddNav = ({ headerRef }) => {
               }
               alt="logo"
             />
-          </Link>
+          </NavLink>
         </div>
         <div className="leftlinks-search">
           <ul

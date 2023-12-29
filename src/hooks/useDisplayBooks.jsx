@@ -138,7 +138,7 @@ const useDisplayBooks = () => {
         );
       });
 
-    if (filteredBooks.length == 0) {
+    if (filteredBooks?.length == 0) {
       return (
         <h1 style={{ color: "#c0114c", textAlign: "center", fontSize: "22px" }}>
           {lang === "en"

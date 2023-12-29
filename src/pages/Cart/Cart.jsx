@@ -8,6 +8,7 @@ import {
 } from "../../features/slices/cartSlice";
 import "./cart.css";
 import { Link } from "react-router-dom";
+import PayButton from "../../Components/PayButton/PayButton";
 
 const Cart = () => {
   const { lang } = useSelector((state) => state.lang);
@@ -21,7 +22,7 @@ const Cart = () => {
           ? { flexDirection: "row" }
           : { flexDirection: "row-reverse" }
       }
-      className={`shopping-cart ${!cartItems.length > 0 ? "empty-cart" : ""}`}
+      className={`shopping-cart`}
     >
       {cartItems.length > 0 ? (
         <>
@@ -104,7 +105,7 @@ const Cart = () => {
               </div>
             ))}
           </div>
-          <div className="shopping-cart-info">
+          <form className="shopping-cart-info">
             <h1 dir={lang === "en" ? "ltr" : "rtl"}>
               {lang === "en" ? "The Total Amount:" : "المبلغ الكلي:"}
             </h1>
@@ -121,7 +122,7 @@ const Cart = () => {
                 {lang == "en" ? " AED" : " درهم"}
               </span>
             </p>
-            <p
+            {/* <p
               style={
                 lang === "en"
                   ? { flexDirection: "row" }
@@ -133,7 +134,7 @@ const Cart = () => {
                 {cartItems?.length > 0 ? 5 : 0}{" "}
                 {lang == "en" ? " AED" : " درهم"}
               </span>
-            </p>
+            </p> */}
             <h3
               style={
                 lang === "en"
@@ -141,35 +142,48 @@ const Cart = () => {
                   : { flexDirection: "row-reverse" }
               }
             >
-              {lang === "en"
-                ? "The total amount (Tax Included)"
-                : "المبلغ الكلي (بمصاريف الشحن)"}{" "}
+              {lang === "en" ? "The total amount" : "المبلغ الكلي"}{" "}
               <span dir={lang === "en" ? "ltr" : "rtl"}>
-                {cartTotalPrice + (cartItems?.length > 0 ? 5 : 0)}
+                {cartTotalPrice}
                 {lang == "en" ? " AED" : " درهم"}
               </span>
             </h3>
-            <button>Go to Checkout</button>
-          </div>
+            <PayButton cartItems={cartItems} />
+          </form>
         </>
       ) : (
-        <h1 className="empty-heading">
-          {lang === "en" ? (
-            <span>
-              Cart is Empty{" "}
-              <Link className="shopping-cart-link" to="/books">
-                Go Add a Book to Buy
-              </Link>
-            </span>
-          ) : (
-            <span>
-              العربة فارغة{" "}
-              <Link className="shopping-cart-link" to="/books">
-                اذهب لاضافة بعض الكتب للشراء
-              </Link>
-            </span>
-          )}
-        </h1>
+        <div
+          style={
+            lang === "en"
+              ? { flexDirection: "row" }
+              : { flexDirection: "row-reverse" }
+          }
+          className="empty-cart"
+        >
+          <h1 className="empty-heading">
+            {" "}
+            {lang === "en" ? (
+              <span dir={lang === "en" ? "ltr" : "rtl"}>
+                Cart is Empty{" "}
+                <Link className="shopping-cart-link" to="/books">
+                  Go Add a Book to Buy
+                </Link>
+              </span>
+            ) : (
+              <span dir={lang === "en" ? "ltr" : "rtl"}>
+                العربة فارغة{" "}
+                <Link className="shopping-cart-link" to="/books">
+                  اذهب لاضافة بعض الكتب للشراء
+                </Link>
+              </span>
+            )}
+          </h1>
+          <img
+            src="https://res.cloudinary.com/dxfphp6to/image/upload/v1701211606/nabdu_al_qalam/empty_cart_qtnlwu.svg"
+            width={400}
+            alt="empty_cart"
+          />
+        </div>
       )}
     </section>
   );

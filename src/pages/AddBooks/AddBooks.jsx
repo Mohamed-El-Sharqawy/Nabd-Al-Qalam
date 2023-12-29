@@ -90,11 +90,9 @@ const AddBooks = () => {
     });
   }
 
-  useEffect(() => {
-    if (!user.isAdmin) {
-      navigate("/");
-    }
-  }, []);
+  if (!user.isAdmin) {
+    return navigate("/");
+  }
 
   return (
     <form ref={formRef} onSubmit={handleSubmit} className="add-form">

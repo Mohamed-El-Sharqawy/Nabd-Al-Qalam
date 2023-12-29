@@ -5,13 +5,14 @@ import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
 import { ToastContainer } from "react-toastify";
 import KeyboardDoubleArrowUpIcon from "@mui/icons-material/KeyboardDoubleArrowUp";
-import "react-toastify/dist/ReactToastify.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   const { pathname } = useLocation();
   const [isLoading, setIsLoading] = useState(true);
   const [topbtn, setTopBtn] = useState(false);
+
   // Create a client
   const queryClient = new QueryClient();
 
@@ -51,6 +52,7 @@ const App = () => {
     <QueryClientProvider client={queryClient}>
       <ToastContainer position="bottom-right" />
       <Header />
+
       <Outlet />
       <Newsletter />
       <Footer />
