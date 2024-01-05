@@ -118,7 +118,7 @@ export default function Cards() {
       ) : (
         <h4 className="products-number">
           {lang === "en"
-            ? `Results : ${displayBooks()?.length} ${
+            ? `Results : ${displayBooks()?.length ?? "0"} ${
                 displayBooks()?.length > 1
                   ? "Books"
                   : displayBooks()?.length === undefined
