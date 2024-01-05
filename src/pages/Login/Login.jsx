@@ -26,7 +26,7 @@ const Login = () => {
         onChange={handleChange}
         value={userData.password}
       />
-      <Link to="/signup">Don't Have an Account ? Go to Signup Page</Link>
+      <Link to="/signup">Don&apos;t Have an Account ? Go to Signup Page</Link>
       <button>
         {isLoading ? (
           <span className="loader"></span>

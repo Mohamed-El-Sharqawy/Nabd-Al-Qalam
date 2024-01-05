@@ -30,6 +30,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
+  border-radius: 0.5rem;
 }
 
 .contact-section .contact .left-side {

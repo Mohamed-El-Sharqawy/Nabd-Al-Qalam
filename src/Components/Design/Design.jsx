@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import "./design.css";
+
 const Design = () => {
   const { lang } = useSelector((state) => state.lang);
+
   return (
     <>
       <div className="design">

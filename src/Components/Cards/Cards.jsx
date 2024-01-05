@@ -1,9 +1,8 @@
 import Popup from "../Popup/Popup";
 import ClipLoader from "react-spinners/ClipLoader";
 import useDisplayBooks from "../../hooks/useDisplayBooks";
-import { memo } from "react";
 
-const Cards = () => {
+export default function Cards() {
   const {
     handleChange,
     displayBooks,
@@ -119,7 +118,7 @@ const Cards = () => {
       ) : (
         <h4 className="products-number">
           {lang === "en"
-            ? `Results : ${displayBooks()?.length || "Nothing Found"} ${
+            ? `Results : ${displayBooks()?.length} ${
                 displayBooks()?.length > 1
                   ? "Books"
                   : displayBooks()?.length === undefined
@@ -166,6 +165,8 @@ const Cards = () => {
       </div>
     </>
   );
-};
+}
 
-export default memo(Cards);
+// const MemoizedCards = React.memo(Cards);
+
+// export { MemoizedCards as Cards };

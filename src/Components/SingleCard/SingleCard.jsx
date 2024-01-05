@@ -1,4 +1,4 @@
-import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+// import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, getTotal } from "../../features/slices/cartSlice";
@@ -11,7 +11,11 @@ const SingleCard = ({ book, popup, setPopup, setChosenBook }) => {
   return (
     <div className="card">
       <div className="card-img">
-        <img src={book.img} alt="" />
+        <img
+          src={book.img}
+          alt={lang === "en" ? book.enTitle : book.arTitle}
+          title={lang === "en" ? book.enTitle : book.arTitle}
+        />
       </div>
       <div
         style={
@@ -35,7 +39,7 @@ const SingleCard = ({ book, popup, setPopup, setChosenBook }) => {
       </div>
       <div className="shopping">
         <div className="icons">
-          <FavoriteBorderOutlinedIcon />
+          {/* <FavoriteBorderOutlinedIcon /> */}
           <RemoveRedEyeOutlinedIcon
             onClick={() => {
               if (popup) return;
@@ -51,7 +55,7 @@ const SingleCard = ({ book, popup, setPopup, setChosenBook }) => {
             dispatch(getTotal());
             toast.success("Added to The Cart", {
               position: "bottom-right",
-              autoClose: 5000,
+              autoClose: 3000,
               hideProgressBar: false,
               closeOnClick: true,
               pauseOnHover: true,

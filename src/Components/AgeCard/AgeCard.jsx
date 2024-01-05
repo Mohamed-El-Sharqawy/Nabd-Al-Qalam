@@ -4,7 +4,7 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 
 const AgeCard = ({ card }) => {
   const { lang } = useSelector((state) => state.lang);
-  const [_, setSearchParams] = useSearchParams();
+  const [, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
 
   const handleClick = (href) => {

@@ -1,8 +1,9 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+
 import axios from "axios";
 import "./addBooks.css";
 
@@ -27,22 +28,12 @@ const AddBooks = () => {
   const formRef = useRef(null);
   const navigate = useNavigate();
 
-  const axiosConfig = {
-    headers: {
-      "Access-Control-Allow-Headers":
-        "access-control-allow-headers,access-control-allow-methods,access-control-allow-origin,content-type",
-      "Access-Control-Allow-Methods": "GET, POST, OPTIONS, PUT, DELETE",
-      "Access-Control-Allow-Origin": "https://nabd-al-qalam.vercel.app",
-    },
-  };
-
   const postBook = async (newBook) => {
     try {
-      await axios.post(
-        import.meta.env.VITE_ADD_BOOKS_ENDPOINT,
-        newBook,
-        axiosConfig
-      );
+      await axios.post(import.meta.env.VITE_ADD_BOOKS_ENDPOINT, newBook);
+
+      toast.success("Book Was Created Successfully");
+      setBook(defaultFormData);
     } catch (err) {
       toast.error("Please Try Again !", {
         toastId: "invalid_book_data",
@@ -54,17 +45,12 @@ const AddBooks = () => {
   // Mutations
   const mutation = useMutation({
     mutationFn: postBook,
-    onSuccess: () => {
-      // Invalidate and refetch
-      queryClient.invalidateQueries({ queryKey: ["books"] });
-    },
   });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    mutation.mutate(book);
 
-    setBook(defaultFormData);
+    mutation.mutate(book);
   };
 
   const handleChange = (e) => {
@@ -236,6 +222,8 @@ const AddBooks = () => {
         id="file-upload"
         accept=".jpeg, .png, .jpg, .webp"
         onChange={(e) => handleFileUpload(e)}
+        name="book_img"
+        key={+(book.img.length > 0)}
       />
 
       <button>

@@ -4,6 +4,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./slide.css";
 const SliderWardan = () => {
+  const { lang } = useSelector((state) => state.lang);
+
   const settings = {
     dots: true,
     infinite: true,
@@ -38,7 +40,7 @@ const SliderWardan = () => {
       },
     ],
   };
-  const { lang } = useSelector((state) => state.lang);
+
   return (
     <>
       <div className="slide-container">

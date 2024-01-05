@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import "./payButton.css";
 
 export default function PayButton({ cartItems }) {
   const [isLoading, setIsLoading] = useState(false);

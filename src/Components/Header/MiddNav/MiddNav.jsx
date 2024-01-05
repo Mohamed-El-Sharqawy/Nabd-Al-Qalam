@@ -27,14 +27,17 @@ const MiddNav = ({ headerRef }) => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (window.pageYOffset >= headerRef?.current.clientHeight) {
+    const displayGoTopButton = () => {
+      if (window.scrollY >= headerRef?.current.clientHeight) {
         setHeaderScroll("middnav-scroll");
       } else {
         setHeaderScroll("");
       }
-    });
-  }, []);
+    };
+
+    window.addEventListener("scroll", displayGoTopButton);
+    return () => window.removeEventListener("scroll", displayGoTopButton);
+  }, [headerRef]);
 
   return (
     <div className={`middnav ${headerScroll}`}>
@@ -118,12 +121,6 @@ const MiddNav = ({ headerRef }) => {
               {lang == "en" ? "LOGOUT" : "تسجيل خروج"}
             </button>
           )}
-          {/* <select className="countryPrice">
-            <option value="AED">AED</option>
-            <option value="SAR">SAR</option>
-            <option value="OMR">OMR</option>
-            <option value="QAR">QAR</option>
-          </select> */}
           <button className="lang-btn" onClick={handleLangSwitch}>
             {lang === "en" ? (
               <img

@@ -2,11 +2,12 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useSelector } from "react-redux";
+import Cookies from "universal-cookie";
 import axios from "axios";
 
 const useFormHandling = (form) => {
   const navigate = useNavigate();
-  const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+  const emailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
   const { lang } = useSelector((state) => state.lang);
   const [userData, setUserData] = useState({
     email: "",
@@ -22,18 +23,23 @@ const useFormHandling = (form) => {
   //! Login Form
   const handleLogin = async (e) => {
     e.preventDefault();
+
+    const cookies = new Cookies(null, { path: "/" });
     setIsLoading(true);
 
     if (!userData.email) {
       toast.error("Please Enter Your Email", { toastId: "login_email" });
+      setIsLoading(false);
     } else if (userData.email && !emailRegex.test(userData.email)) {
       toast.error("Please Enter a Valid Email", {
         toastId: "login_invalid_email",
       });
+      setIsLoading(false);
     } else if (userData.password.length < 8) {
       toast.error("Minimum Password Length is 8 Characters", {
         toastId: "login_minimum_length",
       });
+      setIsLoading(false);
     } else {
       try {
         const res = await axios.post(import.meta.env.VITE_LOGIN_ENDPOINT, {
@@ -41,7 +47,7 @@ const useFormHandling = (form) => {
           password: userData.password,
         });
 
-        localStorage.setItem("jwt", JSON.stringify(res?.data?.token));
+        cookies.set("jwt", res?.data?.token);
 
         navigate("/");
       } catch (err) {
@@ -56,6 +62,8 @@ const useFormHandling = (form) => {
   //! Signup Form
   const handleSignup = async (e) => {
     e.preventDefault();
+
+    const cookies = new Cookies(null, { path: "/" });
     setIsLoading(true);
 
     if (!user.email) {
@@ -82,7 +90,7 @@ const useFormHandling = (form) => {
         });
         setIsLoading(false);
 
-        localStorage.setItem("jwt", JSON.stringify(res?.data?.token));
+        cookies.set("jwt", res?.data?.token);
 
         if (res?.data?.user) {
           navigate("/");
@@ -128,14 +136,19 @@ const useFormHandling = (form) => {
   };
 
   useEffect(() => {
-    if (
-      localStorage.getItem("jwt") &&
-      (window.location.pathname.includes("login") ||
-        window.location.pathname.includes("signup"))
-    ) {
+    // Create the cookies instance
+    const cookies = new Cookies(null, { path: "/" });
+    const url = window.location.pathname;
+    const isAtAuthPage = url.includes("login") || url.includes("signup");
+
+    // Check if the user is authenticated
+    const isAuthenticated = cookies.get("jwt") && isAtAuthPage;
+
+    // Navigate if authenticated
+    if (isAuthenticated) {
       navigate("/");
     }
-  }, []);
+  }, [navigate]);
 
   //! Contact Form
   const getEmailMessage = ({ from_name, email, subject, message } = {}) => {

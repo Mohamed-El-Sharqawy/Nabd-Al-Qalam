@@ -122,7 +122,7 @@ const Cart = () => {
                 {lang == "en" ? " AED" : " درهم"}
               </span>
             </p>
-            {/* <p
+            <p
               style={
                 lang === "en"
                   ? { flexDirection: "row" }
@@ -131,10 +131,10 @@ const Cart = () => {
             >
               {lang === "en" ? "Shipping" : "مصاريف الشحن"}
               <span dir={lang === "en" ? "ltr" : "rtl"}>
-                {cartItems?.length > 0 ? 5 : 0}{" "}
+                {cartItems?.length > 0 ? 10 : 0}{" "}
                 {lang == "en" ? " AED" : " درهم"}
               </span>
-            </p> */}
+            </p>
             <h3
               style={
                 lang === "en"
@@ -142,9 +142,9 @@ const Cart = () => {
                   : { flexDirection: "row-reverse" }
               }
             >
-              {lang === "en" ? "The total amount" : "المبلغ الكلي"}{" "}
+              {lang === "en" ? "Total Amount" : "المبلغ الكلي"}{" "}
               <span dir={lang === "en" ? "ltr" : "rtl"}>
-                {cartTotalPrice}
+                {cartTotalPrice + 10}
                 {lang == "en" ? " AED" : " درهم"}
               </span>
             </h3>
