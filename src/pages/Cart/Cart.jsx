@@ -181,6 +181,7 @@ const Cart = () => {
           <img
             src="https://res.cloudinary.com/dxfphp6to/image/upload/v1701211606/nabdu_al_qalam/empty_cart_qtnlwu.svg"
             width={400}
+            height={330}
             alt="empty_cart"
           />
         </div>
