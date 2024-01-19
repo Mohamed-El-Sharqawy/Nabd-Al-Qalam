@@ -48,7 +48,7 @@ const Hero = () => {
         <div className="image-container">
           <img
             src={
-              "https://res.cloudinary.com/dxfphp6to/image/upload/v1697903940/nabdu_al_qalam/hero_okolhr.png"
+              "https://res.cloudinary.com/dxfphp6to/image/upload/v1705702288/nabdu_al_qalam/hero_okolhr_ruo8dl.webp"
             }
             width={600}
             height={800}

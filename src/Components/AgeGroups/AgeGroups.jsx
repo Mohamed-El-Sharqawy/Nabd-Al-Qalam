@@ -14,13 +14,13 @@ const AgeGroups = () => {
     },
     {
       id: 2,
-      img: "https://res.cloudinary.com/dxfphp6to/image/upload/v1697903942/nabdu_al_qalam/6-9_fo2hjt.png",
+      img: "https://res.cloudinary.com/dxfphp6to/image/upload/v1705703082/nabdu_al_qalam/6-9_fo2hjt_ei4hec.webp",
       arAge: "من 6 سنوات ل 9 سنوات",
       enAge: "From 6 years to 9 years",
     },
     {
       id: 3,
-      img: "https://res.cloudinary.com/dxfphp6to/image/upload/v1697903946/nabdu_al_qalam/9-12_zmhwr0.png",
+      img: "https://res.cloudinary.com/dxfphp6to/image/upload/v1705703081/nabdu_al_qalam/9-12_zmhwr0_ys8njd.webp",
       arAge: "من 9 سنوات ل 12 سنة",
       enAge: "From 9 years to 12 years",
     },
