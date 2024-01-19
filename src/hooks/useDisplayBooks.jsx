@@ -207,8 +207,6 @@ const useDisplayBooks = () => {
     if (category) setQuery((prev) => ({ ...prev, category }));
   }, [category, group]);
 
-  console.log(category, group);
-
   return {
     displayBooks,
     displayWardanSeries,

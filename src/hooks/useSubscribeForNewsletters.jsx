@@ -9,7 +9,7 @@ export default function useSubscribeForNewsletters() {
   const getSubscribed = ({ email }) => {
     return `
     <p>That Client Wants to Subscribe to Your Newsletter:</p>
-    <div style="background-color: #101010; color: #fbfbfb; padding: 12px">
+    <div style="background-color: #555; color: #fbfbfb; padding: 12px">
     <p style="margin: 12px 0;">Email: ${email}</p>
     </div>
     `;

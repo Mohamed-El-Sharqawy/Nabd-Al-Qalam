@@ -27,6 +27,11 @@ const MobileMenu = ({ setIsMenuHidden, isMenuHidden }) => {
         </Link>
       </li>
       <li>
+        <Link onClick={handleClick} to={"/books"}>
+          {lang === "en" ? "Buy Now" : "اشتري الأن"}
+        </Link>
+      </li>
+      <li>
         <Link onClick={handleClick} to={"/about"}>
           {lang === "en" ? "About" : "من نحن"}
         </Link>
@@ -36,6 +41,11 @@ const MobileMenu = ({ setIsMenuHidden, isMenuHidden }) => {
           {lang === "en" ? "Contact" : "تواصل معنا"}
         </Link>
       </li>
+      <li>
+        <Link onClick={handleClick} to="/activities">
+          {lang === "en" ? "Activities" : "أنشطة الدار"}
+        </Link>
+      </li>
       {user.isAdmin && (
         <li>
           <Link onClick={handleClick} to="/add-books">
@@ -43,11 +53,6 @@ const MobileMenu = ({ setIsMenuHidden, isMenuHidden }) => {
           </Link>
         </li>
       )}
-      <li>
-        <Link onClick={handleClick} to="/activities">
-          {lang === "en" ? "Activities" : "أنشطة الدار"}
-        </Link>
-      </li>
       <li>
         <Link
           onClick={handleClick}

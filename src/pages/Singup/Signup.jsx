@@ -9,7 +9,7 @@ const Signup = () => {
   return (
     <form method="POST" className="signup-form" onSubmit={handleSignup}>
       <img
-        src="https://hips.hearstapps.com/hmg-prod/images/best-childrens-kids-books-1599680383.jpg"
+        src="https://res.cloudinary.com/dxfphp6to/image/upload/v1705701165/nabdu_al_qalam/reading_ukaqz5.svg"
         alt="login_form_image"
       />
       <input

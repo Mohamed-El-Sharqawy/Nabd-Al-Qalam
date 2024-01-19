@@ -22,8 +22,9 @@
   width: 95%;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   gap: 1rem;
+  padding: 2rem 0;
 }
 .left-about {
   width: 800px;
@@ -43,7 +44,7 @@
   font-size: 14px;
   text-transform: capitalize;
   font-weight: 600;
-  line-height: 1.7;
+  line-height: 2;
   color: crimson;
 }
 .right-about {
@@ -52,6 +53,7 @@
   display: flex;
   align-self: center;
   background-color: #fa85118a;
+  border-radius: 0.5rem;
 }
 .right-about img {
   width: 100%;

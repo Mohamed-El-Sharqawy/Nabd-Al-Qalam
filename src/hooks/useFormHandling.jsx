@@ -154,7 +154,7 @@ const useFormHandling = (form) => {
   const getEmailMessage = ({ from_name, email, subject, message } = {}) => {
     return `
         <p>You have received a new message from your contact form website:</p>
-        <div style="background-color: #101010; color: #fbfbfb; padding: 12px">
+        <div style="background-color: #fbfbfb; color: #222; padding: 12px">
             <p style="margin: 0;">Name: ${from_name}</p>
             <p style="margin: 12px 0;">Email: ${email}</p>
             <p style="margin: 0 0 12px;">Subject: ${subject}</p>
@@ -170,10 +170,12 @@ const useFormHandling = (form) => {
       toast.error("Please Enter Your Name", {
         toastId: "from_name",
       });
+      setIsLoading(false);
     } else if (!form?.current?.email.value) {
       toast.error("Please Enter Your Email", {
         toastId: "contact_email",
       });
+      setIsLoading(false);
     } else if (
       form?.current?.email.value &&
       !emailRegex.test(form?.current?.email.value)
@@ -181,14 +183,17 @@ const useFormHandling = (form) => {
       toast.error("Please Enter a Valid Email", {
         toastId: "contact_email",
       });
+      setIsLoading(false);
     } else if (!form?.current?.subject.value) {
       toast.error("Please Enter a Subject", {
         toastId: "contact_subject",
       });
+      setIsLoading(false);
     } else if (!form?.current?.message.value) {
       toast.error("Please Enter a Message", {
         toastId: "contact_message",
       });
+      setIsLoading(false);
     } else {
       const emailMessage = getEmailMessage({
         from_name: form?.current?.from_name.value,

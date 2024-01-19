@@ -74,6 +74,12 @@ const MiddNav = ({ headerRef }) => {
               <Link to="/"> {lang == "en" ? "Home" : "الصفحة الرئيسية"} </Link>
             </li>
             <li>
+              <Link to="/books">
+                {" "}
+                {lang == "en" ? "Buy Now" : "اشتري الأن"}{" "}
+              </Link>
+            </li>
+            <li>
               <Link to="/about">{lang == "en" ? "About" : "من نحن"}</Link>
             </li>
             <li>
