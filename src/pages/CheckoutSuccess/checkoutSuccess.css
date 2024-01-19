@@ -1,0 +1,83 @@
+.checkout-success {
+  padding: 3rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.checkout-success div:has(img) {
+  width: 450px;
+  height: 450px;
+  background-color: #c1114d;
+  border-radius: 50%;
+  padding: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkout-success div:has(img) img {
+  width: 100%;
+}
+
+.checkout-success div:has(a) a {
+  display: inline-block;
+  background-color: #c1114d;
+  padding: 0.5rem 0.85rem;
+  border-radius: 0.5rem;
+  color: white;
+  margin-top: 0.5rem;
+  transition: 0.35s ease-out;
+}
+
+.checkout-success div:has(a) a:hover {
+  background-color: #a70d40;
+  letter-spacing: 1px;
+}
+
+@media screen and (max-width: 1023px) {
+  .checkout-success div:has(img) {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .checkout-success {
+    flex-direction: column-reverse !important;
+  }
+
+  .checkout-success div:has(a) a {
+    display: block;
+    margin: 0.5rem auto 0;
+    width: fit-content;
+  }
+
+  .checkout-success div:has(img) {
+    width: 350px;
+    height: 350px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  html {
+    font-size: 14px;
+  }
+
+  .checkout-success div:has(img) {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .checkout-success {
+    gap: 1.5rem;
+  }
+
+  .checkout-success div:has(img) {
+    width: 200px;
+    height: 200px;
+  }
+}
