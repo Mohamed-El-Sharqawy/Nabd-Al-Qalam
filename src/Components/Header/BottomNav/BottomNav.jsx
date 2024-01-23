@@ -1,4 +1,4 @@
-import "./middnav.css";
+import "./bottomNav.css";
 import PersonIcon from "@mui/icons-material/Person";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
@@ -8,7 +8,7 @@ import { switchLang } from "../../../features/slices/langSlice";
 import { useEffect, useState } from "react";
 import { logout } from "../../../features/slices/authSlice";
 import MobileMenu from "../MobileMenu/MobileMenu";
-const MiddNav = ({ headerRef }) => {
+const BottomNav = ({ headerRef }) => {
   const [headerScroll, setHeaderScroll] = useState("");
   const [isMenuHidden, setIsMenuHidden] = useState(true);
   const { cartItems } = useSelector((state) => state.cart);
@@ -29,7 +29,7 @@ const MiddNav = ({ headerRef }) => {
   useEffect(() => {
     const displayGoTopButton = () => {
       if (window.scrollY >= headerRef?.current.clientHeight) {
-        setHeaderScroll("middnav-scroll");
+        setHeaderScroll("bottomnav-scroll");
       } else {
         setHeaderScroll("");
       }
@@ -40,7 +40,7 @@ const MiddNav = ({ headerRef }) => {
   }, [headerRef]);
 
   return (
-    <div className={`middnav ${headerScroll}`}>
+    <div className={`bottomnav ${headerScroll}`}>
       <div
         style={
           lang === "en"
@@ -164,4 +164,4 @@ const MiddNav = ({ headerRef }) => {
   );
 };
 
-export default MiddNav;
+export default BottomNav;

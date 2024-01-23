@@ -1,5 +1,5 @@
 import TopNav from "./TopNav/TopNav";
-import MiddNav from "./MiddNav/MiddNav";
+import BottomNav from "./BottomNav/BottomNav";
 import { useRef } from "react";
 
 const Header = () => {
@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <header ref={headerRef}>
       <TopNav />
-      <MiddNav headerRef={headerRef} />
+      <BottomNav headerRef={headerRef} />
     </header>
   );
 };

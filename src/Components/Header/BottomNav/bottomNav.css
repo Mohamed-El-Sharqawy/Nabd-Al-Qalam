@@ -1,7 +1,7 @@
 header {
   min-height: 153px;
 }
-.middnav {
+.bottomnav {
   position: static;
   padding-top: 10px;
   width: 100%;
@@ -10,7 +10,7 @@ header {
   background-color: white;
   z-index: 999;
 }
-.middnav-scroll {
+.bottomnav-scroll {
   position: fixed;
   z-index: 999;
   top: 0;
@@ -46,7 +46,7 @@ header {
 }
 
 .leftlinks-search .links-search a {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: bold;
   color: #fa8411;
 }
@@ -92,6 +92,7 @@ button.auth-btn {
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   transition: 0.35s;
+  font-size: 0.8rem;
 }
 button.auth-btn:hover {
   background-color: #e27f1c;
@@ -176,5 +177,17 @@ button.lang-btn {
 
   .mobile-menu li img {
     width: 25px;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 1130px) {
+  html {
+    font-size: 13px;
   }
 }
