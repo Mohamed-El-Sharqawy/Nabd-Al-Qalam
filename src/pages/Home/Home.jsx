@@ -21,7 +21,7 @@ const Home = () => {
   useEffect(() => {
     const getLoggedUser = async (decodedToken) => {
       const res = await axios.get(
-        `${import.meta.env.VITE_USERS_ENDPOINT}${decodedToken?.id}`
+        `${"https://nabd-server.onrender.com/users/"}${decodedToken?.id}`
       );
 
       dispatch(login(res.data));

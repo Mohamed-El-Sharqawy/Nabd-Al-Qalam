@@ -30,7 +30,7 @@ const AddBooks = () => {
 
   const postBook = async (newBook) => {
     try {
-      await axios.post(import.meta.env.VITE_ADD_BOOKS_ENDPOINT, newBook);
+      await axios.post("https://nabd-server.onrender.com/add-books", newBook);
 
       toast.success("Book Was Created Successfully");
       setBook(defaultFormData);

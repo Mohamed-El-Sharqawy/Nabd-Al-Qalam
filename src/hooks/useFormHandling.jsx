@@ -42,7 +42,7 @@ const useFormHandling = (form) => {
       setIsLoading(false);
     } else {
       try {
-        const res = await axios.post(import.meta.env.VITE_LOGIN_ENDPOINT, {
+        const res = await axios.post("https://nabd-server.onrender.com/login", {
           email: userData.email,
           password: userData.password,
         });
@@ -84,7 +84,7 @@ const useFormHandling = (form) => {
       });
     } else if (user.password === user.confirmPassword) {
       try {
-        const res = await axios.post(import.meta.env.VITE_SIGNUP_ENDPOINT, {
+        const res = await axios.post("https://nabd-server.onrender.com/signup", {
           email: user.email,
           password: user.password,
         });

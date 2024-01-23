@@ -17,7 +17,10 @@ export default function PayButton({ cartItems }) {
     };
 
     axios
-      .post(`${import.meta.env.VITE_CHECKOUT_ENDPOINT}`, data)
+      .post(
+        `${"https://nabd-server.onrender.com/create-checkout-session"}`,
+        data
+      )
       .then((res) => {
         if (res.data.url) {
           window.location.href = res.data.url;

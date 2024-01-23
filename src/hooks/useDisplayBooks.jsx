@@ -17,7 +17,7 @@ const useDisplayBooks = () => {
   const category = searchParams.get("category");
 
   const getAllBooks = async () => {
-    const res = await axios.get(import.meta.env.VITE_BOOKS_ENDPOINT);
+    const res = await axios.get("https://nabd-server.onrender.com");
     return res.data;
   };
 
