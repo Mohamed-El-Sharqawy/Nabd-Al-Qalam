@@ -7,11 +7,13 @@ import { ToastContainer } from "react-toastify";
 import KeyboardDoubleArrowUpIcon from "@mui/icons-material/KeyboardDoubleArrowUp";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import "react-toastify/dist/ReactToastify.css";
+import useToken from "./hooks/useToken";
 
 const App = () => {
   const { pathname } = useLocation();
   const [isLoading, setIsLoading] = useState(true);
   const [topbtn, setTopBtn] = useState(false);
+  useToken();
 
   // Create a client
   const queryClient = new QueryClient();

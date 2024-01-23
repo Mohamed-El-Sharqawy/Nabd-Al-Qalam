@@ -18,7 +18,7 @@ export default function PayButton({ cartItems }) {
 
     axios
       .post(
-        `${"https://nabd-server.onrender.com/create-checkout-session"}`,
+        `${"https://comfortable-duck-pants.cyclic.app/create-checkout-session"}`,
         data
       )
       .then((res) => {
