@@ -25,7 +25,7 @@ const Hero = () => {
               : "اهلا بك في نبض القلم"}
           </h1>
           <p
-            className={`${lang === "ar" ? "ar" : ""}`}
+            className={`${lang === "ar" ? "ar" : "en"}`}
             dir={lang === "en" ? "ltr" : "rtl"}
           >
             {lang === "en"

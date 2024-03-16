@@ -166,7 +166,3 @@ export default function Cards() {
     </>
   );
 }
-
-// const MemoizedCards = React.memo(Cards);
-
-// export { MemoizedCards as Cards };

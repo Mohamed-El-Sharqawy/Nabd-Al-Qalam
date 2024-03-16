@@ -39,7 +39,7 @@ export default function useSubscribeForNewsletters() {
       const res = await fetch("https://sendmail-api-docs.vercel.app/api/send", {
         method: "POST",
         body: JSON.stringify({
-          to: "dev.elbehery@gmail.com",
+          to: "N.alqalam.p.d@gmail.com",
           subject: "Subscription Request",
           message: subscribed,
         }),

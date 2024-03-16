@@ -40,8 +40,12 @@
 
 .hero .container .content h1.ar,
 .hero .container .content p.ar {
-  animation: slide-left ease 1s;
-  margin-left: auto;
+  margin-left: auto !important;
+}
+
+.hero .container .content h1.en,
+.hero .container .content p.en {
+  margin-right: auto !important;
 }
 
 .hero .container .content a {

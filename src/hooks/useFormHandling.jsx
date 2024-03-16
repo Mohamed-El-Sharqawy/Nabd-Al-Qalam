@@ -205,7 +205,7 @@ const useFormHandling = (form) => {
       const res = await fetch("https://sendmail-api-docs.vercel.app/api/send", {
         method: "POST",
         body: JSON.stringify({
-          to: "dev.elbehery@gmail.com",
+          to: "N.alqalam.p.d@gmail.com",
           subject: form?.current?.subject.value,
           message: emailMessage,
         }),
