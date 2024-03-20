@@ -5,6 +5,8 @@ import { useSelector } from "react-redux";
 const Hero = () => {
   const { lang } = useSelector((state) => state.lang);
 
+  console.log(lang);
+
   return (
     <section className="hero">
       <div
