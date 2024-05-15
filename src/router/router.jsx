@@ -10,7 +10,7 @@ import Login from "../pages/Login/Login";
 import Cards from "../Components/Cards/Cards";
 import Activities from "../pages/Activities/Activities";
 import CheckoutSuccess from "../pages/CheckoutSuccess/CheckoutSuccess";
-import { Payment } from "../pages";
+import { Orders, Payment } from "../pages";
 
 export const router = createBrowserRouter([
   {
@@ -24,6 +24,10 @@ export const router = createBrowserRouter([
       {
         path: "add-books",
         element: <AddBooks />,
+      },
+      {
+        path: "orders",
+        element: <Orders />,
       },
       {
         path: "contact",

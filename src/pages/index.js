@@ -1,6 +1,7 @@
 export { default as About } from "./About/About";
 export { default as Activities } from "./Activities/Activities";
 export { default as AddBooks } from "./AddBooks/AddBooks";
+export { default as Orders } from "./Orders/Orders";
 export { default as Cart } from "./Cart/Cart";
 export { default as Home } from "./Home/Home";
 export { default as Login } from "./Login/Login";

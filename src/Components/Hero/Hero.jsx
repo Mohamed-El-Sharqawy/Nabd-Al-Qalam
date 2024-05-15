@@ -31,7 +31,11 @@ const Hero = () => {
             dir={lang === "en" ? "ltr" : "rtl"}
           >
             {lang === "en"
-              ? `Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum odit, quaerat deserunt doloremque delectus voluptate sed rem temporibus pariatur, assumenda enim doloribus alias deleniti dolor consequuntur unde magni quae earum.`
+              ? `institution
+              A cultural organization specializing in the manufacture and publication of books according to international standards. Dar started
+              Pulse of the Pen, its journey at the beginning of 2018 in the Capital of Culture, “Sharjah”
+              An approved, systematic plan to advance children’s culture and literature in the world
+              Arab League to keep pace with the global trend in this field.`
               : `مؤسسة
   ثقافية متخصصة بصناعة ونشر الكتاب وفق المعايير العالمية. بدأت دار
   نبض القلم مســيرتها في بداية عام 2018 بعاصمة الثقافة " الشــارقة "

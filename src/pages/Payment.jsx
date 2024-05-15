@@ -10,6 +10,12 @@ export default function Payment() {
   const emailRef = useRef();
   const phoneRef = useRef();
 
+  // Delivery Address
+  const addressRef = useRef();
+  const cityRef = useRef();
+  const stateRef = useRef();
+  const zipCodeRef = useRef();
+
   useEffect(() => {
     const items = cartItems.map((item) => ({
       name: item.arTitle,
@@ -28,8 +34,9 @@ export default function Payment() {
         publicKey: "pk_sandbox_ba6fef65d126a7d60d318a4e68faba59",
         mode: PaymenntJS?.modes.TEST,
         onTokenized: async function (data) {
+          console.log(cartTotalPrice);
           const response = await fetch(
-            "http://localhost:5000/paymentt-checkout",
+            "https://comfortable-duck-pants.cyclic.app/paymentt-checkout",
             {
               method: "POST",
               headers: {
@@ -66,25 +73,23 @@ export default function Payment() {
                   },
                   billingAddress: {
                     name: `${firstNameRef.current.value} ${lastNameRef.current.value}`,
-                    address1: "Cairo, Heliopolis",
-                    address2: "Cairo, Heliopolis, 2",
-                    city: "Heliopolis",
-                    state: "Cairo",
-                    zip: "11798",
-                    country: "EG",
+                    address1: addressRef.current.value,
+                    city: cityRef.current.value,
+                    state: stateRef.current.value,
+                    zip: zipCodeRef.current.value,
+                    country: "AE",
                     set: true,
                   },
                   deliveryAddress: {
-                    name: "Mohamed Ahmed",
-                    address1: "Cairo, Heliopolis",
-                    address2: "Cairo, Heliopolis, 2",
-                    city: "Heliopolis",
-                    state: "Cairo",
-                    zip: "11798",
-                    country: "EG",
+                    name: `${firstNameRef.current.value} ${lastNameRef.current.value}`,
+                    address1: addressRef.current.value,
+                    city: cityRef.current.value,
+                    state: stateRef.current.value,
+                    zip: zipCodeRef.current.value,
+                    country: "AE",
                     set: true,
                   },
-                  returnUrl: "https://nabdalqalam.com/checkout-success",
+                  returnUrl: "https://nabdalqalam.com",
                 },
                 validReturnUrl: true,
               }),
@@ -92,6 +97,7 @@ export default function Payment() {
           );
 
           const result = await response.json();
+
           if (result.success) {
             if (result.result.status === "REDIRECT")
               window.location.href = result.result.redirectUrl;
@@ -162,6 +168,35 @@ export default function Payment() {
             min={1}
             name="phoneNumber"
             ref={phoneRef}
+          />
+          <input
+            className="paymentt-custom-input"
+            placeholder="Address..."
+            type="text"
+            name="address"
+            ref={addressRef}
+          />
+          <input
+            className="paymentt-custom-input"
+            placeholder="City..."
+            type="text"
+            name="city"
+            ref={cityRef}
+          />
+          <input
+            className="paymentt-custom-input"
+            placeholder="State..."
+            type="text"
+            name="state"
+            ref={stateRef}
+          />
+          <input
+            className="paymentt-custom-input"
+            placeholder="Zip Code..."
+            type="number"
+            min={5}
+            name="zipCode"
+            ref={zipCodeRef}
           />
         </div>
         <div id="paymennt-frame" className="card-frame">

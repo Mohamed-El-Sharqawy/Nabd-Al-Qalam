@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 import axios from "axios";
@@ -83,6 +83,15 @@ const AddBooks = () => {
   return (
     <form ref={formRef} onSubmit={handleSubmit} className="add-form">
       <div className="heading-book">
+        <Link style={{
+          margin: "0 auto 1rem",
+          display: "block",
+          width: "fit-content",
+          backgroundColor: "rgb(235, 184, 117)",
+          color: "white",
+          padding: "0.5rem 0.85rem",
+          borderRadius: "0.5rem",
+        }} to={"/orders"}>الطلبات</Link>
         <h1>{lang === "en" ? "Add Book" : "أضف كتاب"}</h1>
       </div>
       <input
