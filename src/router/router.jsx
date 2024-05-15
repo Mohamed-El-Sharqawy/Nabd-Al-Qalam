@@ -10,6 +10,7 @@ import Login from "../pages/Login/Login";
 import Cards from "../Components/Cards/Cards";
 import Activities from "../pages/Activities/Activities";
 import CheckoutSuccess from "../pages/CheckoutSuccess/CheckoutSuccess";
+import { Payment } from "../pages";
 
 export const router = createBrowserRouter([
   {
@@ -51,6 +52,10 @@ export const router = createBrowserRouter([
       {
         path: "login",
         element: <Login />,
+      },
+      {
+        path: "payment",
+        element: <Payment />,
       },
       {
         path: "books",

@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import "./payButton.css";
+import { Link } from "react-router-dom";
 
 export default function PayButton({ cartItems }) {
   const [isLoading, setIsLoading] = useState(false);
@@ -34,14 +35,16 @@ export default function PayButton({ cartItems }) {
   };
 
   return (
-    <button className="pay-button" onClick={handleCheckout}>
-      {isLoading ? (
-        <span className="loader"></span>
-      ) : lang == "en" ? (
-        " Go to Checkout"
-      ) : (
-        "اذهب للدفع الأن"
-      )}
+    <button type="button" className="pay-button">
+      <Link to={"/payment"}>
+        {isLoading ? (
+          <span className="loader"></span>
+        ) : lang == "en" ? (
+          " Go to Checkout"
+        ) : (
+          "اذهب للدفع الأن"
+        )}
+      </Link>
     </button>
   );
 }

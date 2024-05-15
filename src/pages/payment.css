@@ -1,0 +1,81 @@
+section.payment-section {
+  border: 1px solid #c0114c;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 1rem;
+  border-radius: 0.75rem;
+}
+
+.payment-inputs {
+  max-width: 370px;
+  margin: 0 auto;
+  padding: 0.75rem;
+  border-radius: 0.7rem;
+}
+
+#paymennt-frame {
+  max-width: 370px;
+  margin: 0 auto;
+  padding: 0.75rem;
+  border-radius: 0.7rem;
+  height: auto;
+}
+
+#pay-button {
+  display: block;
+  margin: 1.5rem auto 0;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  font-weight: 500;
+  height: 40px;
+  width: 120px;
+  background-color: #ebb875 !important;
+  cursor: pointer !important;
+  z-index: 9999999999 !important;
+}
+
+#pay-button:disabled {
+  background-color: #ebb875;
+}
+
+#pay-button:not(:disabled) {
+  cursor: pointer;
+}
+
+.card-frame {
+  /* border: solid 1px #13395e; */
+  border-radius: 3px;
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 8px;
+  height: 100px;
+  /* box-shadow: 0 1px 3px 0 rgba(19, 57, 94, 0.2); */
+}
+
+.error-message {
+  color: red;
+  font-weight: 600;
+}
+
+.info-message {
+  color: green;
+  font-weight: 600;
+}
+
+.paymentt-custom-input {
+  width: 45%;
+  margin-left: 10px;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.5rem;
+  border: 1px solid #c0114c;
+}
+
+.paymentt-custom-input:active {
+  border: 1px solid #c0114c;
+}
+
+.paymentt-custom-input:focus {
+  border: 1px solid #c0114c;
+}

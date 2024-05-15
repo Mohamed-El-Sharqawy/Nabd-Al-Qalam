@@ -6,3 +6,4 @@ export { default as Home } from "./Home/Home";
 export { default as Login } from "./Login/Login";
 export { default as Signup } from "./Singup/Signup";
 export { default as Contact } from "./Contact";
+export { default as Payment } from "./Payment";
