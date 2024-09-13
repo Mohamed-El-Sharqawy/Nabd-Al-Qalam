@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
+import { calculateTotalPriceWithTax, calculateTax } from "../utils/calculateTotalPriceWithTax";
 import "./payment.css";
 
 export default function Payment() {
@@ -54,10 +55,10 @@ export default function Payment() {
                   requestId: "ORD-1234-r1s",
                   orderId: "ORD-123s4",
                   currency: "AED",
-                  amount: cartTotalPrice + 10,
+                  amount: calculateTotalPriceWithTax(cartTotalPrice) + 10,
                   totals: {
                     subtotal: cartTotalPrice,
-                    tax: 0,
+                    tax: calculateTax(cartTotalPrice).toFixed(2),
                     shipping: 10,
                     handling: 0,
                     discount: 0,
@@ -105,7 +106,6 @@ export default function Payment() {
         onTokenizationFailed: function (data) {
           errorMessage.innerText = data.error;
         },
-
         onValidationUpdate: function (data) {
           payButton.disabled = !data.valid;
           if (!data.valid) {

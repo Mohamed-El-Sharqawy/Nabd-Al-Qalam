@@ -32,10 +32,10 @@ const Footer = () => {
           <LocationOnIcon /> United Arab Emirates
         </li>
         <li className="info">
-          <LocalPhoneIcon /> +971551886228
+          <LocalPhoneIcon /> <Link to={"tel:+971551886228"}>+971551886228</Link>
         </li>
         <li className="info">
-          <MailIcon /> N.alqalam.p.d@gmail.com
+          <MailIcon /> <Link to={"mailto:N.alqalam.p.d@gmail.com"}>N.alqalam.p.d@gmail.com</Link>
         </li>
       </ul>
       <ul className="payment-methods">

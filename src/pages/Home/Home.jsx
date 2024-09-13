@@ -43,7 +43,7 @@ const Home = () => {
       <div className="images-container">
         <Hero />
         <AgeGroups />
-        <SliderWardan />
+        {/* <SliderWardan /> */}
         <Design />
       </div>
     </>
