@@ -20,6 +20,9 @@ const Footer = () => {
         <li>
           <Link to={"/activities"}>Activities</Link>
         </li>
+        <li>
+          <Link to={"/terms-and-conditions"}>Terms & Conditions</Link>
+        </li>
       </ul>
       <ul>
         <li>

@@ -1,0 +1,36 @@
+section.terms-conditions {
+  width: 95%;
+  margin: 0 auto;
+  padding-block: 3rem;
+}
+section.terms-conditions h1 {
+  color: #c0114c;
+}
+
+section.terms-conditions p {
+  max-width: 1000px;
+  width: 100%;
+  line-height: 2;
+  font-weight: bold;
+}
+
+section.terms-conditions p .contact-number {
+  color: #c0114c;
+  margin-inline: 0.4rem;
+}
+
+section.terms-conditions ul {
+  padding-inline: 2rem;
+  margin-top: 1.5rem;
+}
+
+section.terms-conditions li {
+  max-width: 1050px;
+  list-style-type: decimal;
+  margin-bottom: 0.625rem;
+  cursor: auto;
+}
+
+section.terms-conditions li:last-child {
+  margin-bottom: 1.5rem;
+}

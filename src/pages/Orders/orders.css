@@ -1,0 +1,12 @@
+section.orders {
+  min-height: 450px;
+}
+
+section.orders h1 {
+  color: #c0114c;
+  font-size: 2.5rem;
+  border-bottom: 2px solid #c0114c;
+  width: fit-content;
+  padding-inline: 1.5rem;
+  margin: 0 auto 1.5rem;
+}

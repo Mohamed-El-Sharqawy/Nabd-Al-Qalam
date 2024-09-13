@@ -17,7 +17,7 @@ const Hero = () => {
       >
         <div className="content">
           <h1
-            className={`${lang === "ar" ? "ar" : ""}`}
+            className={`${lang === "ar" ? "ar" : "en"}`}
             dir={lang === "en" ? "ltr" : "rtl"}
           >
             {lang === "en"

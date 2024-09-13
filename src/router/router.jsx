@@ -11,6 +11,7 @@ import Cards from "../Components/Cards/Cards";
 import Activities from "../pages/Activities/Activities";
 import CheckoutSuccess from "../pages/CheckoutSuccess/CheckoutSuccess";
 import { Orders, Payment } from "../pages";
+import TermsConditions from "../pages/TermsConditions/TermsConditions";
 
 export const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ export const router = createBrowserRouter([
       {
         path: "activities",
         element: <Activities />,
+      },
+      {
+        path: "terms-and-conditions",
+        element: <TermsConditions />,
       },
       {
         path: "shopping-cart",

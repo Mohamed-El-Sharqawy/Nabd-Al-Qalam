@@ -24,7 +24,6 @@
   font-size: 40px;
   line-height: 1.4;
   margin-bottom: 1rem;
-  animation: slide-right ease 1s;
 }
 
 .hero .container .content p {
@@ -34,17 +33,18 @@
   font-weight: bold;
   font-size: 17px;
   margin-bottom: 2rem;
-  animation: slide-right ease 1s;
 }
 
 .hero .container .content h1.ar,
 .hero .container .content p.ar {
   margin-left: auto !important;
+  animation: slide-left ease 1s;
 }
 
 .hero .container .content h1.en,
 .hero .container .content p.en {
   margin-right: auto !important;
+  animation: slide-right ease 1s;
 }
 
 .hero .container .content a {

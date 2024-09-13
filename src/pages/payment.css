@@ -37,20 +37,16 @@ section.payment-section {
 
 #pay-button:disabled {
   background-color: #ebb875;
-}
-
-#pay-button:not(:disabled) {
-  cursor: pointer;
+  cursor: default !important;
+  opacity: 0.5;
 }
 
 .card-frame {
-  /* border: solid 1px #13395e; */
   border-radius: 3px;
   width: 100%;
   padding: 5px;
   margin-bottom: 8px;
   height: 100px;
-  /* box-shadow: 0 1px 3px 0 rgba(19, 57, 94, 0.2); */
 }
 
 .error-message {
@@ -78,4 +74,24 @@ section.payment-section {
 
 .paymentt-custom-input:focus {
   border: 1px solid #c0114c;
+}
+
+.payment-section .loader {
+  width: 60px;
+  aspect-ratio: 4;
+  --_g: no-repeat radial-gradient(circle closest-side, #000 90%, #0000);
+  background: var(--_g) 0% 50%, var(--_g) 50% 50%, var(--_g) 100% 50%;
+  background-size: calc(100% / 3) 100%;
+  animation: l7 1s infinite linear;
+}
+@keyframes l7 {
+  33% {
+    background-size: calc(100% / 3) 0%, calc(100% / 3) 100%, calc(100% / 3) 100%;
+  }
+  50% {
+    background-size: calc(100% / 3) 100%, calc(100% / 3) 0%, calc(100% / 3) 100%;
+  }
+  66% {
+    background-size: calc(100% / 3) 100%, calc(100% / 3) 100%, calc(100% / 3) 0%;
+  }
 }

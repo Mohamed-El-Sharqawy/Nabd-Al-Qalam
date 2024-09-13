@@ -1,9 +1,11 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import "./payment.css";
 
 export default function Payment() {
   const { cartItems, cartTotalPrice } = useSelector((state) => state.cart);
+  const { lang } = useSelector((state) => state.lang);
+  const [isClickedPayButton, setIsClickedPayButton] = useState(false);
 
   const firstNameRef = useRef();
   const lastNameRef = useRef();
@@ -26,8 +28,6 @@ export default function Payment() {
 
     var payButton = document.getElementById("pay-button");
     var errorMessage = document.querySelector(".error-message");
-
-    payButton.disabled = true;
 
     if (PaymenntJS) {
       PaymenntJS?.init({
@@ -129,6 +129,7 @@ export default function Payment() {
 
     payButton.addEventListener("click", function (event) {
       event.preventDefault();
+      setIsClickedPayButton(true);
       if (PaymenntJS) {
         PaymenntJS?.submitPayment();
       }
@@ -203,8 +204,14 @@ export default function Payment() {
           <p className="error-message"></p>
         </div>
 
-        <button id="pay-button" type="submit">
-          Pay
+        <button id="pay-button" type="submit" disabled={isClickedPayButton}>
+          {isClickedPayButton
+            ? lang == "en"
+              ? "Loading ..."
+              : "...جاري التحميل"
+            : lang == "en"
+            ? "Pay"
+            : "ادفع الأن"}
         </button>
       </section>
     </>
