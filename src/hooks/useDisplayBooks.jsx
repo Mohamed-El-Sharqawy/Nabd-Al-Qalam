@@ -17,7 +17,7 @@ const useDisplayBooks = () => {
   const category = searchParams.get("category");
 
   const getAllBooks = async () => {
-    const res = await axios.get("https://comfortable-duck-pants.cyclic.app");
+    const res = await axios.get("https://nabd-al-qalam-server-production.up.railway.app");
     return res.data;
   };
 

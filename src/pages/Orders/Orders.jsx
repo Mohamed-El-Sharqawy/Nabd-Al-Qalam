@@ -9,7 +9,7 @@ const Orders = () => {
 
   useEffect(() => {
     const getAllOrders = async () => {
-      const res = await fetch("https://comfortable-duck-pants.cyclic.app/orders");
+      const res = await fetch("https://nabd-al-qalam-server-production.up.railway.app/orders");
 
       const data = await res.json();
 

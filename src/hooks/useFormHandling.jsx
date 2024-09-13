@@ -42,7 +42,7 @@ const useFormHandling = (form) => {
       setIsLoading(false);
     } else {
       try {
-        const res = await axios.post("https://comfortable-duck-pants.cyclic.app/login", {
+        const res = await axios.post("https://nabd-al-qalam-server-production.up.railway.app/login", {
           email: userData.email,
           password: userData.password,
         });
@@ -84,7 +84,7 @@ const useFormHandling = (form) => {
       });
     } else if (user.password === user.confirmPassword) {
       try {
-        const res = await axios.post("https://comfortable-duck-pants.cyclic.app/signup", {
+        const res = await axios.post("https://nabd-al-qalam-server-production.up.railway.app/signup", {
           email: user.email,
           password: user.password,
         });

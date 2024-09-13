@@ -34,9 +34,8 @@ export default function Payment() {
         publicKey: "pk_sandbox_ba6fef65d126a7d60d318a4e68faba59",
         mode: PaymenntJS?.modes.TEST,
         onTokenized: async function (data) {
-          console.log(cartTotalPrice);
           const response = await fetch(
-            "https://comfortable-duck-pants.cyclic.app/paymentt-checkout",
+            "https://nabd-al-qalam-server-production.up.railway.app/paymentt-checkout",
             {
               method: "POST",
               headers: {

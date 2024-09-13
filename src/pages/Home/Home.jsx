@@ -13,9 +13,8 @@ const Home = () => {
 
   useEffect(() => {
     const getPaymentStatus = async () => {
-      console.log(searchParams.get("payment"));
       const res = await fetch(
-        `https://comfortable-duck-pants.cyclic.app/get-payment/${searchParams.get("payment")}`,
+        `https://nabd-al-qalam-server-production.up.railway.app/get-payment/${searchParams.get("payment")}`,
         {
           method: "GET",
           headers: {
