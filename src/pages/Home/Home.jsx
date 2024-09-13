@@ -1,5 +1,4 @@
 import Hero from "../../Components/Hero/Hero";
-import SliderWardan from "../../Components/SliderWardan/SliderWardan";
 import AgeGroups from "../../Components/AgeGroups/AgeGroups";
 import Design from "../../Components/Design/Design";
 import "./home.css";
