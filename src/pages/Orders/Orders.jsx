@@ -37,19 +37,18 @@ const Orders = () => {
 
             // Get the current date
             const currentDate = new Date();
-
-            const sevenDaysAgo = new Date().setDate(currentDate.getDate() - 10);
-
-            if(orderDate <= sevenDaysAgo) return;
-
+            
             // Calculate the difference in milliseconds
             const differenceInMilliseconds = currentDate - orderDate;
-
-            // Convert milliseconds to days
+            
+            // Convert milliseconds to days, hours, and minutes
+            const millisecondsPerMinute = 60 * 1000;
+            const millisecondsPerHour = 60 * 60 * 1000;
             const millisecondsPerDay = 24 * 60 * 60 * 1000;
-            const daysPassed = Math.floor(
-              differenceInMilliseconds / millisecondsPerDay
-            );
+            
+            const minutesPassed = Math.floor(differenceInMilliseconds / millisecondsPerMinute);
+            const hoursPassed = Math.floor(differenceInMilliseconds / millisecondsPerHour);
+            const daysPassed = Math.floor(differenceInMilliseconds / millisecondsPerDay);
 
             return (
               order.orderItems.length > 0 && (
@@ -113,7 +112,7 @@ const Orders = () => {
                       <span>رقم الهاتف : {order.customer.phone}</span>
                       <span>الرقم البريدي : {order?.deliveryAddress?.zip}</span>
                       <span>
-                        منذ : {daysPassed == 0 ? "اليوم" : `${daysPassed} يوم`}
+                        منذ : {daysPassed == 0 ? hoursPassed < 1 ? `${minutesPassed} دقيقة` : `${hoursPassed} ساعة` : `${daysPassed} يوم`}
                       </span>
                     </div>
                   )}

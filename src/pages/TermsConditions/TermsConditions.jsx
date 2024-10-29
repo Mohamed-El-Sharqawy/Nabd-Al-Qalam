@@ -68,8 +68,8 @@ export default function TermsConditions() {
         {lang == "en"
           ? `In case of return, please contact us on the number`
           : `وفي حاله الترجيع يرجى التواصل معنا على الرقم`}
-        <Link to={"tel:0551886228"} className="contact-number">
-          0551886228
+        <Link to={"tel:+9710551886228"} className="contact-number">
+          +971 0551886228
         </Link>
         {lang == "en"
           ? `A representative from the shipping company will come to receive the shipment. Nabd Al Qalam House will replace the manufacturing defect within 3 days from the date of purchase according to the following conditions:`

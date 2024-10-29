@@ -6,7 +6,16 @@ const Header = () => {
   const headerRef = useRef(null);
 
   return (
-    <header ref={headerRef}>
+    <header
+      style={
+        window.location.href.includes("terms-and-conditions")
+          ? {
+              borderBottom: `1px solid #c0114c`,
+            }
+          : {}
+      }
+      ref={headerRef}
+    >
       <TopNav />
       <BottomNav headerRef={headerRef} />
     </header>
