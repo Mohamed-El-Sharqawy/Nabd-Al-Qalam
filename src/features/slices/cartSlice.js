@@ -51,7 +51,7 @@ export const cartSlice = createSlice({
 
       localStorage.setItem("cart", JSON.stringify(state.cartItems));
 
-      toast.error("Deleted from The Cart", {
+      toast.success("Deleted from The Cart", {
         position: "bottom-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -60,6 +60,7 @@ export const cartSlice = createSlice({
         draggable: true,
         progress: undefined,
         theme: "light",
+        toastId: "delete-from-cart-toast",
       });
     },
 

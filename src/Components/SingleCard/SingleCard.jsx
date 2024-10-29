@@ -62,6 +62,7 @@ const SingleCard = ({ book, popup, setPopup, setChosenBook }) => {
               draggable: true,
               progress: undefined,
               theme: "light",
+              toastId: "add-to-cart-toast",
             });
           }}
         >
