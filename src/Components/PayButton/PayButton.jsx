@@ -19,7 +19,7 @@ export default function PayButton({ cartItems }) {
     };
 
     axios
-      .post("https://nabd-al-qalam-server-production.up.railway.app/create-checkout-session", data)
+      .post("https://nabdalqalam-backend.onrender.com/create-checkout-session", data)
       .then((res) => {
         if (res.data.url) {
           window.location.href = res.data.url;

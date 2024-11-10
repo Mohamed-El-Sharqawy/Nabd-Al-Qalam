@@ -11,7 +11,7 @@ const Orders = () => {
   useEffect(() => {
     const getAllOrders = async () => {
       const res = await fetch(
-        "https://nabd-al-qalam-server-production.up.railway.app/orders"
+        "https://nabdalqalam-backend.onrender.com/orders"
       );
 
       const data = await res.json();

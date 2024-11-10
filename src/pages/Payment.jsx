@@ -36,7 +36,7 @@ export default function Payment() {
         mode: PaymenntJS?.modes.TEST,
         onTokenized: async function (data) {
           const response = await fetch(
-            "https://nabd-al-qalam-server-production.up.railway.app/paymentt-checkout",
+            "https://nabdalqalam-backend.onrender.com/paymentt-checkout",
             {
               method: "POST",
               headers: {
