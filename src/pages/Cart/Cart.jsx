@@ -61,12 +61,12 @@ const Cart = () => {
                       ? `Author: ${book.enAuthor}`
                       : `المؤلف: ${book.arAuthor}`}
                   </p>
-                  {book.numberOfPages === 1 ? null : (
+                  {/* {book.numberOfPages === 1 ? null : (
                     <p dir={lang === "en" ? "ltr" : "rtl"}>
                       {lang === "en" ? "Pages: " : "الصفحات: "}{" "}
                       {book.numberOfPages}
                     </p>
-                  )}
+                  )} */}
                   <p className="quantity" dir={lang === "en" ? "ltr" : "rtl"}>
                     {lang === "en" ? "َQuantity: " : "الكمية: "}{" "}
                     <button
@@ -165,7 +165,7 @@ const Cart = () => {
             >
               {lang === "en" ? "Total Amount" : "المبلغ الكلي"}{" "}
               <span dir={lang === "en" ? "ltr" : "rtl"}>
-                {(calculateTotalPriceWithTax(cartTotalPrice) + 10).toFixed(2)}
+                {(calculateTotalPriceWithTax(cartTotalPrice) + 25).toFixed(2)}
                 {lang == "en" ? " AED" : " درهم"}
               </span>
             </h3>

@@ -220,9 +220,21 @@
   .shopping-cart .shopping-cart-info h3 {
     font-size: 18px;
   }
+    .shopping-cart .quantity {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
 }
 @media screen and (max-width: 331px) {
   .shopping-cart-info h3 {
     font-size: 14px;
   }
+    .shopping-cart .quantity {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
 }
