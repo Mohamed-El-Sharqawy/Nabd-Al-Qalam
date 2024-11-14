@@ -164,7 +164,33 @@ button.lang-btn {
   }
 
   .menu {
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .menu .mobile-nav-link svg {
+    margin-top: 0.25rem;
+    font-size: 26px;
+  }
+
+  .menu .mobile-nav-link {
+    position: relative;
+  }
+
+  .menu .mobile-nav-link .cart-items-length {
+    position: absolute;
+    background-color: #e27f1c;
+    color: white;
+    border-radius: 50%;
+    top: -2.5px;
+    right: -5px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
   }
 
   .mobile-menu {

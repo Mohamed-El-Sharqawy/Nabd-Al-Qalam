@@ -1,6 +1,6 @@
 export function calculateTotalPriceWithTax(cartTotalPrice) {
   // Define the tax rate
-  const taxRate = 1.5 / 100; // 1.5%
+  const taxRate = 5 / 100; // 1.5%
 
   // Calculate the subtotal (cart total + shipping)
   const subtotal = cartTotalPrice;

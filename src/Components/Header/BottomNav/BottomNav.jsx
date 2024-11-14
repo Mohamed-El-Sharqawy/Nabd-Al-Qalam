@@ -154,8 +154,15 @@ const BottomNav = ({ headerRef }) => {
             onClick={() => setIsMenuHidden(false)}
             className="menu-icon"
           />
+          <Link to="/shopping-cart" className="mobile-nav-link">
+            <ShoppingBagOutlinedIcon />
+            <span className="cart-items-length">
+              {cartItems?.length}
+            </span>
+          </Link>
         </div>
       </div>
+
       <MobileMenu
         setIsMenuHidden={setIsMenuHidden}
         isMenuHidden={isMenuHidden}

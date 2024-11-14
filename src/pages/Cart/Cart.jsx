@@ -11,8 +11,8 @@ import { Link } from "react-router-dom";
 import PayButton from "../../Components/PayButton/PayButton";
 import { calculateTotalPriceWithTax } from "../../utils/calculateTotalPriceWithTax";
 
-const SHIPPING_PRICE = 10;
-const TAX_RATE = 1.5 / 100;
+const SHIPPING_PRICE = 25;
+const TAX_RATE = 5 / 100;
 
 const Cart = () => {
   const { lang } = useSelector((state) => state.lang);
@@ -165,7 +165,7 @@ const Cart = () => {
             >
               {lang === "en" ? "Total Amount" : "المبلغ الكلي"}{" "}
               <span dir={lang === "en" ? "ltr" : "rtl"}>
-                {(calculateTotalPriceWithTax(cartTotalPrice) + 25).toFixed(2)}
+                {(calculateTotalPriceWithTax(cartTotalPrice) + SHIPPING_PRICE).toFixed(2)}
                 {lang == "en" ? " AED" : " درهم"}
               </span>
             </h3>
