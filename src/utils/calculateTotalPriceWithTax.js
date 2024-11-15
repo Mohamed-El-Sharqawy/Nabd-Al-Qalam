@@ -22,7 +22,7 @@ export function calculateTotalPriceWithTax(cartTotalPrice) {
 
 export function calculateTax(cartTotalPrice) {
   // Define the tax rate
-  const taxRate = 1.5 / 100; // 1.5%
+  const taxRate = 5 / 100; // 1.5%
 
   // Calculate the tax amount
   let taxAmount = cartTotalPrice * taxRate;
