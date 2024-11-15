@@ -29,10 +29,10 @@ export default function Cards() {
             <>
               <option value={""}>All Age Groups</option>
               <option value={"0 - 3 سنوات"}>0 - 3 Years</option>
-              <option value={"6 - 9 سنوات"}>3 - 6 Years</option>
-              <option value={"9 - 12 سنوات"}>6 - 9 Years</option>
-              <option value={"12 - 15 سنوات"}>9 - 12 Years</option>
-              <option value={"15 - 20 سنوات"}>12 - 15 Years</option>
+              <option value={"6 - 9 سنوات"}>4 - 7 Years</option>
+              <option value={"9 - 12 سنوات"}>8 - 11 Years</option>
+              <option value={"12 - 15 سنوات"}>12 - 15 Years</option>
+              <option value={"16 - 20 سنوات"}>16 - 20 Years</option>
             </>
           ) : (
             <>
@@ -42,17 +42,17 @@ export default function Cards() {
               <option value={"0 - 3 سنوات"} dir="rtl">
                 0 - 3 سنوات
               </option>
-              <option value={"6 - 9 سنوات"} dir="rtl">
-                3 - 6 سنوات
+              <option value={"4 - 7 سنوات"} dir="rtl">
+                4 - 7 سنوات
               </option>
-              <option value={"9 - 12 سنوات"} dir="rtl">
-                6 - 9 سنوات
+              <option value={"8 - 11 سنوات"} dir="rtl">
+                8 - 11 سنوات
               </option>
               <option value={"12 - 15 سنوات"} dir="rtl">
-                9 - 12 سنوات
-              </option>
-              <option value={"15 - 20 سنوات"} dir="rtl">
                 12 - 15 سنوات
+              </option>
+              <option value={"16 - 20 سنوات"} dir="rtl">
+                16 - 20 سنوات
               </option>
             </>
           )}
