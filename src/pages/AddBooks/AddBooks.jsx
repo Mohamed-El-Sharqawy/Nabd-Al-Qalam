@@ -21,7 +21,7 @@ const AddBooks = () => {
     ageGroup: "اختر الفئة العمرية من فضلك",
     img: "",
   };
-
+  
   const { lang } = useSelector((state) => state.lang);
   const { user } = useSelector((state) => state.auth);
   const [book, setBook] = useState(defaultFormData);
@@ -217,7 +217,10 @@ const AddBooks = () => {
             9 - 12 سنوات
           </option>
           <option value={"15 - 20 سنوات"} dir="rtl">
-            12 - 15 سنوات
+            12 - 17 سنوات
+          </option>
+          <option value={"17 - 20 سنوات"} dir="rtl">
+            17 - 20 سنوات
           </option>
         </select>
         <label htmlFor="file-upload">

@@ -1,4 +1,5 @@
 import TopNav from "./TopNav/TopNav";
+import SearchBar from "./SearchBar/SearchBar";
 import BottomNav from "./BottomNav/BottomNav";
 import { useRef } from "react";
 
@@ -17,6 +18,7 @@ const Header = () => {
       ref={headerRef}
     >
       <TopNav />
+      <SearchBar />
       <BottomNav headerRef={headerRef} />
     </header>
   );

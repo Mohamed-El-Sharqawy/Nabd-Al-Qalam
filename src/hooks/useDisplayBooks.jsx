@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import { useQuery } from "@tanstack/react-query";
 
 const useDisplayBooks = () => {
+  const [searchValue, setSearchValue] = useState("");
   const { lang } = useSelector((state) => state.lang);
   const [query, setQuery] = useState({ ageGroup: "", category: "" });
   const [wardanSeries, setWardanSeries] = useState(false);
@@ -75,6 +76,11 @@ const useDisplayBooks = () => {
           );
         }
       })
+      .filter((book) =>
+        lang == "ar"
+          ? book?.arTitle?.toLowerCase().includes(searchValue?.toLowerCase())
+          : book?.enTitle?.toLowerCase().includes(searchValue?.toLowerCase())
+      )
       ?.map((book, index) => {
         if (index == 15 || index == 31) {
           return (
@@ -227,6 +233,8 @@ const useDisplayBooks = () => {
     query,
     books,
     isLoading,
+    setSearchValue,
+    searchValue,
   };
 };
 

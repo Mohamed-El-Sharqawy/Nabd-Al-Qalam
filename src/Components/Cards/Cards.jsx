@@ -1,6 +1,7 @@
 import Popup from "../Popup/Popup";
 import ClipLoader from "react-spinners/ClipLoader";
 import useDisplayBooks from "../../hooks/useDisplayBooks";
+import SearchIcon from "@mui/icons-material/Search";
 
 export default function Cards() {
   const {
@@ -11,6 +12,8 @@ export default function Cards() {
     setWardanSeries,
     setSpaceSeries,
     setPopup,
+    searchValue,
+    setSearchValue,
     category,
     popup,
     lang,
@@ -23,16 +26,33 @@ export default function Cards() {
 
   return (
     <>
+      <div className="search-bar">
+        <input
+          value={searchValue}
+          onChange={(e) => setSearchValue(e.target.value)}
+          dir={lang == "ar" ? "rtl" : "ltr"}
+          type="text"
+          placeholder={
+            lang == "ar" ? "ابحث عن الكتب..." : "Search for books..."
+          }
+        />
+
+        <SearchIcon
+          style={lang == "ar" ? { left: "0.5rem" } : { right: "0.5rem" }}
+        />
+      </div>
+
       <div className="books-filter">
         <select value={query?.ageGroup} onChange={handleChange} name="ageGroup">
           {lang === "en" ? (
             <>
               <option value={""}>All Age Groups</option>
               <option value={"0 - 3 سنوات"}>0 - 3 Years</option>
-              <option value={"6 - 9 سنوات"}>3 - 6 Years</option>
+              <option value={"6 - 9 سنوات"}>3 - 5 Years</option>
               <option value={"9 - 12 سنوات"}>6 - 9 Years</option>
               <option value={"12 - 15 سنوات"}>9 - 12 Years</option>
-              <option value={"15 - 20 سنوات"}>12 - 15 Years</option>
+              <option value={"15 - 20 سنوات"}>12 - 17 Years</option>
+              <option value={"17 - 20 سنوات"}>17 - 20 Years</option>
             </>
           ) : (
             <>
