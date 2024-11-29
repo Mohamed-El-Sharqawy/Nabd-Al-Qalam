@@ -78,6 +78,9 @@ const SingleCard = ({ book, popup, setPopup, setChosenBook, refetch }) => {
               backgroundColor: "#c0114c",
               maxWidth: "500px",
               width: "100%",
+              height: "500px",
+              overflow: "auto",
+              borderRadius: "0.5rem"
             }}
           >
             <div
