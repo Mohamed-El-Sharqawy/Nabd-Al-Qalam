@@ -231,19 +231,19 @@ const SingleCard = ({ book, popup, setPopup, setChosenBook, refetch }) => {
                 onChange={handleChange}
               >
                 <option dir="rtl">اختر الفئة العمرية من فضلك</option>
-                <option value={"0 - 3 سنوات"} dir="rtl">
+                <option value={"0-3"} dir="rtl">
                   0 - 3 سنوات
                 </option>
-                <option value={"3 - 5 سنوات"} dir="rtl">
+                <option value={"3-5"} dir="rtl">
                   3 - 5 سنوات
                 </option>
-                <option value={"6 - 9 سنوات"} dir="rtl">
+                <option value={"6-9"} dir="rtl">
                   6 - 9 سنوات
                 </option>
-                <option value={"9 - 12 سنوات"} dir="rtl">
+                <option value={"9-12"} dir="rtl">
                   9 - 12 سنوات
                 </option>
-                <option value={"12 - 17 سنوات"} dir="rtl">
+                <option value={"12-17"} dir="rtl">
                   12 - 17 سنوات
                 </option>
               </select>

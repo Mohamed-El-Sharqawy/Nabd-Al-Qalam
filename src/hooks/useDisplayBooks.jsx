@@ -32,11 +32,11 @@ const useDisplayBooks = () => {
   });
 
   const ageGroups = {
-    zeroThree: ["0 - 3 سنوات", "From 0 years to 3 years"],
-    threeFive: ["3 - 5 سنوات", "From 3 years to 5 years"],
-    sixNine: ["6 - 9 سنوات", "From 6 years to 9 years"],
-    nineTwelve: ["9 - 12 سنوات", "From 9 years to 12 years"],
-    twelveFifteen: ["12 - 17 سنوات", "From 12 years to 17 years"],
+    zeroThree: "0-3",
+    threeFive: "3-5",
+    sixNine: "6-9",
+    nineTwelve: "9-12",
+    twelveSeventeen: "12-17",
   };
 
   const handleChange = (e) => {
@@ -45,14 +45,14 @@ const useDisplayBooks = () => {
     setSpaceSeries(() => false);
     setSearchParams((prev) => {
       if (e.target.name == "ageGroup") {
-        if (e.target.value == ageGroups.threeFive[0]) {
-          prev.set("group", ageGroups.threeFive[1]);
-        } else if (e.target.value == ageGroups.sixNine[0]) {
-          prev.set("group", ageGroups.sixNine[1]);
-        } else if (e.target.value == ageGroups.nineTwelve[0]) {
-          prev.set("group", ageGroups.nineTwelve[1]);
-        } else if (e.target.value == ageGroups.twelveFifteen[0]) {
-          prev.set("group", ageGroups.twelveFifteen[1]);
+        if (e.target.value == ageGroups.threeFive) {
+          prev.set("group", ageGroups.threeFive);
+        } else if (e.target.value == ageGroups.sixNine) {
+          prev.set("group", ageGroups.sixNine);
+        } else if (e.target.value == ageGroups.nineTwelve) {
+          prev.set("group", ageGroups.nineTwelve);
+        } else if (e.target.value == ageGroups.twelveSeventeen) {
+          prev.set("group", ageGroups.twelveSeventeen);
         } else {
           prev.set("group", "");
         }
