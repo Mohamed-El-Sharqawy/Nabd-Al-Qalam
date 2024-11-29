@@ -1,7 +1,6 @@
 import { useRef, useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
 import axios from "axios";
@@ -21,7 +20,7 @@ const AddBooks = () => {
     ageGroup: "اختر الفئة العمرية من فضلك",
     img: "",
   };
-  
+
   const { lang } = useSelector((state) => state.lang);
   const { user } = useSelector((state) => state.auth);
   const [book, setBook] = useState(defaultFormData);
@@ -82,20 +81,6 @@ const AddBooks = () => {
     return (
       <form ref={formRef} onSubmit={handleSubmit} className="add-form">
         <div className="heading-book">
-          <Link
-            style={{
-              margin: "0 auto 1rem",
-              display: "block",
-              width: "fit-content",
-              backgroundColor: "rgb(235, 184, 117)",
-              color: "white",
-              padding: "0.5rem 0.85rem",
-              borderRadius: "0.5rem",
-            }}
-            to={"/orders"}
-          >
-            الطلبات
-          </Link>
           <h1>{lang === "en" ? "Add Book" : "أضف كتاب"}</h1>
         </div>
         <input
@@ -207,20 +192,17 @@ const AddBooks = () => {
           <option value={"0 - 3 سنوات"} dir="rtl">
             0 - 3 سنوات
           </option>
-          <option value={"6 - 9 سنوات"} dir="rtl">
-            3 - 6 سنوات
+          <option value={"3 - 5 سنوات"} dir="rtl">
+            3 - 5 سنوات
           </option>
-          <option value={"9 - 12 سنوات"} dir="rtl">
+          <option value={"6 - 9 سنوات"} dir="rtl">
             6 - 9 سنوات
           </option>
-          <option value={"12 - 15 سنوات"} dir="rtl">
+          <option value={"9 - 12 سنوات"} dir="rtl">
             9 - 12 سنوات
           </option>
-          <option value={"15 - 20 سنوات"} dir="rtl">
+          <option value={"12 - 17 سنوات"} dir="rtl">
             12 - 17 سنوات
-          </option>
-          <option value={"17 - 20 سنوات"} dir="rtl">
-            17 - 20 سنوات
           </option>
         </select>
         <label htmlFor="file-upload">

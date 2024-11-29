@@ -10,7 +10,6 @@ import Login from "../pages/Login/Login";
 import Cards from "../Components/Cards/Cards";
 import Activities from "../pages/Activities/Activities";
 import CheckoutSuccess from "../pages/CheckoutSuccess/CheckoutSuccess";
-import { Orders, Payment } from "../pages";
 import TermsConditions from "../pages/TermsConditions/TermsConditions";
 
 export const router = createBrowserRouter([
@@ -25,10 +24,6 @@ export const router = createBrowserRouter([
       {
         path: "add-books",
         element: <AddBooks />,
-      },
-      {
-        path: "orders",
-        element: <Orders />,
       },
       {
         path: "contact",
@@ -61,10 +56,6 @@ export const router = createBrowserRouter([
       {
         path: "login",
         element: <Login />,
-      },
-      {
-        path: "payment",
-        element: <Payment />,
       },
       {
         path: "books",

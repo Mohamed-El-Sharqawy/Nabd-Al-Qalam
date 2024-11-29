@@ -22,7 +22,11 @@ const useDisplayBooks = () => {
     return res.data;
   };
 
-  const { data: books, isLoading } = useQuery({
+  const {
+    data: books,
+    isLoading,
+    refetch,
+  } = useQuery({
     queryKey: ["books"],
     queryFn: getAllBooks,
   });
@@ -90,6 +94,7 @@ const useDisplayBooks = () => {
                 setChosenBook={setChosenBook}
                 setPopup={setPopup}
                 book={book}
+                refetch={refetch}
               />
               <div className="twobanner">
                 {/* Space */}
@@ -140,6 +145,7 @@ const useDisplayBooks = () => {
             setChosenBook={setChosenBook}
             setPopup={setPopup}
             book={book}
+            refetch={refetch}
           />
         );
       });
@@ -170,6 +176,7 @@ const useDisplayBooks = () => {
           setChosenBook={setChosenBook}
           setPopup={setPopup}
           book={book}
+          refetch={refetch}
         />
       ));
 
@@ -189,6 +196,7 @@ const useDisplayBooks = () => {
           setChosenBook={setChosenBook}
           setPopup={setPopup}
           book={book}
+          refetch={refetch}
         />
       ));
 

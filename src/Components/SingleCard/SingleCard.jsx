@@ -1,30 +1,17 @@
-// import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, getTotal } from "../../features/slices/cartSlice";
 import { toast } from "react-toastify";
 import { useState } from "react";
-import "../../pages/AddBooks/addBooks.css"
+import "../../pages/AddBooks/addBooks.css";
+import axios from "axios";
 
-const SingleCard = ({ book, popup, setPopup, setChosenBook }) => {
+const SingleCard = ({ book, popup, setPopup, setChosenBook, refetch }) => {
   const { lang } = useSelector((state) => state.lang);
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
   const [isEditFormShown, setIsEditFormShown] = useState(false);
-  const defaultFormData = {
-    arTitle: "",
-    enTitle: "",
-    arDescription: "",
-    enDescription: "",
-    arAuthor: "",
-    enAuthor: "",
-    numberOfPages: "",
-    price: "",
-    category: "",
-    ageGroup: "اختر الفئة العمرية من فضلك",
-    img: "",
-  };
-  const [data, setData] = useState(defaultFormData);
+  const [data, setData] = useState(book);
 
   const handleChange = (e) => {
     setData(() => ({ ...data, [e.target.name]: e.target.value }));
@@ -49,32 +36,156 @@ const SingleCard = ({ book, popup, setPopup, setChosenBook }) => {
     });
   }
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.patch(
+        `https://nabdalqalam-backend.onrender.com/edit/${data._id}`,
+        data
+      );
+
+      setData(res.data.book);
+      await refetch();
+      setIsEditFormShown(false);
+      toast.success("Book was Edited Successfully", {
+        position: "bottom-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        toastId: "add-to-cart-toast",
+      });
+    } catch (err) {
+      console.err(err.message);
+    }
+  };
+
   return (
     <div className="card">
       {isEditFormShown && (
         <>
-          <div
+          <form
+            onSubmit={handleSubmit}
             style={{
               position: "fixed",
-              inset: 0,
+              left: "50%",
+              top: "50%",
+              transform: "translate(-50%, -50%)",
               zIndex: 1000,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
+              backgroundColor: "#c0114c",
+              maxWidth: "500px",
+              width: "100%",
             }}
           >
             <div
               style={{
-                backgroundColor: "#c0114c",
+                display: "grid",
+                gap: "1rem",
+                padding: "1rem",
               }}
             >
-              <input type="text" placeholder="ar title" />
-              <input type="text" placeholder="en title" />
-              <input type="text" placeholder="ar description" />
-              <input type="text" placeholder="en description" />
-              <input type="text" placeholder="ar author" />
-              <input type="text" placeholder="en author" />
-              <input type="number" placeholder="price" />
+              <input
+                style={{
+                  borderRadius: "0.5rem",
+                  padding: "0.25rem 0.5rem",
+                  border: "1px solid #777",
+                  outline: "none",
+                }}
+                type="text"
+                placeholder="ar title"
+                value={data.arTitle}
+                onChange={handleChange}
+                name="arTitle"
+              />
+              <input
+                style={{
+                  borderRadius: "0.5rem",
+                  padding: "0.25rem 0.5rem",
+                  border: "1px solid #777",
+                  outline: "none",
+                }}
+                type="text"
+                placeholder="en title"
+                value={data.enTitle}
+                onChange={handleChange}
+                name="enTitle"
+              />
+              <input
+                style={{
+                  borderRadius: "0.5rem",
+                  padding: "0.25rem 0.5rem",
+                  border: "1px solid #777",
+                  outline: "none",
+                }}
+                type="text"
+                placeholder="ar description"
+                value={data.arDescription}
+                onChange={handleChange}
+                name="arDescription"
+              />
+              <input
+                style={{
+                  borderRadius: "0.5rem",
+                  padding: "0.25rem 0.5rem",
+                  border: "1px solid #777",
+                  outline: "none",
+                }}
+                type="text"
+                placeholder="en description"
+                value={data.enDescription}
+                onChange={handleChange}
+                name="enDescription"
+              />
+              <input
+                style={{
+                  borderRadius: "0.5rem",
+                  padding: "0.25rem 0.5rem",
+                  border: "1px solid #777",
+                  outline: "none",
+                }}
+                type="text"
+                placeholder="ar author"
+                value={data.arAuthor}
+                onChange={handleChange}
+                name="arAuthor"
+              />
+              <input
+                style={{
+                  borderRadius: "0.5rem",
+                  padding: "0.25rem 0.5rem",
+                  border: "1px solid #777",
+                  outline: "none",
+                }}
+                type="text"
+                placeholder="en author"
+                value={data.enAuthor}
+                onChange={handleChange}
+                name="enAuthor"
+              />
+              <input
+                style={{
+                  borderRadius: "0.5rem",
+                  padding: "0.25rem 0.5rem",
+                  border: "1px solid #777",
+                  outline: "none",
+                }}
+                type="number"
+                placeholder="price"
+                value={data.price}
+                onChange={handleChange}
+                name="price"
+              />
+            </div>
+            <div
+              style={{
+                display: "grid",
+                gap: "1rem",
+                padding: "1rem",
+              }}
+            >
               <select
                 required
                 name="category"
@@ -120,20 +231,17 @@ const SingleCard = ({ book, popup, setPopup, setChosenBook }) => {
                 <option value={"0 - 3 سنوات"} dir="rtl">
                   0 - 3 سنوات
                 </option>
-                <option value={"6 - 9 سنوات"} dir="rtl">
-                  3 - 6 سنوات
+                <option value={"3 - 5 سنوات"} dir="rtl">
+                  3 - 5 سنوات
                 </option>
-                <option value={"9 - 12 سنوات"} dir="rtl">
+                <option value={"6 - 9 سنوات"} dir="rtl">
                   6 - 9 سنوات
                 </option>
-                <option value={"12 - 15 سنوات"} dir="rtl">
+                <option value={"9 - 12 سنوات"} dir="rtl">
                   9 - 12 سنوات
                 </option>
-                <option value={"15 - 20 سنوات"} dir="rtl">
+                <option value={"12 - 17 سنوات"} dir="rtl">
                   12 - 17 سنوات
-                </option>
-                <option value={"17 - 20 سنوات"} dir="rtl">
-                  17 - 20 سنوات
                 </option>
               </select>
               <label htmlFor="file-upload">
@@ -143,6 +251,12 @@ const SingleCard = ({ book, popup, setPopup, setChosenBook }) => {
                     "https://media.istockphoto.com/id/1328167226/vector/open-book.jpg?s=612x612&w=0&k=20&c=yqfKR7Es5IDuM20rtyg4xZihaGTl2waDtvucK1YCTIw="
                   }`}
                   alt="book"
+                  style={{
+                    width: "100%",
+                    height: "200px",
+                    objectFit: "contain",
+                    borderRadius: "0.5rem",
+                  }}
                 />
               </label>
               <input
@@ -155,7 +269,20 @@ const SingleCard = ({ book, popup, setPopup, setChosenBook }) => {
                 key={+(book.img.length > 0)}
               />
             </div>
-          </div>
+
+            <button
+              title="logout"
+              className="auth-btn"
+              style={{
+                border: "1px solid rgb(0,0,0,0)",
+                outline: "none",
+                margin: "0 auto 1rem",
+                display: "block",
+              }}
+            >
+              {lang == "en" ? "Save" : "حفظ"}
+            </button>
+          </form>
 
           <div
             onClick={() => setIsEditFormShown(false)}
