@@ -14,7 +14,7 @@ export default function useToken() {
   useEffect(() => {
     const getLoggedUser = async (decodedToken) => {
       const res = await axios.get(
-        `${"https://nabdalqalam-backend.onrender.com/users/"}${decodedToken?.id}`
+        `${"http://localhost:5000/users/"}${decodedToken?.id}`
       );
 
       dispatch(login(res.data));

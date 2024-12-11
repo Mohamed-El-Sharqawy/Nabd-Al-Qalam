@@ -13,7 +13,7 @@ const Home = () => {
   useEffect(() => {
     const getPaymentStatus = async () => {
       const res = await fetch(
-        `https://nabdalqalam-backend.onrender.com/get-payment/${searchParams.get("payment")}`,
+        `http://localhost:5000/get-payment/${searchParams.get("payment")}`,
         {
           method: "GET",
           headers: {

@@ -19,7 +19,7 @@ export default function PayButton({ cartItems }) {
     };
 
     axios
-      .post("https://nabdalqalam-backend.onrender.com/create-checkout-session", data)
+      .post("http://localhost:5000/create-checkout-session", data)
       .then((res) => {
         if (res.data.url) {
           window.location.href = res.data.url;
