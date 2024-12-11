@@ -80,7 +80,7 @@ const SingleCard = ({ book, popup, setPopup, setChosenBook, refetch }) => {
               width: "100%",
               height: "500px",
               overflow: "auto",
-              borderRadius: "0.5rem"
+              borderRadius: "0.5rem",
             }}
           >
             <div
@@ -317,11 +317,10 @@ const SingleCard = ({ book, popup, setPopup, setChosenBook, refetch }) => {
         <p className="caption" dir={lang === "en" ? "ltr" : "rtl"}>
           {lang === "en" ? book.enTitle : book.arTitle}
         </p>
-        <span
-          className="price"
-          dir={lang === "en" ? "ltr" : "rtl"}
-          style={{ justifyContent: "end" }}
-        >
+        <span style={{
+          display: "flex",
+          alignItems: "center",
+        }} className="price" dir={lang === "en" ? "ltr" : "rtl"}>
           {book.price}
           {lang === "en" ? " AED" : " درهم"}
         </span>

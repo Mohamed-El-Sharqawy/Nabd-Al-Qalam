@@ -39,7 +39,7 @@ const AgeCard = ({ card }) => {
             lang === "en" ? { marginRight: "auto" } : { marginLeft: "auto" }
           }
           dir={lang === "en" ? "ltr" : "rtl"}
-          onClick={() => handleClick(card?.enAge)}
+          onClick={() => handleClick(card?.href)}
         >
           {lang === "en" ? "Browse Books" : "تصفح الكتب"}
         </button>

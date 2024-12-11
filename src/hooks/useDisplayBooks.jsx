@@ -164,6 +164,23 @@ const useDisplayBooks = () => {
     }
   };
 
+  const displayPopularBooks = () => {
+    const popularBooks = books
+      ?.filter((singleBook) => singleBook.popular)
+      ?.map((book) => (
+        <SingleCard
+          key={book._id}
+          popup={popup}
+          setChosenBook={setChosenBook}
+          setPopup={setPopup}
+          book={book}
+          refetch={refetch}
+        />
+      ));
+
+    return popularBooks;
+  };
+
   //* Filter and Display Wardan Series
   const displayWardanSeries = () => {
     const wardanBooks = books
@@ -205,18 +222,21 @@ const useDisplayBooks = () => {
   };
 
   useEffect(() => {
-    if (group === "From 3 years to 6 years") {
-      //! 3 - 6
-      setQuery((prev) => ({ ...prev, ageGroup: "6 - 9 سنوات" }));
-    } else if (group === "From 6 years to 9 years") {
+    if (group === "0-3") {
+      //! 0 - 3
+      setQuery((prev) => ({ ...prev, ageGroup: "0-3" }));
+    } else if (group === "3-5") {
+      //! 3 - 5
+      setQuery((prev) => ({ ...prev, ageGroup: "3-5" }));
+    } else if (group === "6-9") {
       //! 6 - 9
-      setQuery((prev) => ({ ...prev, ageGroup: "9 - 12 سنوات" }));
-    } else if (group === "From 9 years to 12 years") {
+      setQuery((prev) => ({ ...prev, ageGroup: "6-9" }));
+    } else if (group === "9-12") {
       //! 9 - 12
-      setQuery((prev) => ({ ...prev, ageGroup: "12 - 15 سنوات" }));
-    } else if (group === "From 12 years to 15 years") {
-      //! 12 - 15
-      setQuery((prev) => ({ ...prev, ageGroup: "15 - 20 سنوات" }));
+      setQuery((prev) => ({ ...prev, ageGroup: "9-12" }));
+    } else if (group === "12-17") {
+      //! 12 - 17
+      setQuery((prev) => ({ ...prev, ageGroup: "12-17" }));
     }
 
     if (category) setQuery((prev) => ({ ...prev, category }));
@@ -226,6 +246,7 @@ const useDisplayBooks = () => {
     displayBooks,
     displayWardanSeries,
     displaySpaceSeries,
+    displayPopularBooks,
     handleChange,
     setWardanSeries,
     setSpaceSeries,

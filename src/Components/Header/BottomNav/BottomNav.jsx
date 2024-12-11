@@ -88,8 +88,8 @@ const BottomNav = ({ headerRef }) => {
               </Link>
             </li>
             <li>
-              <Link to="/activities">
-                {lang == "en" ? "Activities" : "أنشطة الدار"}
+              <Link to="/popular">
+                {lang == "en" ? "Most Popular" : "الأكثر مبيعا"}
               </Link>
             </li>
             {user.isAdmin && (

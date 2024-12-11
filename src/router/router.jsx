@@ -8,9 +8,9 @@ import Cart from "../pages/Cart/Cart";
 import Signup from "../pages/Singup/Signup";
 import Login from "../pages/Login/Login";
 import Cards from "../Components/Cards/Cards";
-import Activities from "../pages/Activities/Activities";
 import CheckoutSuccess from "../pages/CheckoutSuccess/CheckoutSuccess";
 import TermsConditions from "../pages/TermsConditions/TermsConditions";
+import Popular from "../pages/Popular";
 
 export const router = createBrowserRouter([
   {
@@ -34,8 +34,8 @@ export const router = createBrowserRouter([
         element: <About />,
       },
       {
-        path: "activities",
-        element: <Activities />,
+        path: "popular",
+        element: <Popular />,
       },
       {
         path: "terms-and-conditions",

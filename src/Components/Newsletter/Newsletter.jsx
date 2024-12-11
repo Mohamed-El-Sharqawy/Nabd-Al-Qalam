@@ -7,7 +7,7 @@ const Newsletter = () => {
   const { sendMail, isLoading, form } = useSubscribeForNewsletters();
 
   const nabdAr = `دار نبض القلم هي مؤسسة ثقافية تعنى بشؤون
-  تحقيق ونشر الكتب العربية في أعلى المستويات
+  تحقيق ونشر الكتب العربية في أعلى
   المستويات العلمية والمعرفية.`;
 
   const nabdEn = `Dar Nabd Al-Qalam is a cultural institution concerned with the

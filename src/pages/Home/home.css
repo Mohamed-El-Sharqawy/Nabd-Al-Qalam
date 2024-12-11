@@ -37,9 +37,6 @@
   opacity: 1;
 }
 .card-caption {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   gap: 0.25rem;
   padding: 1.5rem 8px;
 }
@@ -56,9 +53,6 @@
   font-size: 14px;
   font-weight: bold;
   color: #333;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   min-width: 90px;
 }
 .shopping {
