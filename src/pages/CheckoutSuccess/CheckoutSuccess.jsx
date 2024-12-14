@@ -79,7 +79,7 @@ export default function CheckoutSuccess() {
           {
             method: "POST",
             body: JSON.stringify({
-              to: "dev.elbehery@gmail.com",
+              to: "oi204158@gmail.com",
               subject: "Payment Success",
               message: emailMessage,
             }),
