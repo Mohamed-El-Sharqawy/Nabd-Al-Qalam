@@ -42,8 +42,8 @@ const MobileMenu = ({ setIsMenuHidden, isMenuHidden }) => {
         </Link>
       </li>
       <li>
-        <Link onClick={handleClick} to="/activities">
-          {lang === "en" ? "Activities" : "أنشطة الدار"}
+        <Link onClick={handleClick} to="/popular">
+          {lang === "en" ? "Most Popular" : "الاكثر مبيعا"}
         </Link>
       </li>
       {user.isAdmin && (
