@@ -68,7 +68,7 @@ export const cartSlice = createSlice({
     clearCart: (state) => {
       state.cartItems = [];
 
-      localStorage.setItem("cart", JSON.stringify(state.cartItems));
+      localStorage.removeItem("cart");
     },
 
     //! Get the Total Price
