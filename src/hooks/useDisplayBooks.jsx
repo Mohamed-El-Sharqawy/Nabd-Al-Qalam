@@ -18,7 +18,7 @@ const useDisplayBooks = () => {
   const category = searchParams.get("category");
 
   const getAllBooks = async () => {
-    const res = await axios.get("http://localhost:5000");
+    const res = await axios.get("http://localhost:5001");
     return res.data;
   };
 

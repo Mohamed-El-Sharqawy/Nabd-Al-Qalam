@@ -19,7 +19,7 @@ export default function PayButton({ cartItems }) {
     };
 
     axios
-      .post("http://localhost:5000/create-checkout-session", data)
+      .post("http://localhost:5001/create-checkout-session", data)
       .then((res) => {
         if (res.data.url) {
           window.location.href = res.data.url;
@@ -30,7 +30,7 @@ export default function PayButton({ cartItems }) {
         console.error(err.message);
         toast.error("Please Try Again Later", {
           position: "bottom-right",
-          autoClose: 5000,
+          autoClose: 5001,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,

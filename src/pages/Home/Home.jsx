@@ -13,7 +13,7 @@ const Home = () => {
   useEffect(() => {
     const getPaymentStatus = async () => {
       const res = await fetch(
-        `http://localhost:5000/get-payment/${searchParams.get("payment")}`,
+        `http://localhost:5001/get-payment/${searchParams.get("payment")}`,
         {
           method: "GET",
           headers: {

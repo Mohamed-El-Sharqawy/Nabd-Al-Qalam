@@ -53,7 +53,7 @@ export const cartSlice = createSlice({
 
       toast.success("Deleted from The Cart", {
         position: "bottom-right",
-        autoClose: 5000,
+        autoClose: 5001,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,

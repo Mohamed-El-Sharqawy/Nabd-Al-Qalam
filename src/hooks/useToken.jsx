@@ -14,7 +14,7 @@ export default function useToken() {
   useEffect(() => {
     const getLoggedUser = async (decodedToken) => {
       const res = await axios.get(
-        `${"http://localhost:5000/users/"}${decodedToken?.id}`
+        `${"http://localhost:5001/users/"}${decodedToken?.id}`
       );
 
       dispatch(login(res.data));

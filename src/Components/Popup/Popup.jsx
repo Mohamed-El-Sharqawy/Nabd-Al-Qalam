@@ -59,7 +59,7 @@ const Popup = ({ setPopup, popup, chosenBook }) => {
 
                 toast.success("Added to The Cart", {
                   position: "top-right",
-                  autoClose: 5000,
+                  autoClose: 5001,
                   hideProgressBar: false,
                   closeOnClick: true,
                   pauseOnHover: true,

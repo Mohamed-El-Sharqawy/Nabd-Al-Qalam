@@ -42,7 +42,7 @@ const useFormHandling = (form) => {
       setIsLoading(false);
     } else {
       try {
-        const res = await axios.post("http://localhost:5000/login", {
+        const res = await axios.post("http://localhost:5001/login", {
           email: userData.email,
           password: userData.password,
         });
@@ -84,7 +84,7 @@ const useFormHandling = (form) => {
       });
     } else if (user.password === user.confirmPassword) {
       try {
-        const res = await axios.post("http://localhost:5000/signup", {
+        const res = await axios.post("http://localhost:5001/signup", {
           email: user.email,
           password: user.password,
         });
