@@ -40,7 +40,7 @@ const SingleCard = ({ book, popup, setPopup, setChosenBook, refetch }) => {
     e.preventDefault();
     try {
       const res = await axios.patch(
-        `http://localhost:5001/edit/${data._id}`,
+        `https://nabdalqalam-backend.onrender.com/edit/${data._id}`,
         data
       );
 
