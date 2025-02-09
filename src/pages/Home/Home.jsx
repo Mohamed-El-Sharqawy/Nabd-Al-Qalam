@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-
+import MostPopular from "../../Components/MostPopular/mostPopular";
 const Home = () => {
   const [searchParams] = useSearchParams();
 
@@ -41,6 +41,7 @@ const Home = () => {
     <>
       <div className="images-container">
         <Hero />
+        <MostPopular />
         <AgeGroups />
         {/* <SliderWardan /> */}
         <Design />
