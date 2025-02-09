@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-import MostPopular from "../../Components/MostPopular/mostPopular";
+import MostPopular from "../../Components/MostPopular/MostPopular";
 const Home = () => {
   const [searchParams] = useSearchParams();
 
