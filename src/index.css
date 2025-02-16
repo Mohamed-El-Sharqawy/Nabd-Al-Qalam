@@ -1,6 +1,7 @@
 /*TODO Cairo (Arabic Font) */
 @import url("https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Inter:wght@400;600;700&display=swap");
 
+/* Global Styles */
 * {
   padding: 0;
   margin: 0;
@@ -9,6 +10,7 @@
   list-style: none;
   font-family: "Cairo", sans-serif;
 }
+
 html {
   user-select: none;
   scroll-behavior: smooth;
