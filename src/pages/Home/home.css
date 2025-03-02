@@ -320,9 +320,9 @@ button {
 }
 
 @media screen and (max-width: 1050px) {
-  .card {
+  /* .card {
     width: 30%;
-  }
+  } */
 
   .bnr {
     width: 47.5%;
@@ -337,19 +337,19 @@ button {
   .cards h1 {
     margin-bottom: 1rem;
   }
-
+/* 
   .card {
     width: 38%;
-  }
+  } */
   .bnr {
     width: 38%;
   }
 }
 
 @media screen and (max-width: 540px) {
-  .card {
+  /* .card {
     width: 55%;
-  }
+  } */
 
   .twobanner {
     flex-wrap: wrap;
@@ -364,22 +364,22 @@ button {
   }
 }
 @media screen and (max-width: 500px) {
-  .card {
+  /* .card {
     width: 60%;
-  }
+  } */
 }
 @media screen and (max-width: 400px) {
-  .card {
+  /* .card {
     width: 80%;
-  }
+  } */
   .bnr {
     width: 80%;
   }
 }
 @media screen and (max-width: 325px) {
-  .card {
+  /* .card {
     width: 90%;
-  }
+  } */
   .bnr {
     width: 87%;
   }

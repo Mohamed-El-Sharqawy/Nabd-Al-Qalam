@@ -8,6 +8,8 @@ import KeyboardDoubleArrowUpIcon from "@mui/icons-material/KeyboardDoubleArrowUp
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import "react-toastify/dist/ReactToastify.css";
 import useToken from "./hooks/useToken";
+import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 const App = () => {
   const { pathname } = useLocation();
@@ -71,6 +73,9 @@ const App = () => {
       >
         <span className="loader"></span>
       </div>
+
+      <Analytics />
+      <SpeedInsights />
     </QueryClientProvider>
   );
 };
