@@ -38,14 +38,12 @@ const Home = () => {
   }, [searchParams]);
 
   return (
-    <>
       <div className="images-container">
         <Hero />
         <AgeGroups />
         {/* <SliderWardan /> */}
         <Design />
       </div>
-    </>
   );
 };
 export default Home;
